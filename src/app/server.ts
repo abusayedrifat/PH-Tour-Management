@@ -2,13 +2,14 @@ import {Server} from 'http'
 // import dns from 'dns'
 import mongoose from 'mongoose';
 import app from './app';
-import { promise } from 'zod';
-import { error } from 'console';
+import { envVars } from './config/env';
+// import { promise } from 'zod';
+// import { error } from 'console';
 
 let server:Server;
 // dns.setServers(["1.1.1.1", "8.8.8.8"])
 
-const port =  process.env.PORT || 5000
+// const port =  process.env.PORT || 5000
 
 
 
@@ -16,17 +17,19 @@ const startServer = async() =>{
 
     try {
         
-        await mongoose.connect("mongodb+srv://abusayed:pgPmLGb6L4MKchTn@cluster0.faxnq.mongodb.net/ph_Tour_management?appName=Cluster0")
+        
+        await mongoose.connect(envVars.DB_URL)
 
-        console.log("connceted to mongodb");
+        // console.log("connceted to mongodb");
 
-        server = app.listen(port, ()=>{
-            console.log("listening from ph tour server");
+        server = app.listen(envVars.PORT, ()=>{
+            // console.log("listening from ph tour server");
             
         })
         
     } catch (error) {
         console.log(error);
+        
         
     }
 
@@ -35,9 +38,9 @@ const startServer = async() =>{
 startServer()
 
 //todo => signal termination SIGTERM
- process.on("SIGTERM",(err)=>{
+ process.on("SIGTERM",()=>{
 
-    console.log("sigterm signal detected. Server is shutting down", err);
+    // console.log("sigterm signal detected. Server is shutting down", err);
     
 
     if (server) {
@@ -50,9 +53,9 @@ startServer()
  })
 
 //todo => unhandled Rejection error
- process.on("unhandledRejection",(err)=>{
+ process.on("unhandledRejection",()=>{
 
-    console.log("unhandled rejection detected. Server is shutting down", err);
+    // console.log("unhandled rejection detected. Server is shutting down", err);
     
 
     if (server) {
