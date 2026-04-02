@@ -13,11 +13,15 @@ const createUser = async (req:Request, res:Response) =>{
             email 
         })
 
-        res.status(httpStatus.CREATED)
+        res.status(httpStatus.CREATED).json({
+            message:"User created successfully",
+            user
+        })
     } 
     
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     catch (error:any) {
+        // eslint-disable-next-line no-console
         console.log(error);
 
         res.status(400).json({
@@ -27,3 +31,8 @@ const createUser = async (req:Request, res:Response) =>{
         
     }
 }
+
+
+export const UserControllers = {
+    createUser
+} 

@@ -37,6 +37,7 @@ const startServer = async() =>{
 
 startServer()
 
+
 //todo => signal termination SIGTERM
  process.on("SIGTERM",()=>{
 
