@@ -1,12 +1,16 @@
 
+
 import  express, { Request, Response }  from 'express';
-import { UserRoutes } from './modules/user/user.routes';
 import cors from "cors"
+import { router } from './Routes';
+import { globalErrorHandler } from './middlewares/globalErrorHandler';
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.use('/api/v1/user', UserRoutes)
+app.use('/api/v1', router)
+
+app.use(globalErrorHandler)
 
 
 app.get('/', (req:Request, res:Response)=>{
