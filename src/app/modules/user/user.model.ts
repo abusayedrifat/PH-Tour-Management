@@ -26,7 +26,7 @@ const userSchema = new Schema<IUser>({
         type: String,
         required: true,
         trim:true,
-        unique:[true, "this email already in used"]
+        unique:true
     },
     password: { type: String },
     role: {

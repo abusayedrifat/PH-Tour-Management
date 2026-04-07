@@ -7,7 +7,7 @@ import { UserServices } from "./user.service";
 const createUser = async (req:Request, res:Response, next: NextFunction) =>{
 
     try {
-
+        
         const user = await UserServices.createUser(req.body)
  
 
