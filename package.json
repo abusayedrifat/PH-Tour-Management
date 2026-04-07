@@ -1,0 +1,41 @@
+{
+  "name": "mission-5",
+  "version": "1.0.0",
+  "description": "\"# PH-Tour-Management\"",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/app/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abusayedrifat/PH-Tour-Management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/abusayedrifat/PH-Tour-Management/issues"
+  },
+  "homepage": "https://github.com/abusayedrifat/PH-Tour-Management#readme",
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.1.1",
+    "mongoose": "^9.3.3",
+    "ts-node-dev": "^2.0.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/cors": "^2.8.19",
+    "eslint": "^10.1.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.2"
+  }
+}
