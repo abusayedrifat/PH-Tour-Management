@@ -23,9 +23,8 @@ import catchAsync from "../../utils/catchAsync";
 //   }
 // };
 
-const createUser = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
-    
+const createUser = catchAsync( async (req: Request, res: Response, next: NextFunction) => {
+
     const user = await UserServices.createUser(req.body);
 
     res.status(httpStatus.CREATED).json({
@@ -36,8 +35,7 @@ const createUser = catchAsync(
 );
 
 
-const getALlUsers = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
+const getALlUsers = catchAsync( async (req: Request, res: Response, next: NextFunction) => {
 
     const user = await UserServices.getAllUsers();
 
