@@ -6,6 +6,7 @@ import { NextFunction, Request, Response } from "express";
 import httpStatus from "http-status-codes";
 import { UserServices } from "./user.service";
 import catchAsync from "../../utils/catchAsync";
+import { sendResponse } from "../../utils/sendResponse";
 
 
 // const createUser = async (req: Request, res: Response, next: NextFunction) => {
@@ -23,28 +24,36 @@ import catchAsync from "../../utils/catchAsync";
 //   }
 // };
 
-const createUser = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
-    
+const createUser = catchAsync( async (req: Request, res: Response, next: NextFunction) => {
+
     const user = await UserServices.createUser(req.body);
 
-    res.status(httpStatus.CREATED).json({
-      message: "User created successfully",
-      user,
-    });
+    sendResponse(res, {
+      success: true,
+      statusCode: httpStatus.CREATED,
+      message: "user created successfully",
+      data: user
+    })
   },
 );
 
 
-const getALlUsers = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
+const getALlUsers = catchAsync( async (req: Request, res: Response, next: NextFunction) => {
 
-    const user = await UserServices.getAllUsers();
+    const result = await UserServices.getAllUsers();
 
-    res.status(httpStatus.ACCEPTED).json({
+    // res.status(httpStatus.ACCEPTED).json({
+    //   success: true,
+    //   user,
+    // });
+
+     sendResponse(res, {
       success: true,
-      user,
-    });
+      statusCode: httpStatus.CREATED,
+      message: "user created successfully",
+      data: result.data,
+      meta: result.meta,
+    })
   },
 );
 
