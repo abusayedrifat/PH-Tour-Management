@@ -1,7 +1,7 @@
 import { Response } from "express";
 
 interface TMeta {
-    tota: number;
+    total: number;
 
 }
 

@@ -40,12 +40,20 @@ const createUser = catchAsync( async (req: Request, res: Response, next: NextFun
 
 const getALlUsers = catchAsync( async (req: Request, res: Response, next: NextFunction) => {
 
-    const user = await UserServices.getAllUsers();
+    const result = await UserServices.getAllUsers();
 
-    res.status(httpStatus.ACCEPTED).json({
+    // res.status(httpStatus.ACCEPTED).json({
+    //   success: true,
+    //   user,
+    // });
+
+     sendResponse(res, {
       success: true,
-      user,
-    });
+      statusCode: httpStatus.CREATED,
+      message: "user created successfully",
+      data: result.data,
+      meta: result.meta,
+    })
   },
 );
 
