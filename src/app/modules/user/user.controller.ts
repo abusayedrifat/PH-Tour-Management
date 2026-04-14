@@ -8,7 +8,6 @@ import { UserServices } from "./user.service";
 import catchAsync from "../../utils/catchAsync";
 import { sendResponse } from "../../utils/sendResponse";
 
-
 // const createUser = async (req: Request, res: Response, next: NextFunction) => {
 //   try {
 //     const user = await UserServices.createUser(req.body);
@@ -24,22 +23,21 @@ import { sendResponse } from "../../utils/sendResponse";
 //   }
 // };
 
-const createUser = catchAsync( async (req: Request, res: Response, next: NextFunction) => {
-
+const createUser = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
     const user = await UserServices.createUser(req.body);
 
     sendResponse(res, {
       success: true,
       statusCode: httpStatus.CREATED,
       message: "user created successfully",
-      data: user
-    })
+      data: user,
+    });
   },
 );
 
-
-const getALlUsers = catchAsync( async (req: Request, res: Response, next: NextFunction) => {
-
+const getALlUsers = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
     const result = await UserServices.getAllUsers();
 
     // res.status(httpStatus.ACCEPTED).json({
@@ -47,13 +45,13 @@ const getALlUsers = catchAsync( async (req: Request, res: Response, next: NextFu
     //   user,
     // });
 
-     sendResponse(res, {
+    sendResponse(res, {
       success: true,
       statusCode: httpStatus.CREATED,
       message: "user created successfully",
       data: result.data,
       meta: result.meta,
-    })
+    });
   },
 );
 
