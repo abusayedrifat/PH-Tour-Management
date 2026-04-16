@@ -3,25 +3,33 @@ import  httpStatus  from 'http-status-codes';
 import AppError from "../../errorHelper/AppError";
 import { IUser } from "../user/user.interface";
 import { User } from "../user/user.model";
+import  Jwt  from 'jsonwebtoken';
 
 const crendentialsLogIn = async (payload: Partial<IUser>)=>{
 
     const {email, password } = payload
 
-    const isEmailExists = await User.findOne({email})
+    const isUserExists = await User.findOne({email})
 
-    if (!isEmailExists) {
+    if (!isUserExists) {
         throw new AppError(httpStatus.BAD_REQUEST,"email does not exist","")
     }
 
-    const isPasswordMatched = await bcrypt.compare(password as string , isEmailExists.password as string)
+    const isPasswordMatched = await bcrypt.compare(password as string , isUserExists.password as string)
 
     if (!isPasswordMatched) {
          throw new AppError(httpStatus.BAD_REQUEST,"Incorrect password or email","")
     }
 
+    const jwtPayload = {
+        email: isUserExists.email,
+        role: isUserExists.role,
+        id: isUserExists._id
+    }
+    const accessToken = Jwt.sign(jwtPayload, 'secret', {expiresIn:'1d'})
+
  return{
-    email: isEmailExists.email
+    accessToken
  }
 
 }
