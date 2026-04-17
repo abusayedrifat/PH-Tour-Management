@@ -2,9 +2,12 @@ import { UserControllers } from "./user.controller";
 import { createUserZodSchema } from "./user.validation";
 import { validateRequest } from "../../middlewares/validateRequest";
 import { Router } from "express";
-import { Authorization } from "../../middlewares/validateAuthorization";
+import { checkAuthorization } from "../../middlewares/checkAuthorization";
+import { Role } from "./user.interface";
 
 const router = Router();
+
+
 
 router.post(
     "/register",
@@ -14,7 +17,7 @@ router.post(
 
 router.get(
     "/allUsers",
-    Authorization,
+    checkAuthorization(Role.ADMIN, Role.SUPER_ADMIN),
     UserControllers.getALlUsers
 
 );

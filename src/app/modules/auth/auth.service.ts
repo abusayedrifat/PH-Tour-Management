@@ -3,7 +3,8 @@ import  httpStatus  from 'http-status-codes';
 import AppError from "../../errorHelper/AppError";
 import { IUser } from "../user/user.interface";
 import { User } from "../user/user.model";
-import  Jwt  from 'jsonwebtoken';
+import { generateToken } from '../../utils/jwt';
+import { envVars } from '../../config/env';
 
 const crendentialsLogIn = async (payload: Partial<IUser>)=>{
 
@@ -26,7 +27,7 @@ const crendentialsLogIn = async (payload: Partial<IUser>)=>{
         role: isUserExists.role,
         id: isUserExists._id
     }
-    const accessToken = Jwt.sign(jwtPayload, 'secret', {expiresIn:'1d'})
+    const accessToken = generateToken(jwtPayload, envVars.JWT_ACCESS_SECRET, envVars.JWT_EXPIRES_IN)
 
  return{
     accessToken
