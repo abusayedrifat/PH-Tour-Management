@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/abusayedrifat/PH-Tour-Management#readme",
   "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/express": "^5.0.6",
+    "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/cors": "^2.8.19",
+    "@types/jsonwebtoken": "^9.0.10",
     "eslint": "^10.1.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.57.2"
