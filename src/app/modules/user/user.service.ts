@@ -1,43 +1,43 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import bcrypt from "bcryptjs";
 import AppError from "../../errorHelper/AppError";
-import { IAuthProvider, IUser } from "./user.interface";
+import { IAuthProvider, IUser, Role } from "./user.interface";
 import { User } from "./user.model";
-import httpStatus from 'http-status-codes'
+import httpStatus from "http-status-codes";
 import { envVars } from "../../config/env";
-
+import { JwtPayload } from "jsonwebtoken";
 
 //*======== create user ====================================
 const createUser = async (payload: Partial<IUser>) => {
     const { email, password, ...rest } = payload;
 
-    const isUserExist = await User.findOne({ email })
+    const isUserExist = await User.findOne({ email });
 
     if (isUserExist) {
-        throw new AppError(httpStatus.BAD_REQUEST, 'User already exist', '')
+        throw new AppError(httpStatus.BAD_REQUEST, "User already exist", "");
     }
 
-    const hasedPassword = await bcrypt.hash(password as string, Number(envVars.BCRYPT_SALT_ROUND))
+    const hasedPassword = await bcrypt.hash(
+        password as string,
+        Number(envVars.BCRYPT_SALT_ROUND),
+    );
 
     const authProvider: IAuthProvider = {
         provider: "credentials",
-        providerId: email as string
-    }
+        providerId: email as string,
+    };
 
     const user = await User.create({
         email,
         password: hasedPassword,
         auths: [authProvider],
-        ...rest
+        ...rest,
     });
     return user;
 };
 
-
-
 //*============== get all users =============================
 const getAllUsers = async () => {
-
     const users = await User.find({});
     const totalUsers = await User.countDocuments();
     return {
@@ -48,7 +48,58 @@ const getAllUsers = async () => {
     };
 };
 
+//*==============Update User ===========================
+
+const updateUser = async (
+    userId: string,
+    payload: Partial<IUser>,
+    decodedToken: JwtPayload,
+) => {
+    const isUserExist = await User.findById(userId);
+
+    if (!isUserExist) {
+        throw new AppError(httpStatus.NOT_FOUND, "This user not found", "");
+    }
+
+    //* email - can't update email
+    // *password - re-hased password
+    // *name,address,phone, picture
+    // *only admin/ super_admin - role, isDeleted,....
+    // *
+
+    if (payload.role) {
+        if (decodedToken.role === Role.USER || decodedToken.role === Role.GUIDE) {
+            throw new AppError(httpStatus.FORBIDDEN, "You are not authorized", "");
+        }
+
+        if (decodedToken.role === Role.SUPER_ADMIN && decodedToken.role === Role.ADMIN) {
+            throw new AppError(httpStatus.FORBIDDEN, "You are not authorized", "");
+        }
+    }
+
+    if (payload.isActive || payload.isDeleted || payload.isVarified) {
+        if (decodedToken.role === Role.USER || decodedToken.role === Role.GUIDE) {
+            throw new AppError(httpStatus.FORBIDDEN, "You are not authorized", "");
+        }
+    }
+
+    if (payload.password) {
+        payload.password = await bcrypt.hash(
+            payload.password,
+            envVars.BCRYPT_SALT_ROUND,
+        );
+    }
+
+    const newUpdatedUser = await User.findByIdAndUpdate(userId, payload, {
+        new: true,
+        runValidators: true,
+    });
+
+    return newUpdatedUser;
+};
+
 export const UserServices = {
     createUser,
     getAllUsers,
+    updateUser,
 };

@@ -21,6 +21,8 @@ export const checkAuthorization = (...authRoles: string[]) => async(req:Request,
         if (!authRoles.includes(varifiedToken.role)) {
             throw new AppError(403, "you are not paermitted to see this route", '')
         }
+
+        req.user = varifiedToken
         
         next()
 
