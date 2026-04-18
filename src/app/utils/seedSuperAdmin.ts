@@ -24,7 +24,7 @@ export const seedSuperAdmin = async() =>{
         }
 
         const payload:IUser = {
-            name: "Super Admin",
+            name: "Super_Admin",
             role: Role.SUPER_ADMIN,
             email: envVars.SUPER_ADMIN_EMAIL,
             password: hasedPassword,

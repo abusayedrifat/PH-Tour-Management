@@ -7,5 +7,9 @@ router.post('/logIn',
     AuthControllers.credentialsLogIn
 )
 
+router.post('/refresh-token',
+    AuthControllers.getNewAccessToken
+)
+
 
 export const AuthRoutes = router
