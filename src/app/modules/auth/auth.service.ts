@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { envVars } from './../../config/env';
 import bcrypt from "bcryptjs";
 import httpStatus from "http-status-codes";
 import AppError from "../../errorHelper/AppError";
@@ -6,7 +8,8 @@ import { User } from "../user/user.model";
 import {
     createNewAccessTokenWithRefreshToken,
     createUserTokens,
-} from "../../utils/userTokens";
+} from "../../utils/tokens";
+import { JwtPayload } from "jsonwebtoken";
 
 const crendentialsLogIn = async (payload: Partial<IUser>) => {
     const { email, password } = payload;
@@ -61,7 +64,28 @@ const getNewAccessToken = async (refreshToken: string) => {
     return newAccessToken
 };
 
+
+//* ==================== reset password ===================
+
+const resetPassword = async(oldPassword:string, newPassword:string, decodedToken: JwtPayload)=>{
+
+    const user = await User.findById(decodedToken.id)
+
+    const isOldPasswordMatch = bcrypt.compare(oldPassword, user?.password as string)
+
+    if (!isOldPasswordMatch) {
+        throw new AppError(httpStatus.UNAUTHORIZED,'you are not authorized','')
+    }
+
+    user!.password = await bcrypt.hash(newPassword, Number(envVars.BCRYPT_SALT_ROUND))
+
+    user!.save()
+
+
+}
+
 export const AuthServices = {
     crendentialsLogIn,
     getNewAccessToken,
+    resetPassword
 };

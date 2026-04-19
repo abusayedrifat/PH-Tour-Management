@@ -16,17 +16,6 @@ const credentialsLogIn = catchAsync(
 
     setAuthCookie(res, clientLogInInfo)
 
-    // res.cookie("refreshToken", clientLogInInfo.refreshToken,{
-    //   httpOnly:true,
-    //   secure:false,
-
-    // })
-    // res.cookie("accessToken", clientLogInInfo.accessToken,{
-    //   httpOnly:true,
-    //   secure:false,
-
-    // })
-
     sendResponse(res, {
       success: true,
       statusCode: httpStatus.CREATED,
@@ -58,6 +47,7 @@ const getNewAccessToken = catchAsync(
   },
 );
 
+//*==============logout================================
 const logout = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
 
@@ -73,8 +63,29 @@ const logout = catchAsync(
   },
 );
 
+//*=================== reset password ===================
+
+const resetPassword = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+
+  const oldPassword = req.body.oldPassword;
+  const newPassword = req.body.newPassword;
+  const decodedToken = req.user
+    
+  await AuthServices.resetPassword(oldPassword, newPassword, decodedToken)
+
+    sendResponse(res, {
+      success: true,
+      statusCode: httpStatus.ACCEPTED,
+      message: "password reseted successfully",
+      data: null,
+    });
+  },
+);
+
 export const AuthControllers = {
   credentialsLogIn,
   getNewAccessToken,
-  logout
+  logout,
+  resetPassword
 };
