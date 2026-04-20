@@ -6,6 +6,9 @@ import { sendResponse } from "../../utils/sendResponse";
 import { AuthServices } from "./auth.service";
 import AppError from "../../errorHelper/AppError";
 import { clearCookies, setAuthCookie } from "../../utils/Cookies";
+import { JwtPayload } from "jsonwebtoken";
+import { createUserTokens } from "../../utils/tokens";
+import { envVars } from "../../config/env";
 
 const credentialsLogIn = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -72,7 +75,7 @@ const resetPassword = catchAsync(
   const newPassword = req.body.newPassword;
   const decodedToken = req.user
     
-  await AuthServices.resetPassword(oldPassword, newPassword, decodedToken)
+  await AuthServices.resetPassword(oldPassword, newPassword, decodedToken as JwtPayload)
 
     sendResponse(res, {
       success: true,
@@ -83,9 +86,38 @@ const resetPassword = catchAsync(
   },
 );
 
+
+//*=================== google log In ===================
+const googleCallBackController = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+
+    const user = req.user;
+
+    console.log("google autentication logIn", user);
+    
+    if (!user) {
+      throw new AppError(httpStatus.BAD_REQUEST, 'user not found','')
+    }
+
+    const tokenInfo = createUserTokens(user)
+
+    setAuthCookie(res, tokenInfo)
+
+    // sendResponse(res, {
+    //   success: true,
+    //   statusCode: httpStatus.ACCEPTED,
+    //   message: "password reseted successfully",
+    //   data: null,
+    // });
+
+    res.redirect(envVars.FRONTEND_URL)
+  },
+);
+
 export const AuthControllers = {
   credentialsLogIn,
   getNewAccessToken,
   logout,
-  resetPassword
+  resetPassword,
+  googleCallBackController
 };
