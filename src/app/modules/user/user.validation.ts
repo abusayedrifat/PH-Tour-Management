@@ -38,6 +38,8 @@ export const createUserZodSchema = z.object({
     .optional(),
 });
 
+
+
 export const updateUserZodSchema = z.object({
   name: z
     .string({ message: "Name must be string" })
@@ -76,5 +78,7 @@ export const updateUserZodSchema = z.object({
     .boolean({ message: "isDeleted must be true or false" })
     .optional(),
 
-  isVarified: z.boolean({ message: "isVarified must be true or false" }),
+  isVarified: z
+  .boolean({ message: "isVarified must be true or false" })
+  .optional()
 });

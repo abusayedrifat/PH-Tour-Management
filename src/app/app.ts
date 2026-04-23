@@ -8,12 +8,13 @@ import cookieParser from 'cookie-parser';
 import passport from 'passport';
 import expressSession from 'express-session'
 import '../app/config/passport'
+import { envVars } from './config/env';
 
 
 const app = express()
 
 app.use(expressSession({
-    secret:'express_session_secret',
+    secret:envVars.EXPRESS_SESSION_SECRET,
     resave:false,
     saveUninitialized:false
 }))
@@ -25,15 +26,13 @@ app.use(cors())
 
 app.use('/api/v1', router)
 
-app.use(globalErrorHandler)
-
-app.use(routeNotFound)
-
-
 app.get('/', (req:Request, res:Response)=>{
     res.json({
         message:"ph tour server is running"
     })
 })
+
+app.use(globalErrorHandler)
+app.use(routeNotFound)
 
 export default app

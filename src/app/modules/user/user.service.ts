@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import bcrypt from "bcryptjs";
 import AppError from "../../errorHelper/AppError";
@@ -13,9 +14,9 @@ const createUser = async (payload: Partial<IUser>) => {
 
     const isUserExist = await User.findOne({ email });
 
-    if (isUserExist) {
-        throw new AppError(httpStatus.BAD_REQUEST, "User already exist", "");
-    }
+    // if (isUserExist) {
+    //     throw new AppError(httpStatus.BAD_REQUEST, "User already exist", "");
+    // }
 
     const hasedPassword = await bcrypt.hash(
         password as string,

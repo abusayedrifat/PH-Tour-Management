@@ -6,7 +6,7 @@ import passport from "passport";
 
 const router = Router()
 
-router.post('/logIn',
+router.post('/login',
     AuthControllers.credentialsLogIn
 )
 
@@ -21,7 +21,8 @@ router.post('/resetPassword',checkAuthorization(...Object.values(Role)),
 )
 
 router.get('/google', async(req:Request, res:Response, next:NextFunction)=>{
-    passport.authenticate("google", {scope: ["profile","email"]})(req, res, next)
+    const redirect = req.query.redirect || "/"
+    passport.authenticate("google", {scope: ["profile","email"], state:redirect as string})(req, res, next)
 } )
 
 router.get('/google/callback', passport.authenticate("google", {failureRedirect:"/logIn"}) ,AuthControllers.googleCallBackController )
