@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { UserControllers } from "./user.controller";
 import { createUserZodSchema, updateUserZodSchema } from "./user.validation";
 import { validateRequest } from "../../middlewares/validateRequest";
@@ -11,7 +12,7 @@ const router = Router();
 
 router.post(
     "/register",
-    validateRequest(createUserZodSchema),
+    // validateRequest(createUserZodSchema),
     UserControllers.createUser,
 );
 
@@ -22,7 +23,8 @@ router.get(
 
 );
 
-router.patch("/:id", validateRequest(updateUserZodSchema),
+router.patch("/:id",
+     validateRequest(updateUserZodSchema),
     checkAuthorization(...Object.values(Role)),
     UserControllers.updateUser
 )

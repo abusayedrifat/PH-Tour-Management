@@ -6,10 +6,25 @@ import AppError from "../errorHelper/AppError";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
 export const globalErrorHandler = (err: any, req:Request, res:Response, next: NextFunction) =>{
 
-    let statusCode = 500
-    let message = `Something went wrong!! ${err.message}`
+    /**
+     * mongoose
+     * - duplicate key error
+     */
 
-    if (err instanceof AppError) {
+    let statusCode = 500
+    let message = `Something went wrong!!`
+
+    if (err.code === 11000) {
+        statusCode = 400
+        const duplicateKeyValue = err.keyValue[Object.keys(err.keyValue)[0]] //* Object.keys() returns an array of keys
+        message= `${duplicateKeyValue}  already exists`
+        
+    }
+    else if(err.name === "CastError"){
+        statusCode = 400
+        message=`Invalid MongoDB Object Id. Please, provide a valid id`
+    }
+    else if (err instanceof AppError) {
         statusCode = err.statusCode
         message = err.message
         
