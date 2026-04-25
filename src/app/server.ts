@@ -3,6 +3,7 @@ import {Server} from 'http'
 import mongoose from 'mongoose';
 import app from './app';
 import { envVars } from './config/env';
+import { seedSuperAdmin } from './utils/seedSuperAdmin';
 // import { promise } from 'zod';
 // import { error } from 'console';
 
@@ -35,7 +36,16 @@ const startServer = async() =>{
 
 }
 
-startServer()
+
+//*below This code is called an IIFE, specifically an Async IIFE.
+//*IIFE = Immediately Invoked Function Expression
+
+(async()=>{
+    await startServer();
+    await seedSuperAdmin()
+})()
+
+
 
 //todo => signal termination SIGTERM
  process.on("SIGTERM",()=>{
