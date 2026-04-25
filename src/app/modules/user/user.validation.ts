@@ -2,10 +2,10 @@ import z from "zod";
 import { IsActive, Role } from "./user.interface";
 
 export const createUserZodSchema = z.object({
-  name: z
-    .string({ message: "Name must be string" })
-    .min(2, { message: "name must be at least 2 character long" })
-    .max(50, { message: "name cannot be longer than 50 character" }),
+  name:z
+      .string({ message: "Name must be string" })
+      .min(2, { message: "name must be at least 2 character long" })
+      .max(50, { message: "name cannot be longer than 50 character" }),
   email: z
     .string({ message: "email must be a string" })
     .email({
@@ -79,6 +79,6 @@ export const updateUserZodSchema = z.object({
     .optional(),
 
   isVarified: z
-  .boolean({ message: "isVarified must be true or false" })
-  .optional()
+    .boolean({ message: "isVarified must be true or false" })
+    .optional()
 });
