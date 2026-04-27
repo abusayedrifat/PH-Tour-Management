@@ -1,12 +1,75 @@
-import  httpStatus  from 'http-status-codes';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import httpStatus from 'http-status-codes';
 import { NextFunction, Request, Response } from "express";
 import catchAsync from "../../utils/catchAsync";
 import { sendResponse } from "../../utils/sendResponse";
+import { TourServices, TourTypeServices } from './tour.service';
 
 
+
+
+//todo--> ============= TOUR controller ================================
+const createTour = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+      const tour = await TourServices.createTour(req.body)
+
+      sendResponse(res, {
+            success: true,
+            statusCode: httpStatus.CREATED,
+            message: "tour type created successfully",
+            data: tour,
+      })
+})
+
+//*================= getAll tour type =====================
+const getAllTour = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+      const allTour = await TourServices.getAllTour()
+      sendResponse(res, {
+            success: true,
+            statusCode: httpStatus.CREATED,
+            message: "tour type created successfully",
+            data: allTour,
+      })
+})
+
+//*================= update tour type =====================
+
+const updateTour = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+      const id = req.params.id as string
+      const payload = req.body
+      const updateTour = await TourServices.updateTour(id, payload)
+      sendResponse(res, {
+            success: true,
+            statusCode: httpStatus.CREATED,
+            message: "tour type created successfully",
+            data: updateTour,
+      })
+})
+
+//*================= delete tour type =====================
+const deleteTour = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+      const id = req.params.id as string
+
+      const deleteTour = await TourServices.deleteTour(id)
+
+      sendResponse(res, {
+            success: true,
+            statusCode: httpStatus.CREATED,
+            message: "tour type created successfully",
+            data: deleteTour,
+      })
+})
+
+
+//todo-->=================== TOUR TYPE controller =============
 const createTourType = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
-    sendResponse(res, {
+      const tourType = await TourTypeServices.createTourType(req.body)
+
+      sendResponse(res, {
             success: true,
             statusCode: httpStatus.CREATED,
             message: "tour type created successfully",
@@ -17,11 +80,12 @@ const createTourType = catchAsync(async (req: Request, res: Response, next: Next
 //*================= getAll tour type =====================
 const getAllTourType = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
-    sendResponse(res, {
+      const allTourType = await TourTypeServices.getAllTourType()
+      sendResponse(res, {
             success: true,
             statusCode: httpStatus.CREATED,
             message: "tour type created successfully",
-            data: tourType,
+            data: allTourType,
       })
 })
 
@@ -29,29 +93,39 @@ const getAllTourType = catchAsync(async (req: Request, res: Response, next: Next
 
 const updateTourType = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
-    sendResponse(res, {
+      const id = req.params.id as string;
+      const paylaod = req.body
+
+      const updateTourType = await TourTypeServices.updateTourType(id, paylaod)
+      sendResponse(res, {
             success: true,
             statusCode: httpStatus.CREATED,
             message: "tour type created successfully",
-            data: tourType,
+            data: updateTourType,
       })
 })
 
 //*================= delete tour type =====================
 const deleteTourType = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+      const id = req.params.id as string;
 
-    sendResponse(res, {
+      const deleteTourType = await TourTypeServices.deleteTourType(id)
+      sendResponse(res, {
             success: true,
             statusCode: httpStatus.CREATED,
             message: "tour type created successfully",
-            data: tourType,
+            data: deleteTourType,
       })
 })
 
 
 export const TourController = {
-    createTourType,
-    getAllTourType,
-    updateTourType,
-    deleteTourType
+      createTourType,
+      getAllTourType,
+      updateTourType,
+      deleteTourType,
+      createTour,
+      getAllTour,
+      updateTour,
+      deleteTour
 }

@@ -23,7 +23,7 @@ const createDivision = catchAsync(async(req:Request, res:Response, next:NextFunc
 
 const getALlDivision = catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
 
-  const allDivision = DivisionServices.getAllDivision()
+  const allDivision = await DivisionServices.getAllDivision()
 
     sendResponse(res, {
       success: true,
@@ -40,7 +40,7 @@ const updateDivision = catchAsync(async(req:Request, res:Response, next:NextFunc
 
   const id = req.params.id as string
   const payload = req.body
-  const updateDivision = DivisionServices.updateDivision(id , payload)
+  const updateDivision = await DivisionServices.updateDivision(id , payload)
     sendResponse(res, {
       success: true,
       statusCode: httpStatus.CREATED,
@@ -56,7 +56,7 @@ const deleteDivision = catchAsync(async(req:Request, res:Response, next:NextFunc
 
 
   const id = req.params.id as string
-  const deleteDivision = DivisionServices.deleteDivision(id)
+  const deleteDivision = await DivisionServices.deleteDivision(id)
     sendResponse(res, {
       success: true,
       statusCode: httpStatus.CREATED,

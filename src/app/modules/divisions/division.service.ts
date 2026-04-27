@@ -9,7 +9,7 @@ const createDivision = async (payload: IDivisions) => {
     const isDivisionExists = await Division.findOne({ name: payload.name })
 
     if (isDivisionExists) {
-      throw new AppError(httpStatus.BAD_REQUEST, "this division does not exists", "")
+      throw new AppError(httpStatus.BAD_REQUEST, "this division already exists", "")
     }
 
 
@@ -42,7 +42,7 @@ const updateDivision = async (id: string, payload: Partial<IDivisions>) => {
 
     const duplicateDivision = await Division.findOne({
         _id: { $ne: id },
-        name: payload.name
+        name: payload.name as string
     })
 
     if (duplicateDivision) {
@@ -50,6 +50,8 @@ const updateDivision = async (id: string, payload: Partial<IDivisions>) => {
     }
 
     const updateDivision = await Division.findByIdAndUpdate(id, payload, { new: true, runValidators: true })
+
+    
 
     return updateDivision
 }

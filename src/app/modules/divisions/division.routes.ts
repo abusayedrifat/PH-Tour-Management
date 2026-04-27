@@ -17,7 +17,11 @@ router.post(
   DivisionController.createDivision,
 );
 
-router.get("/", DivisionController.getALlDivision);
+router.get(
+  "/",
+  checkAuthorization(Role.ADMIN, Role.SUPER_ADMIN),
+  DivisionController.getALlDivision,
+);
 
 router.patch(
   "/:id",
@@ -26,6 +30,10 @@ router.patch(
   DivisionController.updateDivision,
 );
 
-router.delete("/:id",checkAuthorization(Role.ADMIN, Role.SUPER_ADMIN) ,DivisionController.deleteDivision);
+router.delete(
+  "/:id",
+  checkAuthorization(Role.ADMIN, Role.SUPER_ADMIN),
+  DivisionController.deleteDivision,
+);
 
 export const DivisionRoutes = router;
