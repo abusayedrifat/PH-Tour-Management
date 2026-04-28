@@ -1,0 +1,2328 @@
+{
+  "divisions": [
+    {
+      "_id": "64a1000000000000000000001",
+      "name": "Dhaka",
+      "slug": "dhaka",
+      "description": "The capital and largest division of Bangladesh, home to the bustling megacity of Dhaka and rich Mughal heritage.",
+      "thumbnail": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+    },
+    {
+      "_id": "64a1000000000000000000002",
+      "name": "Chittagong",
+      "slug": "chittagong",
+      "description": "Bangladesh's second largest division, featuring the port city of Chattogram, scenic hill tracts, and Cox's Bazar beach.",
+      "thumbnail": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+    },
+    {
+      "_id": "64a1000000000000000000003",
+      "name": "Rajshahi",
+      "slug": "rajshahi",
+      "description": "Known as the Silk City, Rajshahi is famous for its mangoes, silk, and ancient archaeological sites.",
+      "thumbnail": "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=800"
+    },
+    {
+      "_id": "64a1000000000000000000004",
+      "name": "Khulna",
+      "slug": "khulna",
+      "description": "Gateway to the Sundarbans, the world's largest mangrove forest, and home to diverse wildlife including the Royal Bengal Tiger.",
+      "thumbnail": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800"
+    },
+    {
+      "_id": "64a1000000000000000000005",
+      "name": "Barisal",
+      "slug": "barisal",
+      "description": "The Venice of the East, Barisal is a river-laced division famous for floating guava markets and lush green landscapes.",
+      "thumbnail": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+    },
+    {
+      "_id": "64a1000000000000000000006",
+      "name": "Sylhet",
+      "slug": "sylhet",
+      "description": "The land of tea gardens and haor wetlands, Sylhet offers breathtaking natural beauty and unique cultural heritage.",
+      "thumbnail": "https://images.unsplash.com/photo-1473496169904-658ba7574b0d?w=800"
+    },
+    {
+      "_id": "64a1000000000000000000007",
+      "name": "Rangpur",
+      "slug": "rangpur",
+      "description": "A northern agricultural division dotted with historical mosques, temples, and the scenic Teesta river landscape.",
+      "thumbnail": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800"
+    },
+    {
+      "_id": "64a1000000000000000000008",
+      "name": "Mymensingh",
+      "slug": "mymensingh",
+      "description": "Home to the famous Bangladesh Agricultural University and the scenic Brahmaputra riverbank, rich in natural beauty.",
+      "thumbnail": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
+    }
+  ],
+
+  "tourTypes": [
+    {
+      "_id": "64b1000000000000000000001",
+      "name": "Adventure"
+    },
+    {
+      "_id": "64b1000000000000000000002",
+      "name": "Cultural"
+    },
+    {
+      "_id": "64b1000000000000000000003",
+      "name": "Nature"
+    },
+    {
+      "_id": "64b1000000000000000000004",
+      "name": "Historical"
+    },
+    {
+      "_id": "64b1000000000000000000005",
+      "name": "Beach"
+    },
+    {
+      "_id": "64b1000000000000000000006",
+      "name": "Wildlife"
+    },
+    {
+      "_id": "64b1000000000000000000007",
+      "name": "Religious"
+    },
+    {
+      "_id": "64b1000000000000000000008",
+      "name": "Eco-Tourism"
+    },
+    {
+      "_id": "64b1000000000000000000009",
+      "name": "Family"
+    },
+    {
+      "_id": "64b1000000000000000000010",
+      "name": "Luxury"
+    }
+  ],
+
+  "tours": [
+    {
+      "_id": "64c1000000000000000000001",
+      "title": "Old Dhaka Heritage Walk",
+      "slug": "old-dhaka-heritage-walk",
+      "description": "Explore the historic lanes of Old Dhaka including Lalbagh Fort, Ahsan Manzil, and the bustling Sadarghat river port.",
+      "images": [
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800"
+      ],
+      "location": "Old Dhaka, Dhaka",
+      "costFrom": 1500,
+      "startDate": "2025-02-01T00:00:00.000Z",
+      "endDate": "2025-02-01",
+      "included": ["Guide fee", "Rickshaw rides", "Lunch at local restaurant", "Entry tickets"],
+      "excluded": ["Personal expenses", "Souvenirs", "Dinner"],
+      "amenities": ["Expert local guide", "First aid kit", "Water bottle", "City map"],
+      "tourPlan": [
+        "Day 1: Arrive at Sadarghat, boat ride on the Buriganga river, visit Lalbagh Fort",
+        "Day 1 Evening: Explore Ahsan Manzil Pink Palace, walk through Star Mosque",
+        "Day 1 Night: Street food tour in Chawkbazar"
+      ],
+      "maxGuest": 20,
+      "minAge": 5,
+      "departureLoacation": "Dhaka Central Bus Terminal",
+      "arriveLocation": "Sadarghat, Old Dhaka",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000002",
+      "title": "Dhaka City Lights Luxury Tour",
+      "slug": "dhaka-city-lights-luxury-tour",
+      "description": "Experience the modern side of Dhaka with rooftop dining, five-star hotel stays, and exclusive city sightseeing.",
+      "images": [
+        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800"
+      ],
+      "location": "Gulshan, Dhaka",
+      "costFrom": 15000,
+      "startDate": "2025-03-05T00:00:00.000Z",
+      "endDate": "2025-03-07",
+      "included": ["5-star hotel (2 nights)", "All meals", "Private car", "City tours", "SPA access"],
+      "excluded": ["Flights", "Alcohol", "Personal shopping"],
+      "amenities": ["Private chauffeur", "Personal concierge", "Luxury suite", "Spa & wellness"],
+      "tourPlan": [
+        "Day 1: Arrival, check-in to five-star hotel, rooftop welcome dinner",
+        "Day 2: Hatirjheel lake tour, Bashundhara City Mall, fine dining",
+        "Day 3: National Museum, Liberation War Museum, farewell brunch"
+      ],
+      "maxGuest": 6,
+      "minAge": 18,
+      "departureLoacation": "Hazrat Shahjalal International Airport",
+      "arriveLocation": "Gulshan-2, Dhaka",
+      "tourType": "64b1000000000000000000010",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000003",
+      "title": "Sonargaon Ancient Capital Tour",
+      "slug": "sonargaon-ancient-capital-tour",
+      "description": "Visit the ancient capital Sonargaon with its 400-year-old ruins, folk art museum, and the mystical Panam Nagar ghost city.",
+      "images": [
+        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800"
+      ],
+      "location": "Sonargaon, Narayanganj",
+      "costFrom": 2000,
+      "startDate": "2025-02-15T00:00:00.000Z",
+      "endDate": "2025-02-15",
+      "included": ["AC transport", "Entry tickets", "Lunch", "Guide"],
+      "excluded": ["Personal expenses", "Photography fee inside museum"],
+      "amenities": ["AC bus", "Professional guide", "Bottled water"],
+      "tourPlan": [
+        "Morning: Depart Dhaka, arrive Sonargaon",
+        "Midday: Visit Panam Nagar, Folk Art Museum",
+        "Afternoon: Explore Goaldi Mosque, Baro Sardar Bari",
+        "Evening: Return to Dhaka"
+      ],
+      "maxGuest": 30,
+      "minAge": 8,
+      "departureLoacation": "Gulistan, Dhaka",
+      "arriveLocation": "Sonargaon, Narayanganj",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000004",
+      "title": "Dhaka Food & Culture Trail",
+      "slug": "dhaka-food-culture-trail",
+      "description": "Immerse yourself in Dhaka's rich culinary culture through street food tours, local restaurant visits, and cooking workshops.",
+      "images": [
+        "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800"
+      ],
+      "location": "Dhaka City",
+      "costFrom": 2500,
+      "startDate": "2025-04-10T00:00:00.000Z",
+      "endDate": "2025-04-11",
+      "included": ["All food tastings", "Cooking class", "Hotel stay (1 night)", "Transport"],
+      "excluded": ["Extra food purchases", "Personal expenses"],
+      "amenities": ["Cooking instructor", "Tasting kits", "Recipe booklet"],
+      "tourPlan": [
+        "Day 1 Morning: Old Dhaka street food tour – biryani, kebab, pitha",
+        "Day 1 Afternoon: Traditional Bangladeshi cooking class",
+        "Day 2: Dhanmondi food street, dessert & chai trail"
+      ],
+      "maxGuest": 15,
+      "minAge": 10,
+      "departureLoacation": "Dhaka New Market",
+      "arriveLocation": "Chawkbazar, Old Dhaka",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000005",
+      "title": "Dhaka Family Fun Weekend",
+      "slug": "dhaka-family-fun-weekend",
+      "description": "A fun-filled family tour covering fantasy kingdom, national zoo, botanical gardens, and the science museum.",
+      "images": [
+        "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800"
+      ],
+      "location": "Dhaka & Narayanganj",
+      "costFrom": 4000,
+      "startDate": "2025-03-20T00:00:00.000Z",
+      "endDate": "2025-03-21",
+      "included": ["Entry tickets", "Meals", "AC transport", "Hotel (1 night)"],
+      "excluded": ["Rides inside Fantasy Kingdom", "Personal expenses"],
+      "amenities": ["AC bus", "Tour leader", "First aid kit", "Kids activity pack"],
+      "tourPlan": [
+        "Day 1: National Zoo Mirpur, Botanical Garden",
+        "Day 1 Evening: Fantasy Kingdom Ashulia",
+        "Day 2: Bangabandhu Science & Technology Museum, return to Dhaka"
+      ],
+      "maxGuest": 25,
+      "minAge": 3,
+      "departureLoacation": "Mohakhali, Dhaka",
+      "arriveLocation": "Mirpur, Dhaka",
+      "tourType": "64b1000000000000000000009",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000006",
+      "title": "Cox's Bazar Sunrise Beach Tour",
+      "slug": "coxs-bazar-sunrise-beach-tour",
+      "description": "Experience the world's longest natural sea beach at Cox's Bazar with sunrise walks, surfing, and fresh seafood dining.",
+      "images": [
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+        "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800"
+      ],
+      "location": "Cox's Bazar, Chittagong",
+      "costFrom": 5000,
+      "startDate": "2025-01-15T00:00:00.000Z",
+      "endDate": "2025-01-18",
+      "included": ["Hotel (3 nights)", "Breakfast & dinner", "Surfing lesson", "Beach transport"],
+      "excluded": ["Flights", "Lunch", "Personal shopping"],
+      "amenities": ["Beachfront hotel", "Surfboard rental", "Sunblock kit", "Lifeguard service"],
+      "tourPlan": [
+        "Day 1: Arrive Cox's Bazar, check-in, evening beach walk",
+        "Day 2: Sunrise surfing session, Himchari waterfall visit",
+        "Day 3: Inani beach, seafood BBQ dinner",
+        "Day 4: Departure"
+      ],
+      "maxGuest": 20,
+      "minAge": 12,
+      "departureLoacation": "Chittagong Railway Station",
+      "arriveLocation": "Cox's Bazar Beach",
+      "tourType": "64b1000000000000000000005",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000007",
+      "title": "Bandarban Hill Trekking Adventure",
+      "slug": "bandarban-hill-trekking-adventure",
+      "description": "Trek through Bandarban's stunning hill ranges, visit indigenous tribal villages, and camp under the stars.",
+      "images": [
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+      ],
+      "location": "Bandarban, Chittagong",
+      "costFrom": 6500,
+      "startDate": "2025-02-10T00:00:00.000Z",
+      "endDate": "2025-02-14",
+      "included": ["Camping gear", "All meals", "Expert trekking guide", "Jeep transport"],
+      "excluded": ["Personal trekking shoes", "Insurance", "Alcohol"],
+      "amenities": ["Tent & sleeping bags", "Campfire", "Trekking poles", "Water purifier"],
+      "tourPlan": [
+        "Day 1: Arrive Bandarban, acclimatization trek",
+        "Day 2: Trek to Boga Lake, tribal village visit",
+        "Day 3: Summit attempt of Keokradong (highest peak)",
+        "Day 4: Nafakhum waterfall trek",
+        "Day 5: Return to Bandarban, departure"
+      ],
+      "maxGuest": 12,
+      "minAge": 16,
+      "departureLoacation": "Chittagong Bus Terminal",
+      "arriveLocation": "Bandarban Town",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000008",
+      "title": "Rangamati Lake & Tribal Culture Tour",
+      "slug": "rangamati-lake-tribal-culture-tour",
+      "description": "Sail across Kaptai Lake, visit Chakma tribal villages, and explore the natural wonders of Rangamati hill district.",
+      "images": [
+        "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800"
+      ],
+      "location": "Rangamati, Chittagong",
+      "costFrom": 4500,
+      "startDate": "2025-03-01T00:00:00.000Z",
+      "endDate": "2025-03-03",
+      "included": ["Boat trips", "Hotel (2 nights)", "Meals", "Cultural show"],
+      "excluded": ["Personal expenses", "Extra boat rides"],
+      "amenities": ["Houseboat", "Local cultural guide", "Life jackets", "Tribal craft workshop"],
+      "tourPlan": [
+        "Day 1: Arrive Rangamati, Kaptai Lake boat cruise at sunset",
+        "Day 2: Chakma tribal village, handloom weaving workshop, waterfall",
+        "Day 3: Hanging Bridge, Buddhist temple, departure"
+      ],
+      "maxGuest": 18,
+      "minAge": 8,
+      "departureLoacation": "Chittagong City Center",
+      "arriveLocation": "Rangamati Town",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000009",
+      "title": "Khagrachhari Eco-Trek",
+      "slug": "khagrachhari-eco-trek",
+      "description": "An immersive eco-tour through Khagrachhari's green hills, bamboo forests, and waterfall-rich landscapes.",
+      "images": [
+        "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800"
+      ],
+      "location": "Khagrachhari, Chittagong",
+      "costFrom": 3800,
+      "startDate": "2025-02-20T00:00:00.000Z",
+      "endDate": "2025-02-22",
+      "included": ["Eco-lodge stay (2 nights)", "All meals", "Trekking guide", "Nature kit"],
+      "excluded": ["Travel to Khagrachhari", "Alcoholic beverages"],
+      "amenities": ["Eco-lodge", "Nature walk guide", "Bird watching binoculars", "Campfire"],
+      "tourPlan": [
+        "Day 1: Arrive, nature orientation, evening bamboo forest walk",
+        "Day 2: Waterfall trek, indigenous village visit, stargazing",
+        "Day 3: Morning bird watching, departure"
+      ],
+      "maxGuest": 10,
+      "minAge": 14,
+      "departureLoacation": "Chittagong Bus Terminal",
+      "arriveLocation": "Khagrachhari Town",
+      "tourType": "64b1000000000000000000008",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000010",
+      "title": "Cox's Bazar Luxury Resort Escape",
+      "slug": "coxs-bazar-luxury-resort-escape",
+      "description": "Indulge in a lavish beachside retreat with private pool villas, yacht rides, deep-sea fishing, and gourmet dining.",
+      "images": [
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800"
+      ],
+      "location": "Cox's Bazar, Chittagong",
+      "costFrom": 25000,
+      "startDate": "2025-04-05T00:00:00.000Z",
+      "endDate": "2025-04-08",
+      "included": ["Private villa (3 nights)", "All gourmet meals", "Yacht ride", "Spa", "Deep-sea fishing"],
+      "excluded": ["Flights", "Alcoholic beverages", "Shopping"],
+      "amenities": ["Private pool villa", "Butler service", "Yacht", "Spa & Jacuzzi", "Candlelit dinner"],
+      "tourPlan": [
+        "Day 1: Arrival by private car, sunset yacht cruise, welcome dinner",
+        "Day 2: Deep-sea fishing, Inani beach, spa session",
+        "Day 3: Helicopter coastal view ride, seafood gala dinner",
+        "Day 4: Departure"
+      ],
+      "maxGuest": 4,
+      "minAge": 18,
+      "departureLoacation": "Chittagong Airport",
+      "arriveLocation": "Cox's Bazar Luxury Resort",
+      "tourType": "64b1000000000000000000010",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000011",
+      "title": "Mahasthangarh Archaeological Tour",
+      "slug": "mahasthangarh-archaeological-tour",
+      "description": "Explore Mahasthangarh, one of the oldest archaeological sites in Bangladesh, and discover the lost city of Pundranagar.",
+      "images": [
+        "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+      ],
+      "location": "Bogura, Rajshahi",
+      "costFrom": 2200,
+      "startDate": "2025-03-10T00:00:00.000Z",
+      "endDate": "2025-03-11",
+      "included": ["AC transport", "Guide", "Entry tickets", "Lunch"],
+      "excluded": ["Personal expenses", "Camera fee"],
+      "amenities": ["Expert archaeologist guide", "AC bus", "Museum brochure"],
+      "tourPlan": [
+        "Day 1: Depart Rajshahi, arrive Mahasthangarh, excavation site visit",
+        "Day 1 Afternoon: Mahasthangarh Museum, Govinda Bhita temple ruins",
+        "Day 2: Gokul Medh stupa, local village walk, return"
+      ],
+      "maxGuest": 25,
+      "minAge": 10,
+      "departureLoacation": "Rajshahi Bus Stand",
+      "arriveLocation": "Mahasthangarh, Bogura",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000003"
+    },
+    {
+      "_id": "64c1000000000000000000012",
+      "title": "Rajshahi Mango Garden & Silk Tour",
+      "slug": "rajshahi-mango-garden-silk-tour",
+      "description": "Visit the famous Rajshahi mango orchards, witness silk weaving, and taste the finest mangoes and local cuisine.",
+      "images": [
+        "https://images.unsplash.com/photo-1490885578174-acda8905c2c6?w=800"
+      ],
+      "location": "Rajshahi City & Chapai Nawabganj",
+      "costFrom": 3000,
+      "startDate": "2025-05-20T00:00:00.000Z",
+      "endDate": "2025-05-22",
+      "included": ["Hotel (2 nights)", "Mango tasting", "Silk workshop", "All transport"],
+      "excluded": ["Mango purchases to take home", "Personal expenses"],
+      "amenities": ["Orchard guide", "AC hotel", "Silk weaving demo kit", "Mango basket (2kg)"],
+      "tourPlan": [
+        "Day 1: Arrive Rajshahi, mango orchard tour, mango tasting session",
+        "Day 2: Silk weaving factory in Rajshahi, Varendra Research Museum",
+        "Day 3: Chapai Nawabganj mango market, Shibganj mosque, return"
+      ],
+      "maxGuest": 20,
+      "minAge": 6,
+      "departureLoacation": "Rajshahi Airport",
+      "arriveLocation": "Rajshahi City Center",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000003"
+    },
+    {
+      "_id": "64c1000000000000000000013",
+      "title": "Puthia Temple Complex Pilgrimage",
+      "slug": "puthia-temple-complex-pilgrimage",
+      "description": "Visit the largest Hindu temple complex in Bangladesh at Puthia, featuring magnificent 19th-century terracotta temples.",
+      "images": [
+        "https://images.unsplash.com/photo-1568454537842-d933259bb258?w=800"
+      ],
+      "location": "Puthia, Rajshahi",
+      "costFrom": 1800,
+      "startDate": "2025-02-28T00:00:00.000Z",
+      "endDate": "2025-02-28",
+      "included": ["Transport", "Guide", "Puja materials", "Lunch"],
+      "excluded": ["Donations at temple", "Personal expenses"],
+      "amenities": ["Religious guide", "Puja kit", "AC minibus"],
+      "tourPlan": [
+        "Morning: Depart Rajshahi, arrive Puthia",
+        "Midday: Visit Shiva Temple, Govinda Temple, Dol Mancha",
+        "Afternoon: Ananta Basu Uddin Temple, royal pond, return to Rajshahi"
+      ],
+      "maxGuest": 30,
+      "minAge": 5,
+      "departureLoacation": "Rajshahi City Center",
+      "arriveLocation": "Puthia Upazila, Rajshahi",
+      "tourType": "64b1000000000000000000007",
+      "division": "64a1000000000000000000003"
+    },
+    {
+      "_id": "64c1000000000000000000014",
+      "title": "Padma River Boating & Nature Escape",
+      "slug": "padma-river-boating-nature-escape",
+      "description": "Enjoy a serene boat journey along the mighty Padma River with fishing, dolphin spotting, and riverside village visits.",
+      "images": [
+        "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800"
+      ],
+      "location": "Rajshahi Riverfront",
+      "costFrom": 2500,
+      "startDate": "2025-11-01T00:00:00.000Z",
+      "endDate": "2025-11-02",
+      "included": ["Boat charter", "Fishing equipment", "Meals", "Night stay on houseboat"],
+      "excluded": ["Personal fishing license", "Alcoholic beverages"],
+      "amenities": ["Houseboat", "Fishing rods", "Binoculars for dolphin watching", "Campfire on boat"],
+      "tourPlan": [
+        "Day 1: Morning departure from Rajshahi Ghat, dolphin spotting, riverside picnic",
+        "Day 1 Evening: Fishing session, houseboat overnight stay",
+        "Day 2: Sunrise on the Padma, village market visit, return"
+      ],
+      "maxGuest": 12,
+      "minAge": 8,
+      "departureLoacation": "Rajshahi Boat Ghat",
+      "arriveLocation": "Padma River, Rajshahi",
+      "tourType": "64b1000000000000000000003",
+      "division": "64a1000000000000000000003"
+    },
+    {
+      "_id": "64c1000000000000000000015",
+      "title": "Rajshahi Varsity & Barind Landscape Tour",
+      "slug": "rajshahi-varsity-barind-landscape-tour",
+      "description": "A nature and educational tour covering the beautiful Rajshahi University campus and the unique Barind Tract landscape.",
+      "images": [
+        "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
+      ],
+      "location": "Rajshahi University & Naogaon",
+      "costFrom": 1500,
+      "startDate": "2025-12-05T00:00:00.000Z",
+      "endDate": "2025-12-06",
+      "included": ["Transport", "Lunch & dinner", "Nature walk guide"],
+      "excluded": ["Personal expenses", "Entry to paid areas"],
+      "amenities": ["AC minibus", "Botanical guide", "Packed meals"],
+      "tourPlan": [
+        "Day 1: RU campus botanical walk, Shaheed Smriti Sangrahashala",
+        "Day 2: Barind Tract eco-drive, Naogaon historical sites, return"
+      ],
+      "maxGuest": 20,
+      "minAge": 12,
+      "departureLoacation": "Rajshahi City Center",
+      "arriveLocation": "Rajshahi University",
+      "tourType": "64b1000000000000000000003",
+      "division": "64a1000000000000000000003"
+    },
+    {
+      "_id": "64c1000000000000000000016",
+      "title": "Sundarbans Royal Bengal Tiger Safari",
+      "slug": "sundarbans-royal-bengal-tiger-safari",
+      "description": "Venture deep into the UNESCO World Heritage Sundarbans for a thrilling wildlife safari and spot the elusive Royal Bengal Tiger.",
+      "images": [
+        "https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=800"
+      ],
+      "location": "Sundarbans, Khulna",
+      "costFrom": 12000,
+      "startDate": "2025-01-20T00:00:00.000Z",
+      "endDate": "2025-01-24",
+      "included": ["All permits", "Cruise ship accommodation", "All meals", "Naturalist guide", "Forest entry"],
+      "excluded": ["Travel to Khulna", "Insurance", "Alcoholic beverages"],
+      "amenities": ["Cruise ship cabin", "Wildlife binoculars", "Camera trap access", "Naturalist guide"],
+      "tourPlan": [
+        "Day 1: Arrive Khulna, board cruise, sail into Sundarbans",
+        "Day 2: Morning wildlife watch – spotted deer, crocodiles, birds",
+        "Day 3: Tiger watch from watchtower, deep forest canoe ride",
+        "Day 4: Hiron Point lighthouse, bird sanctuary visit",
+        "Day 5: Return to Khulna, departure"
+      ],
+      "maxGuest": 15,
+      "minAge": 14,
+      "departureLoacation": "Khulna Launch Ghat",
+      "arriveLocation": "Sundarbans Forest",
+      "tourType": "64b1000000000000000000006",
+      "division": "64a1000000000000000000004"
+    },
+    {
+      "_id": "64c1000000000000000000017",
+      "title": "Sundarbans Mangrove Eco-Tour",
+      "slug": "sundarbans-mangrove-eco-tour",
+      "description": "An eco-friendly journey through Sundarbans' mangrove ecosystem, learning about biodiversity conservation and forest life.",
+      "images": [
+        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800"
+      ],
+      "location": "Sundarbans, Khulna",
+      "costFrom": 7500,
+      "startDate": "2025-02-05T00:00:00.000Z",
+      "endDate": "2025-02-08",
+      "included": ["Eco-boat", "Forest guide", "All meals", "Permits", "Lodge stay"],
+      "excluded": ["Travel to Mongla", "Personal expenses"],
+      "amenities": ["Solar-powered eco-boat", "Binoculars", "Nature journal", "Mangrove planting kit"],
+      "tourPlan": [
+        "Day 1: Arrive Mongla, eco-briefing, sail into the forest",
+        "Day 2: Mangrove planting session, Kotka wildlife sanctuary",
+        "Day 3: Bird watching dawn tour, honey collection demo",
+        "Day 4: Dublar Char island, return to Mongla"
+      ],
+      "maxGuest": 12,
+      "minAge": 12,
+      "departureLoacation": "Mongla Port, Khulna",
+      "arriveLocation": "Sundarbans Eco-Lodge",
+      "tourType": "64b1000000000000000000008",
+      "division": "64a1000000000000000000004"
+    },
+    {
+      "_id": "64c1000000000000000000018",
+      "title": "Kumarkhali Baul Music & River Tour",
+      "slug": "kumarkhali-baul-music-river-tour",
+      "description": "A cultural journey to Kushtia exploring the birthplace of Lalon Fakir, live Baul music performances, and Gorai river trips.",
+      "images": [
+        "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800"
+      ],
+      "location": "Kushtia, Khulna",
+      "costFrom": 2800,
+      "startDate": "2025-03-15T00:00:00.000Z",
+      "endDate": "2025-03-16",
+      "included": ["Transport", "Baul concert tickets", "Hotel (1 night)", "Meals"],
+      "excluded": ["Personal expenses", "Extra music CDs"],
+      "amenities": ["Cultural guide", "AC hotel", "Live Baul music show", "Traditional dinner"],
+      "tourPlan": [
+        "Day 1: Arrive Kushtia, Lalon Shah Mazar visit, Baul music workshop",
+        "Day 1 Evening: Live Baul concert at Lalon Akhra",
+        "Day 2: Gorai river boat ride, Rabindranath's Shilaidaha Kuthibari, return"
+      ],
+      "maxGuest": 20,
+      "minAge": 10,
+      "departureLoacation": "Khulna City Center",
+      "arriveLocation": "Kushtia Town",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000004"
+    },
+    {
+      "_id": "64c1000000000000000000019",
+      "title": "Sixty Dome Mosque & Bagerhat Heritage Tour",
+      "slug": "sixty-dome-mosque-bagerhat-heritage-tour",
+      "description": "Discover the UNESCO-listed Sixty Dome Mosque of Bagerhat and the historic mosques of Khan Jahan Ali's medieval city.",
+      "images": [
+        "https://images.unsplash.com/photo-1519110047178-b2c0dc9ecc8c?w=800"
+      ],
+      "location": "Bagerhat, Khulna",
+      "costFrom": 2500,
+      "startDate": "2025-04-01T00:00:00.000Z",
+      "endDate": "2025-04-02",
+      "included": ["Transport", "Entry tickets", "Guide", "Meals"],
+      "excluded": ["Personal expenses", "Camera fee"],
+      "amenities": ["Expert heritage guide", "AC van", "Historical booklet"],
+      "tourPlan": [
+        "Day 1: Arrive Bagerhat, Sixty Dome Mosque, Khan Jahan Ali's tomb",
+        "Day 1 Afternoon: Singarair Mosque, Zindapir Mosque, Shat Gambuj Museum",
+        "Day 2: Khulna Division Museum, return"
+      ],
+      "maxGuest": 25,
+      "minAge": 8,
+      "departureLoacation": "Khulna Bus Terminal",
+      "arriveLocation": "Bagerhat Town",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000004"
+    },
+    {
+      "_id": "64c1000000000000000000020",
+      "title": "Khulna Family Sundarbans Day Trip",
+      "slug": "khulna-family-sundarbans-day-trip",
+      "description": "A safe and exciting one-day family adventure to the edge of the Sundarbans with boat rides, wildlife spotting, and picnic.",
+      "images": [
+        "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800"
+      ],
+      "location": "Sundarbans Periphery, Khulna",
+      "costFrom": 3500,
+      "startDate": "2025-05-01T00:00:00.000Z",
+      "endDate": "2025-05-01",
+      "included": ["Boat charter", "Picnic lunch", "Entry permits", "Guide"],
+      "excluded": ["Personal expenses", "Souvenirs"],
+      "amenities": ["Family-friendly boat", "Life jackets", "Picnic basket", "First aid"],
+      "tourPlan": [
+        "Morning: Depart Khulna, boat ride to forest edge",
+        "Midday: Wildlife spotting, picnic on sandbank",
+        "Afternoon: Return to Khulna, local market visit"
+      ],
+      "maxGuest": 20,
+      "minAge": 5,
+      "departureLoacation": "Khulna Launch Terminal",
+      "arriveLocation": "Sundarbans Edge, Mongla",
+      "tourType": "64b1000000000000000000009",
+      "division": "64a1000000000000000000004"
+    },
+    {
+      "_id": "64c1000000000000000000021",
+      "title": "Barisal Floating Guava Market Tour",
+      "slug": "barisal-floating-guava-market-tour",
+      "description": "Witness the unique floating guava gardens of Barisal, a rare agricultural wonder of Bangladesh on water.",
+      "images": [
+        "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800"
+      ],
+      "location": "Swarupkathi, Barisal",
+      "costFrom": 2000,
+      "startDate": "2025-09-15T00:00:00.000Z",
+      "endDate": "2025-09-16",
+      "included": ["Boat ride", "Guava tasting", "Lunch", "Hotel (1 night)"],
+      "excluded": ["Guava purchase", "Personal expenses"],
+      "amenities": ["Country boat", "Local guide", "Life jackets", "Guava basket (1kg)"],
+      "tourPlan": [
+        "Day 1: Arrive Barisal, boat to floating guava market, harvest experience",
+        "Day 1 Evening: Canal-side dinner at local homestead",
+        "Day 2: Local village visit, boat back, departure"
+      ],
+      "maxGuest": 15,
+      "minAge": 6,
+      "departureLoacation": "Barisal Launch Ghat",
+      "arriveLocation": "Swarupkathi, Barisal",
+      "tourType": "64b1000000000000000000003",
+      "division": "64a1000000000000000000005"
+    },
+    {
+      "_id": "64c1000000000000000000022",
+      "title": "Kuakata Sea Beach & Sunrise Tour",
+      "slug": "kuakata-sea-beach-sunrise-tour",
+      "description": "Visit Kuakata, the only beach in Bangladesh where you can see both sunrise and sunset, and explore Buddhist temples.",
+      "images": [
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+      ],
+      "location": "Kuakata, Patuakhali",
+      "costFrom": 4200,
+      "startDate": "2025-01-10T00:00:00.000Z",
+      "endDate": "2025-01-13",
+      "included": ["Hotel (3 nights)", "All meals", "AC transport", "Beach guide"],
+      "excluded": ["Personal expenses", "Boat rides beyond package"],
+      "amenities": ["Beachfront hotel", "Sunrise alarm wake-up call", "Beach umbrella & chair", "Seafood dinner"],
+      "tourPlan": [
+        "Day 1: Arrive Kuakata, sunset at the beach, seafood dinner",
+        "Day 2: 5 AM sunrise watch, Gangamata Mandir temple, Jhau Forest",
+        "Day 3: Seal island boat trip, Fat Budda temple (Adinath Mandir)",
+        "Day 4: Sunrise farewell, departure"
+      ],
+      "maxGuest": 20,
+      "minAge": 8,
+      "departureLoacation": "Barisal Launch Terminal",
+      "arriveLocation": "Kuakata Beach",
+      "tourType": "64b1000000000000000000005",
+      "division": "64a1000000000000000000005"
+    },
+    {
+      "_id": "64c1000000000000000000023",
+      "title": "Barisal Canal & River Village Life Tour",
+      "slug": "barisal-canal-river-village-life-tour",
+      "description": "Explore the intricate network of rivers and canals of Barisal and experience authentic village life in the water region.",
+      "images": [
+        "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800"
+      ],
+      "location": "Barisal District",
+      "costFrom": 2200,
+      "startDate": "2025-10-05T00:00:00.000Z",
+      "endDate": "2025-10-07",
+      "included": ["Country boat", "Houseboat night stay", "All meals", "Village guide"],
+      "excluded": ["Personal expenses", "Alcohol"],
+      "amenities": ["Houseboat", "Country boat", "Fishing rods", "Local meals"],
+      "tourPlan": [
+        "Day 1: Arrive Barisal, embark houseboat, canal cruise",
+        "Day 2: Village life immersion – paddy fields, fishing, local handicrafts",
+        "Day 3: Morning market visit, return to Barisal"
+      ],
+      "maxGuest": 12,
+      "minAge": 6,
+      "departureLoacation": "Barisal Sadar",
+      "arriveLocation": "Barisal Waterways",
+      "tourType": "64b1000000000000000000008",
+      "division": "64a1000000000000000000005"
+    },
+    {
+      "_id": "64c1000000000000000000024",
+      "title": "Barisal Patuakhali Mangrove Walk",
+      "slug": "barisal-patuakhali-mangrove-walk",
+      "description": "Trek through the coastal mangroves of Patuakhali, observe migratory birds, and discover coastal fishing communities.",
+      "images": [
+        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800"
+      ],
+      "location": "Patuakhali, Barisal",
+      "costFrom": 1800,
+      "startDate": "2025-11-15T00:00:00.000Z",
+      "endDate": "2025-11-16",
+      "included": ["Boat transport", "Mangrove guide", "Lunch", "Binoculars"],
+      "excluded": ["Personal expenses", "Camera gear"],
+      "amenities": ["Eco-boat", "Bird watching guide", "Binoculars", "Mangrove map"],
+      "tourPlan": [
+        "Day 1: Arrive Patuakhali, mangrove trail walk, bird watching",
+        "Day 1 Evening: Fishing community dinner experience",
+        "Day 2: Sunrise bird count, coastal boat ride, return"
+      ],
+      "maxGuest": 15,
+      "minAge": 10,
+      "departureLoacation": "Barisal City",
+      "arriveLocation": "Patuakhali Mangrove Coast",
+      "tourType": "64b1000000000000000000008",
+      "division": "64a1000000000000000000005"
+    },
+    {
+      "_id": "64c1000000000000000000025",
+      "title": "Barisal Religious Heritage Circuit",
+      "slug": "barisal-religious-heritage-circuit",
+      "description": "Visit the historic mosques, temples, and churches of Barisal city, experiencing the region's multi-faith heritage.",
+      "images": [
+        "https://images.unsplash.com/photo-1568454537842-d933259bb258?w=800"
+      ],
+      "location": "Barisal City",
+      "costFrom": 1200,
+      "startDate": "2025-02-22T00:00:00.000Z",
+      "endDate": "2025-02-22",
+      "included": ["Rickshaw rides", "Guide", "Lunch", "Puja / prayer material"],
+      "excluded": ["Donations", "Personal expenses"],
+      "amenities": ["Trilingual guide", "Rickshaw", "Prayer kit"],
+      "tourPlan": [
+        "Morning: Oxfam Church, Sher-e-Bangla Museum",
+        "Midday: Barisal's historic mosques – Kalibari & Durga Mandir",
+        "Afternoon: Barisal Cathedral, local lunch, return"
+      ],
+      "maxGuest": 20,
+      "minAge": 5,
+      "departureLoacation": "Barisal Bus Stand",
+      "arriveLocation": "Barisal City Center",
+      "tourType": "64b1000000000000000000007",
+      "division": "64a1000000000000000000005"
+    },
+    {
+      "_id": "64c1000000000000000000026",
+      "title": "Srimangal Tea Garden Adventure",
+      "slug": "srimangal-tea-garden-adventure",
+      "description": "Explore the lush tea gardens of Srimangal, the tea capital of Bangladesh, and visit Lawachara rainforest.",
+      "images": [
+        "https://images.unsplash.com/photo-1473496169904-658ba7574b0d?w=800"
+      ],
+      "location": "Srimangal, Moulvibazar",
+      "costFrom": 4500,
+      "startDate": "2025-01-25T00:00:00.000Z",
+      "endDate": "2025-01-28",
+      "included": ["Hotel (3 nights)", "Tea plantation tour", "Lawachara trek", "All meals"],
+      "excluded": ["Personal expenses", "Tea purchases"],
+      "amenities": ["Eco-resort", "Tea tasting session", "Trekking guide", "7-layer tea experience"],
+      "tourPlan": [
+        "Day 1: Arrive Srimangal, tea garden walk, sunset at tea hills",
+        "Day 2: Lawachara National Park rainforest trek, monkey watching",
+        "Day 3: Finlay Tea Estate, tea factory tour, 7-layer tea tasting",
+        "Day 4: Departure from Srimangal"
+      ],
+      "maxGuest": 18,
+      "minAge": 10,
+      "departureLoacation": "Sylhet City",
+      "arriveLocation": "Srimangal, Moulvibazar",
+      "tourType": "64b1000000000000000000003",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000027",
+      "title": "Sylhet Haor Wetland Boat Safari",
+      "slug": "sylhet-haor-wetland-boat-safari",
+      "description": "Sail through the vast haor wetlands of Sylhet during monsoon and witness migratory birds, floating villages, and fishermen.",
+      "images": [
+        "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800"
+      ],
+      "location": "Hakaluki Haor, Sylhet",
+      "costFrom": 3200,
+      "startDate": "2025-07-10T00:00:00.000Z",
+      "endDate": "2025-07-12",
+      "included": ["Boat charter", "Hotel (2 nights)", "All meals", "Bird guide"],
+      "excluded": ["Personal expenses", "Alcohol"],
+      "amenities": ["Motor boat", "Binoculars", "Life jackets", "Floating market visit"],
+      "tourPlan": [
+        "Day 1: Arrive Sylhet, travel to Haor, sunset boat ride",
+        "Day 2: Dawn bird watching, floating village visit, fishing experience",
+        "Day 3: Sunrise over haor, return to Sylhet"
+      ],
+      "maxGuest": 15,
+      "minAge": 8,
+      "departureLoacation": "Sylhet City Center",
+      "arriveLocation": "Hakaluki Haor, Moulvibazar",
+      "tourType": "64b1000000000000000000006",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000028",
+      "title": "Jaflong Crystal Clear River Tour",
+      "slug": "jaflong-crystal-clear-river-tour",
+      "description": "Visit the stunning Jaflong, where crystal clear rivers from Meghalaya meet stone-collecting communities and lush green hills.",
+      "images": [
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+      ],
+      "location": "Jaflong, Sylhet",
+      "costFrom": 3800,
+      "startDate": "2025-02-08T00:00:00.000Z",
+      "endDate": "2025-02-10",
+      "included": ["Hotel (2 nights)", "Transport", "River boat", "Meals", "Guide"],
+      "excluded": ["Stone collecting permit", "Personal expenses"],
+      "amenities": ["AC hotel", "Speed boat", "Mountain view guide", "Photo spots map"],
+      "tourPlan": [
+        "Day 1: Arrive Sylhet, drive to Jaflong, river walk",
+        "Day 2: Dawki river crossing to India border view, Khasi village visit",
+        "Day 3: Tamabil border, waterfall trek, return"
+      ],
+      "maxGuest": 20,
+      "minAge": 8,
+      "departureLoacation": "Sylhet City",
+      "arriveLocation": "Jaflong, Gowainghat",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000029",
+      "title": "Sylhet Sufi Shrine Pilgrimage",
+      "slug": "sylhet-sufi-shrine-pilgrimage",
+      "description": "A spiritual journey visiting the Shrine of Hazrat Shah Jalal, one of the most revered Islamic shrines in Bangladesh.",
+      "images": [
+        "https://images.unsplash.com/photo-1519110047178-b2c0dc9ecc8c?w=800"
+      ],
+      "location": "Sylhet City",
+      "costFrom": 1500,
+      "startDate": "2025-04-18T00:00:00.000Z",
+      "endDate": "2025-04-19",
+      "included": ["Transport", "Hotel (1 night)", "Lunch", "Prayer guide"],
+      "excluded": ["Donations", "Personal expenses"],
+      "amenities": ["Spiritual guide", "Prayer items", "Ziyarat schedule booklet"],
+      "tourPlan": [
+        "Day 1: Arrive Sylhet, Shah Jalal Shrine, dargah evening prayers",
+        "Day 2: Shah Paran Shrine, Keane Bridge, Osmani Museum, departure"
+      ],
+      "maxGuest": 25,
+      "minAge": 5,
+      "departureLoacation": "Sylhet Railway Station",
+      "arriveLocation": "Shah Jalal Dargah, Sylhet",
+      "tourType": "64b1000000000000000000007",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000030",
+      "title": "Sylhet Luxury Tea Resort Retreat",
+      "slug": "sylhet-luxury-tea-resort-retreat",
+      "description": "Unwind in a luxury boutique resort nestled in the heart of a tea garden, with spa, yoga, and private plantation walks.",
+      "images": [
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800"
+      ],
+      "location": "Srimangal, Sylhet",
+      "costFrom": 18000,
+      "startDate": "2025-03-25T00:00:00.000Z",
+      "endDate": "2025-03-29",
+      "included": ["Luxury tea estate villa (4 nights)", "All gourmet meals", "Spa (2 sessions)", "Private plantation walk"],
+      "excluded": ["Flights", "Alcoholic beverages", "Extra spa sessions"],
+      "amenities": ["Private villa", "Infinity pool", "Yoga deck", "Personal butler", "Tea sommelier"],
+      "tourPlan": [
+        "Day 1: Arrival, welcome tea ceremony, sunset yoga",
+        "Day 2: Private tea garden walk, high tea, spa session",
+        "Day 3: Lawachara forest excursion, gourmet dinner",
+        "Day 4: Tea blending masterclass, leisure day",
+        "Day 5: Farewell breakfast, departure"
+      ],
+      "maxGuest": 4,
+      "minAge": 18,
+      "departureLoacation": "Sylhet Airport",
+      "arriveLocation": "Luxury Tea Resort, Srimangal",
+      "tourType": "64b1000000000000000000010",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000031",
+      "title": "Teesta River Rafting & Camp",
+      "slug": "teesta-river-rafting-camp",
+      "description": "Experience the thrill of river rafting on the Teesta river in Rangpur followed by a riverside camping night under the stars.",
+      "images": [
+        "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800"
+      ],
+      "location": "Lalmonirhat, Rangpur",
+      "costFrom": 4500,
+      "startDate": "2025-01-30T00:00:00.000Z",
+      "endDate": "2025-02-01",
+      "included": ["Rafting gear", "Riverside camp", "All meals", "Safety guide"],
+      "excluded": ["Personal gear", "Insurance"],
+      "amenities": ["Safety helmets & life jackets", "Tent & sleeping bags", "Campfire", "First aid"],
+      "tourPlan": [
+        "Day 1: Arrive Lalmonirhat, safety training, first rafting session",
+        "Day 2: Full-day river rafting on Teesta, riverside picnic",
+        "Day 2 Evening: Campfire, stargazing, overnight camp",
+        "Day 3: Morning dip, breakfast, departure"
+      ],
+      "maxGuest": 14,
+      "minAge": 16,
+      "departureLoacation": "Rangpur City",
+      "arriveLocation": "Teesta River, Lalmonirhat",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000007"
+    },
+    {
+      "_id": "64c1000000000000000000032",
+      "title": "Kantajew Temple & Dinajpur Heritage Tour",
+      "slug": "kantajew-temple-dinajpur-heritage-tour",
+      "description": "Marvel at the magnificent terracotta Kantajew Temple of Dinajpur, a 18th-century architectural masterpiece.",
+      "images": [
+        "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+      ],
+      "location": "Dinajpur, Rangpur",
+      "costFrom": 2500,
+      "startDate": "2025-03-08T00:00:00.000Z",
+      "endDate": "2025-03-09",
+      "included": ["AC transport", "Entry tickets", "Guide", "Lunch & dinner"],
+      "excluded": ["Personal expenses", "Camera fee"],
+      "amenities": ["Heritage guide", "AC minibus", "Historical booklet"],
+      "tourPlan": [
+        "Day 1: Arrive Dinajpur, Kantajew Temple, Nayabad Mosque",
+        "Day 2: Rajbari Palace ruins, Dinajpur Museum, Sura Mosque, return"
+      ],
+      "maxGuest": 25,
+      "minAge": 8,
+      "departureLoacation": "Rangpur Bus Terminal",
+      "arriveLocation": "Dinajpur Town",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000007"
+    },
+    {
+      "_id": "64c1000000000000000000033",
+      "title": "Rangpur Ramsagar & Nature Park Tour",
+      "slug": "rangpur-ramsagar-nature-park-tour",
+      "description": "Visit Ramsagar, the largest man-made lake in Bangladesh and Rangpur's lush nature parks and wildlife sanctuary.",
+      "images": [
+        "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800"
+      ],
+      "location": "Dinajpur & Rangpur",
+      "costFrom": 1800,
+      "startDate": "2025-04-12T00:00:00.000Z",
+      "endDate": "2025-04-13",
+      "included": ["Transport", "Entry tickets", "Picnic lunch", "Guide"],
+      "excluded": ["Personal expenses", "Boat ride fee"],
+      "amenities": ["AC bus", "Picnic basket", "Nature guide", "Binoculars"],
+      "tourPlan": [
+        "Day 1: Arrive Dinajpur, Ramsagar Lake picnic, rowing boat",
+        "Day 2: Rangpur Zoo, Tajhat Palace, Rangpur Museum, return"
+      ],
+      "maxGuest": 30,
+      "minAge": 5,
+      "departureLoacation": "Rangpur City Center",
+      "arriveLocation": "Ramsagar, Dinajpur",
+      "tourType": "64b1000000000000000000003",
+      "division": "64a1000000000000000000007"
+    },
+    {
+      "_id": "64c1000000000000000000034",
+      "title": "Rangpur Cultural Festival Tour",
+      "slug": "rangpur-cultural-festival-tour",
+      "description": "Experience the vibrant cultural heritage of Rangpur through local festivals, folk music, and traditional handicraft markets.",
+      "images": [
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800"
+      ],
+      "location": "Rangpur City",
+      "costFrom": 2200,
+      "startDate": "2025-04-14T00:00:00.000Z",
+      "endDate": "2025-04-16",
+      "included": ["Hotel (2 nights)", "Festival passes", "Meals", "Cultural guide"],
+      "excluded": ["Handicraft purchases", "Personal expenses"],
+      "amenities": ["Boutique hotel", "Festival schedule booklet", "Cultural guide", "Traditional dress rental"],
+      "tourPlan": [
+        "Day 1: Arrive, Rangpur Pohela Boishakh festival, cultural procession",
+        "Day 2: Folk music concert, Gamcha weaving workshop, local cuisine dinner",
+        "Day 3: Rangpur Sadar market, crafts fair, departure"
+      ],
+      "maxGuest": 20,
+      "minAge": 8,
+      "departureLoacation": "Rangpur Railway Station",
+      "arriveLocation": "Rangpur Cultural Center",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000007"
+    },
+    {
+      "_id": "64c1000000000000000000035",
+      "title": "Rangpur Family Picnic & Countryside Ride",
+      "slug": "rangpur-family-picnic-countryside-ride",
+      "description": "A fun-filled countryside family trip exploring Rangpur's tobacco fields, lychee orchards, and riverside meadows.",
+      "images": [
+        "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800"
+      ],
+      "location": "Rangpur District",
+      "costFrom": 2000,
+      "startDate": "2025-05-10T00:00:00.000Z",
+      "endDate": "2025-05-11",
+      "included": ["AC transport", "Picnic meals", "Orchard visit", "Kids activity kit"],
+      "excluded": ["Fruit purchases", "Personal expenses"],
+      "amenities": ["AC minibus", "Family picnic set", "Kids games", "Nature guide"],
+      "tourPlan": [
+        "Day 1: Arrive Rangpur, lychee orchard tour, tobacco field walk, picnic",
+        "Day 2: Teesta riverside meadow, kite flying, local lunch, return"
+      ],
+      "maxGuest": 25,
+      "minAge": 3,
+      "departureLoacation": "Rangpur City",
+      "arriveLocation": "Rangpur Countryside",
+      "tourType": "64b1000000000000000000009",
+      "division": "64a1000000000000000000007"
+    },
+    {
+      "_id": "64c1000000000000000000036",
+      "title": "Mymensingh Botanical Garden & Brahmaputra Tour",
+      "slug": "mymensingh-botanical-garden-brahmaputra-tour",
+      "description": "Explore the stunning botanical gardens of Bangladesh Agricultural University and enjoy a sunset cruise on the Brahmaputra.",
+      "images": [
+        "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
+      ],
+      "location": "Mymensingh City",
+      "costFrom": 1500,
+      "startDate": "2025-02-18T00:00:00.000Z",
+      "endDate": "2025-02-19",
+      "included": ["Transport", "Entry tickets", "Boat ride", "Meals"],
+      "excluded": ["Personal expenses", "Plant purchases"],
+      "amenities": ["Botanical guide", "River boat", "AC minibus", "Nature journal"],
+      "tourPlan": [
+        "Day 1: Arrive Mymensingh, BAU Botanical Garden, museum",
+        "Day 1 Evening: Brahmaputra river sunset cruise",
+        "Day 2: Shashi Lodge heritage site, Mymensingh town walk, return"
+      ],
+      "maxGuest": 25,
+      "minAge": 6,
+      "departureLoacation": "Dhaka Mohakhali Bus Stand",
+      "arriveLocation": "Mymensingh City",
+      "tourType": "64b1000000000000000000003",
+      "division": "64a1000000000000000000008"
+    },
+    {
+      "_id": "64c1000000000000000000037",
+      "title": "Garo Hills & Tribal Life Experience",
+      "slug": "garo-hills-tribal-life-experience",
+      "description": "Journey into the Garo Hills of Mymensingh, visit indigenous Garo tribal villages, and discover their unique culture.",
+      "images": [
+        "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800"
+      ],
+      "location": "Haluaghat, Mymensingh",
+      "costFrom": 3500,
+      "startDate": "2025-03-05T00:00:00.000Z",
+      "endDate": "2025-03-07",
+      "included": ["Eco-lodge (2 nights)", "All meals", "Tribal guide", "Cultural show"],
+      "excluded": ["Personal expenses", "Handicraft purchases"],
+      "amenities": ["Eco-lodge", "Tribal cultural guide", "Village cooking experience", "Traditional dress rental"],
+      "tourPlan": [
+        "Day 1: Arrive Haluaghat, Garo village orientation, cultural welcome",
+        "Day 2: Hill trek, traditional Garo kitchen cooking, music performance",
+        "Day 3: Bamboo crafts workshop, return to Mymensingh"
+      ],
+      "maxGuest": 12,
+      "minAge": 10,
+      "departureLoacation": "Mymensingh Bus Terminal",
+      "arriveLocation": "Haluaghat, Mymensingh",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000008"
+    },
+    {
+      "_id": "64c1000000000000000000038",
+      "title": "Mymensingh Adventure Forest Camp",
+      "slug": "mymensingh-adventure-forest-camp",
+      "description": "Camp in the forest areas of Mymensingh with ziplining, rock climbing, and overnight survival skill adventure challenges.",
+      "images": [
+        "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800"
+      ],
+      "location": "Durgapur, Netrokona",
+      "costFrom": 5000,
+      "startDate": "2025-01-18T00:00:00.000Z",
+      "endDate": "2025-01-21",
+      "included": ["Camping gear", "All meals", "Adventure instructor", "Zipline & rock climbing"],
+      "excluded": ["Personal gear", "Insurance"],
+      "amenities": ["Tent & sleeping bags", "Zipline", "Rock climbing wall", "Fire-starting kit"],
+      "tourPlan": [
+        "Day 1: Arrive Durgapur, camp setup, orientation hike",
+        "Day 2: Rock climbing, zipline, survival skills workshop",
+        "Day 3: Birishiri hills walk, Boro Khal river",
+        "Day 4: Debrief, return to Mymensingh"
+      ],
+      "maxGuest": 16,
+      "minAge": 15,
+      "departureLoacation": "Mymensingh City",
+      "arriveLocation": "Durgapur, Netrokona",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000008"
+    },
+    {
+      "_id": "64c1000000000000000000039",
+      "title": "Birishiri White Clay Lake Tour",
+      "slug": "birishiri-white-clay-lake-tour",
+      "description": "Visit the stunning blue-white clay lake at Birishiri, one of the most photogenic natural wonders of Mymensingh.",
+      "images": [
+        "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800"
+      ],
+      "location": "Birishiri, Netrokona",
+      "costFrom": 2800,
+      "startDate": "2025-12-01T00:00:00.000Z",
+      "endDate": "2025-12-02",
+      "included": ["Transport", "Hotel (1 night)", "Meals", "Photography guide"],
+      "excluded": ["Personal expenses", "Clay samples"],
+      "amenities": ["AC minibus", "Photography guide", "Lake boat", "Picnic lunch"],
+      "tourPlan": [
+        "Day 1: Arrive Birishiri, white clay lake exploration, photography session",
+        "Day 1 Evening: Someshwari river walk, local village dinner",
+        "Day 2: Morning lake walk, Tribal cultural village, return"
+      ],
+      "maxGuest": 20,
+      "minAge": 8,
+      "departureLoacation": "Mymensingh Bus Stand",
+      "arriveLocation": "Birishiri, Netrokona",
+      "tourType": "64b1000000000000000000003",
+      "division": "64a1000000000000000000008"
+    },
+    {
+      "_id": "64c1000000000000000000040",
+      "title": "Mymensingh Family Heritage Walk",
+      "slug": "mymensingh-family-heritage-walk",
+      "description": "A family-friendly heritage walk through old Mymensingh visiting zamindari palaces, heritage buildings, and river banks.",
+      "images": [
+        "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800"
+      ],
+      "location": "Mymensingh City",
+      "costFrom": 1200,
+      "startDate": "2025-04-20T00:00:00.000Z",
+      "endDate": "2025-04-20",
+      "included": ["Rickshaw rides", "Guide", "Lunch", "Museum entry"],
+      "excluded": ["Personal expenses", "Souvenirs"],
+      "amenities": ["Family guide", "Rickshaw", "Children activity booklet"],
+      "tourPlan": [
+        "Morning: Shashi Lodge Palace, Alexander Castle",
+        "Midday: Mymensingh Museum, traditional lunch",
+        "Afternoon: Brahmaputra riverfront walk, local market"
+      ],
+      "maxGuest": 20,
+      "minAge": 4,
+      "departureLoacation": "Mymensingh Railway Station",
+      "arriveLocation": "Mymensingh Sadar",
+      "tourType": "64b1000000000000000000009",
+      "division": "64a1000000000000000000008"
+    },
+    {
+      "_id": "64c1000000000000000000041",
+      "title": "Dhaka Dhaleswari River Eco-Tour",
+      "slug": "dhaka-dhaleswari-river-eco-tour",
+      "description": "A serene eco-tour on the Dhaleswari river exploring riverine biodiversity, fishing villages, and wetland habitats.",
+      "images": [
+        "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800"
+      ],
+      "location": "Manikganj, Dhaka",
+      "costFrom": 2000,
+      "startDate": "2025-06-10T00:00:00.000Z",
+      "endDate": "2025-06-11",
+      "included": ["Boat charter", "Meals", "Guide", "Life jackets"],
+      "excluded": ["Personal expenses", "Fishing permits"],
+      "amenities": ["Country boat", "Fishing rods", "Binoculars", "Packed meals"],
+      "tourPlan": [
+        "Day 1: Depart Dhaka, arrive Manikganj, afternoon river cruise",
+        "Day 2: Morning fishing, wetland walk, bird spotting, return"
+      ],
+      "maxGuest": 15,
+      "minAge": 8,
+      "departureLoacation": "Gabtali, Dhaka",
+      "arriveLocation": "Manikganj, Dhaka",
+      "tourType": "64b1000000000000000000008",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000042",
+      "title": "Narsingdi Rural Village Life Tour",
+      "slug": "narsingdi-rural-village-life-tour",
+      "description": "Immerse in rural Bangladesh life, visiting paddy fields, traditional weavers, and village folk fairs in Narsingdi.",
+      "images": [
+        "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800"
+      ],
+      "location": "Narsingdi, Dhaka",
+      "costFrom": 1500,
+      "startDate": "2025-08-05T00:00:00.000Z",
+      "endDate": "2025-08-06",
+      "included": ["Transport", "Village guide", "Meals", "Weaving workshop"],
+      "excluded": ["Fabric purchases", "Personal expenses"],
+      "amenities": ["AC minibus", "Village guide", "Weaving kit", "Village homestay experience"],
+      "tourPlan": [
+        "Day 1: Arrive Narsingdi, paddy field walk, weaving workshop",
+        "Day 2: Village folk fair, traditional music, local lunch, return"
+      ],
+      "maxGuest": 20,
+      "minAge": 8,
+      "departureLoacation": "Gulistan, Dhaka",
+      "arriveLocation": "Narsingdi Sadar",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000043",
+      "title": "Inani Beach & Coral Snorkeling Tour",
+      "slug": "inani-beach-coral-snorkeling-tour",
+      "description": "Discover the rocky coral reefs and crystal waters of Inani beach, the most pristine part of Cox's Bazar coast.",
+      "images": [
+        "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800"
+      ],
+      "location": "Inani, Cox's Bazar",
+      "costFrom": 5500,
+      "startDate": "2025-02-25T00:00:00.000Z",
+      "endDate": "2025-02-27",
+      "included": ["Hotel (2 nights)", "Snorkeling gear", "Meals", "Speedboat"],
+      "excluded": ["Personal expenses", "Alcoholic beverages"],
+      "amenities": ["Beachfront hotel", "Snorkeling mask & fins", "Underwater guide", "Speedboat"],
+      "tourPlan": [
+        "Day 1: Arrive Cox's Bazar, transfer to Inani, evening beach walk",
+        "Day 2: Morning snorkeling at coral reef, underwater photography",
+        "Day 3: Beach volleyball, seafood lunch, departure"
+      ],
+      "maxGuest": 15,
+      "minAge": 14,
+      "departureLoacation": "Cox's Bazar Town",
+      "arriveLocation": "Inani Beach, Cox's Bazar",
+      "tourType": "64b1000000000000000000005",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000044",
+      "title": "Sylhet Tea Garden Sunrise Trek",
+      "slug": "sylhet-tea-garden-sunrise-trek",
+      "description": "Wake before dawn for a guided trek through Sylhet's rolling tea gardens to catch the golden sunrise over the hills.",
+      "images": [
+        "https://images.unsplash.com/photo-1473496169904-658ba7574b0d?w=800"
+      ],
+      "location": "Srimangal, Sylhet",
+      "costFrom": 2800,
+      "startDate": "2025-11-20T00:00:00.000Z",
+      "endDate": "2025-11-21",
+      "included": ["Hotel (1 night)", "Sunrise trek guide", "Breakfast on hilltop", "Tea tasting"],
+      "excluded": ["Personal expenses", "Tea purchases"],
+      "amenities": ["Trekking torch", "Hot tea flask", "Garden guide", "Sunrise photography tips"],
+      "tourPlan": [
+        "Day 1 Evening: Arrive Srimangal, garden orientation, star gazing",
+        "Day 2: 4 AM wake-up, sunrise tea garden trek, hilltop breakfast, tea tasting, return"
+      ],
+      "maxGuest": 12,
+      "minAge": 12,
+      "departureLoacation": "Sylhet City",
+      "arriveLocation": "Srimangal Tea Estate",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000045",
+      "title": "Chittagong Port & City History Tour",
+      "slug": "chittagong-port-city-history-tour",
+      "description": "Explore the historical and commercial heart of Chittagong city, its colonial-era buildings, and the iconic port.",
+      "images": [
+        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800"
+      ],
+      "location": "Chittagong City",
+      "costFrom": 1800,
+      "startDate": "2025-03-20T00:00:00.000Z",
+      "endDate": "2025-03-21",
+      "included": ["Transport", "Port entry pass", "Guide", "Meals"],
+      "excluded": ["Personal expenses", "Camera permits in port"],
+      "amenities": ["Historical guide", "AC van", "City map", "Museum pass"],
+      "tourPlan": [
+        "Day 1: Chittagong Port observation deck, Patenga beach, World War II Cemetery",
+        "Day 2: Chittagong City Corporation heritage walk, Ethnological Museum, Foy's Lake"
+      ],
+      "maxGuest": 20,
+      "minAge": 10,
+      "departureLoacation": "Chittagong Railway Station",
+      "arriveLocation": "Chittagong Port Area",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000046",
+      "title": "Khulna Mangrove Photography Tour",
+      "slug": "khulna-mangrove-photography-tour",
+      "description": "A professional photography tour through the golden light of the Sundarbans mangroves with expert photography coaches.",
+      "images": [
+        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800"
+      ],
+      "location": "Sundarbans, Khulna",
+      "costFrom": 9000,
+      "startDate": "2025-01-08T00:00:00.000Z",
+      "endDate": "2025-01-11",
+      "included": ["Forest permits", "Photography boat", "Hotel (3 nights)", "All meals", "Photo coach"],
+      "excluded": ["Camera gear", "Insurance"],
+      "amenities": ["Photography coach", "Tripod mounts on boat", "Photo editing software session", "Portfolio review"],
+      "tourPlan": [
+        "Day 1: Arrive Khulna, gear check, photography briefing",
+        "Day 2: Dawn shoot in mangroves, wildlife photography session",
+        "Day 3: Sunset golden hour photography at creeks",
+        "Day 4: Portfolio review, return to Khulna"
+      ],
+      "maxGuest": 8,
+      "minAge": 18,
+      "departureLoacation": "Khulna Launch Terminal",
+      "arriveLocation": "Sundarbans Forest",
+      "tourType": "64b1000000000000000000008",
+      "division": "64a1000000000000000000004"
+    },
+    {
+      "_id": "64c1000000000000000000047",
+      "title": "Rajshahi Romantic Couple Getaway",
+      "slug": "rajshahi-romantic-couple-getaway",
+      "description": "A romantic escape along the Padma riverfront, with candlelit river dinners, mango orchards, and sunset boat cruises.",
+      "images": [
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800"
+      ],
+      "location": "Rajshahi City & Riverfront",
+      "costFrom": 8000,
+      "startDate": "2025-02-14T00:00:00.000Z",
+      "endDate": "2025-02-16",
+      "included": ["Boutique hotel (2 nights)", "All meals", "River cruise", "Flower bouquet"],
+      "excluded": ["Personal expenses", "Extra activities"],
+      "amenities": ["Romantic suite", "Candlelit dinner", "River boat", "Flower arrangement", "Couple's spa"],
+      "tourPlan": [
+        "Day 1: Arrival, flower welcome, riverside check-in, candlelit dinner",
+        "Day 2: Mango orchard picnic, sunset Padma river cruise, gala dinner",
+        "Day 3: Morning silk shopping, farewell brunch, departure"
+      ],
+      "maxGuest": 2,
+      "minAge": 18,
+      "departureLoacation": "Rajshahi Airport",
+      "arriveLocation": "Rajshahi Padma Riverfront",
+      "tourType": "64b1000000000000000000010",
+      "division": "64a1000000000000000000003"
+    },
+    {
+      "_id": "64c1000000000000000000048",
+      "title": "Dhaka Liberation War Historical Tour",
+      "slug": "dhaka-liberation-war-historical-tour",
+      "description": "A deeply moving historical tour visiting the Liberation War Museum, Rayerbazar killing field, and national martyrs memorial.",
+      "images": [
+        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800"
+      ],
+      "location": "Dhaka City & Savar",
+      "costFrom": 2500,
+      "startDate": "2025-03-26T00:00:00.000Z",
+      "endDate": "2025-03-26",
+      "included": ["AC transport", "Entry tickets", "Guide", "Lunch"],
+      "excluded": ["Personal expenses"],
+      "amenities": ["Expert historical guide", "AC bus", "Documentary screening"],
+      "tourPlan": [
+        "Morning: Liberation War Museum, Rayerbazar Intellectual Memorial",
+        "Afternoon: Savar National Memorial (Jatiyo Smriti Shoudho)",
+        "Evening: Candle lighting ceremony, return to Dhaka"
+      ],
+      "maxGuest": 30,
+      "minAge": 12,
+      "departureLoacation": "Dhaka City Center",
+      "arriveLocation": "Liberation War Museum, Dhaka",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000049",
+      "title": "Sylhet Ratargul Swamp Forest Canoe Tour",
+      "slug": "sylhet-ratargul-swamp-forest-canoe-tour",
+      "description": "Glide through Ratargul, Bangladesh's only freshwater swamp forest, in traditional dugout canoes amid ancient Hijol trees.",
+      "images": [
+        "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800"
+      ],
+      "location": "Gowainghat, Sylhet",
+      "costFrom": 2500,
+      "startDate": "2025-07-20T00:00:00.000Z",
+      "endDate": "2025-07-21",
+      "included": ["Dugout canoe", "Life jackets", "Guide", "Meals"],
+      "excluded": ["Personal expenses", "Camera waterproof case"],
+      "amenities": ["Dugout canoe", "Forest guide", "Life jackets", "Packed breakfast"],
+      "tourPlan": [
+        "Day 1: Arrive Sylhet, drive to Ratargul, afternoon canoe through swamp",
+        "Day 1 Evening: Campfire at forest edge, firefly watching",
+        "Day 2: Dawn paddle, photography, return to Sylhet"
+      ],
+      "maxGuest": 10,
+      "minAge": 12,
+      "departureLoacation": "Sylhet City",
+      "arriveLocation": "Ratargul Swamp Forest",
+      "tourType": "64b1000000000000000000008",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000050",
+      "title": "Rangpur Haripur Gas Field & Industrial Tour",
+      "slug": "rangpur-haripur-gas-field-industrial-tour",
+      "description": "An educational industrial tour to Haripur natural gas field in Rangpur, learning about Bangladesh's energy sector.",
+      "images": [
+        "https://images.unsplash.com/photo-1530099486328-e021101a494a?w=800"
+      ],
+      "location": "Haripur, Rangpur",
+      "costFrom": 1500,
+      "startDate": "2025-05-18T00:00:00.000Z",
+      "endDate": "2025-05-18",
+      "included": ["Transport", "Industrial guide", "Safety gear", "Lunch"],
+      "excluded": ["Personal expenses"],
+      "amenities": ["Safety helmet & vest", "Expert engineer guide", "Informational booklet"],
+      "tourPlan": [
+        "Morning: Depart Rangpur, arrive Haripur Gas Field",
+        "Midday: Safety briefing, guided field tour",
+        "Afternoon: Q&A with engineers, return to Rangpur"
+      ],
+      "maxGuest": 20,
+      "minAge": 18,
+      "departureLoacation": "Rangpur City",
+      "arriveLocation": "Haripur Gas Field, Rangpur",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000007"
+    },
+    {
+      "_id": "64c1000000000000000000051",
+      "title": "Cox's Bazar Beach Volleyball & Sports Camp",
+      "slug": "coxs-bazar-beach-volleyball-sports-camp",
+      "description": "Join a sports adventure camp at Cox's Bazar with beach volleyball, surfing competitions, and beach marathon.",
+      "images": [
+        "https://images.unsplash.com/photo-1507825428034-b723cf961d3e?w=800"
+      ],
+      "location": "Cox's Bazar Beach",
+      "costFrom": 5000,
+      "startDate": "2025-03-12T00:00:00.000Z",
+      "endDate": "2025-03-15",
+      "included": ["Hotel (3 nights)", "Sports equipment", "All meals", "Sports coach"],
+      "excluded": ["Personal sports gear", "Travel to Cox's Bazar"],
+      "amenities": ["Beach volleyball court", "Surfboards", "Sports coach", "Protein meals"],
+      "tourPlan": [
+        "Day 1: Arrive, fitness assessment, evening beach jog",
+        "Day 2: Surfing training, volleyball tournament",
+        "Day 3: Beach marathon, swimming competition",
+        "Day 4: Awards ceremony, departure"
+      ],
+      "maxGuest": 20,
+      "minAge": 16,
+      "departureLoacation": "Chittagong City",
+      "arriveLocation": "Cox's Bazar Beach",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000052",
+      "title": "Dhaka Art & Craft Workshop Tour",
+      "slug": "dhaka-art-craft-workshop-tour",
+      "description": "A creative cultural tour through Dhaka's art districts, rickshaw art workshops, Jamdani weaving centers, and galleries.",
+      "images": [
+        "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800"
+      ],
+      "location": "Dhaka City",
+      "costFrom": 2200,
+      "startDate": "2025-04-25T00:00:00.000Z",
+      "endDate": "2025-04-26",
+      "included": ["Transport", "Workshop fees", "Materials", "Meals"],
+      "excluded": ["Artwork purchases", "Personal expenses"],
+      "amenities": ["Art instructor", "Workshop materials", "Gallery pass", "Craft kit to keep"],
+      "tourPlan": [
+        "Day 1: Rickshaw art painting workshop, Dhaka Art Center gallery",
+        "Day 2: Jamdani weaving center in Demra, Shankhari Bazaar craft lane"
+      ],
+      "maxGuest": 15,
+      "minAge": 10,
+      "departureLoacation": "Dhaka New Market",
+      "arriveLocation": "Dhaka Art District",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000053",
+      "title": "Bandarban Amiakhum Waterfall Trek",
+      "slug": "bandarban-amiakhum-waterfall-trek",
+      "description": "Trek to Amiakhum, one of the most breathtaking waterfalls hidden deep in Bandarban's jungle wilderness.",
+      "images": [
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+      ],
+      "location": "Remakri, Bandarban",
+      "costFrom": 7000,
+      "startDate": "2025-02-12T00:00:00.000Z",
+      "endDate": "2025-02-16",
+      "included": ["All permits", "Guide & porter", "Camp & meals", "Jeep transport"],
+      "excluded": ["Personal gear", "Insurance", "Extra porters"],
+      "amenities": ["Trekking poles", "Sleeping bags", "Campfire", "Water filter"],
+      "tourPlan": [
+        "Day 1: Arrive Bandarban, permit check, overnight in Thainkhali",
+        "Day 2: Jungle trek to Remakri Falls",
+        "Day 3: Trek to Amiakhum, overnight camp",
+        "Day 4: Waterfall swimming, return trek to Remakri",
+        "Day 5: Return to Bandarban, departure"
+      ],
+      "maxGuest": 10,
+      "minAge": 18,
+      "departureLoacation": "Chittagong Bus Terminal",
+      "arriveLocation": "Remakri, Bandarban",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000054",
+      "title": "Sylhet Family Tea & Nature Package",
+      "slug": "sylhet-family-tea-nature-package",
+      "description": "A perfect family trip to Sylhet combining tea garden exploration, waterfalls, and interactive nature activities for kids.",
+      "images": [
+        "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800"
+      ],
+      "location": "Sylhet & Moulvibazar",
+      "costFrom": 6000,
+      "startDate": "2025-06-15T00:00:00.000Z",
+      "endDate": "2025-06-18",
+      "included": ["Hotel (3 nights)", "All meals", "Tea garden tour", "Kids nature kit"],
+      "excluded": ["Personal expenses", "Tea purchases"],
+      "amenities": ["Family hotel", "Kids nature journal", "Tea tasting set", "Waterfall picnic pack"],
+      "tourPlan": [
+        "Day 1: Arrive Sylhet, check-in, evening garden walk",
+        "Day 2: Srimangal tea gardens, tea tasting for kids",
+        "Day 3: Madhabkunda waterfall swim, eco-resort",
+        "Day 4: Return journey, local market stop"
+      ],
+      "maxGuest": 20,
+      "minAge": 4,
+      "departureLoacation": "Sylhet Railway Station",
+      "arriveLocation": "Srimangal, Moulvibazar",
+      "tourType": "64b1000000000000000000009",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000055",
+      "title": "Khulna Shrimp Farm & Coastal Life Tour",
+      "slug": "khulna-shrimp-farm-coastal-life-tour",
+      "description": "Learn about Bangladesh's famous shrimp farming industry with a guided visit to shrimp farms and coastal fishing communities.",
+      "images": [
+        "https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=800"
+      ],
+      "location": "Paikgacha, Khulna",
+      "costFrom": 1800,
+      "startDate": "2025-08-10T00:00:00.000Z",
+      "endDate": "2025-08-11",
+      "included": ["Transport", "Farm guide", "Seafood lunch", "Boat ride"],
+      "excluded": ["Shrimp purchases", "Personal expenses"],
+      "amenities": ["Shrimp farm guide", "Boat", "Seafood cooking demo", "Rubber boots"],
+      "tourPlan": [
+        "Day 1: Arrive Paikgacha, shrimp farm tour, seafood lunch by canal",
+        "Day 2: Coastal fishing village, net casting demo, local market, return"
+      ],
+      "maxGuest": 18,
+      "minAge": 8,
+      "departureLoacation": "Khulna City",
+      "arriveLocation": "Paikgacha, Khulna",
+      "tourType": "64b1000000000000000000008",
+      "division": "64a1000000000000000000004"
+    },
+    {
+      "_id": "64c1000000000000000000056",
+      "title": "Rajshahi Sompur Mahavihara Tour",
+      "slug": "rajshahi-sompur-mahavihara-tour",
+      "description": "Discover the magnificent Paharpur Buddhist Vihara, a UNESCO World Heritage Site and the largest monastery south of the Himalayas.",
+      "images": [
+        "https://images.unsplash.com/photo-1548013146-72479768bada?w=800"
+      ],
+      "location": "Paharpur, Naogaon",
+      "costFrom": 2000,
+      "startDate": "2025-01-22T00:00:00.000Z",
+      "endDate": "2025-01-23",
+      "included": ["Transport", "Guide", "Entry tickets", "Lunch"],
+      "excluded": ["Camera fee", "Personal expenses"],
+      "amenities": ["Archaeological guide", "AC bus", "UNESCO site map"],
+      "tourPlan": [
+        "Day 1: Depart Rajshahi, arrive Paharpur, vihara excavation tour",
+        "Day 1 Afternoon: Paharpur Museum, Buddhist stupa",
+        "Day 2: Surrounding archaeological field, return to Rajshahi"
+      ],
+      "maxGuest": 25,
+      "minAge": 8,
+      "departureLoacation": "Rajshahi City",
+      "arriveLocation": "Paharpur, Naogaon",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000003"
+    },
+    {
+      "_id": "64c1000000000000000000057",
+      "title": "Barisal Padma & Meghna River Confluence Tour",
+      "slug": "barisal-padma-meghna-confluence-tour",
+      "description": "Witness the spectacular confluence of the Padma, Meghna, and Jamuna rivers on a multi-day river cruise from Barisal.",
+      "images": [
+        "https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=800"
+      ],
+      "location": "Bhola & Lakshmipur, Barisal",
+      "costFrom": 5500,
+      "startDate": "2025-10-20T00:00:00.000Z",
+      "endDate": "2025-10-23",
+      "included": ["River cruise ship (3 nights)", "All meals", "Naturalist guide", "Dolphin watching"],
+      "excluded": ["Personal expenses", "Alcohol"],
+      "amenities": ["Cruise cabin", "Dolphin binoculars", "River naturalist", "On-deck dining"],
+      "tourPlan": [
+        "Day 1: Board cruise at Barisal, sail toward Meghna",
+        "Day 2: Bhola island stop, Irrawaddy dolphin watching",
+        "Day 3: Confluence point photography, river fishing",
+        "Day 4: Return to Barisal, debrief"
+      ],
+      "maxGuest": 20,
+      "minAge": 10,
+      "departureLoacation": "Barisal Launch Ghat",
+      "arriveLocation": "Padma-Meghna Confluence",
+      "tourType": "64b1000000000000000000006",
+      "division": "64a1000000000000000000005"
+    },
+    {
+      "_id": "64c1000000000000000000058",
+      "title": "Dhaka Mosque Circuit Pilgrimage",
+      "slug": "dhaka-mosque-circuit-pilgrimage",
+      "description": "Visit the most iconic mosques of Dhaka including the Star Mosque, Baitul Mukarram, and Choto Katra.",
+      "images": [
+        "https://images.unsplash.com/photo-1519110047178-b2c0dc9ecc8c?w=800"
+      ],
+      "location": "Dhaka City",
+      "costFrom": 1000,
+      "startDate": "2025-04-05T00:00:00.000Z",
+      "endDate": "2025-04-05",
+      "included": ["Rickshaw", "Guide", "Lunch"],
+      "excluded": ["Donations", "Personal expenses"],
+      "amenities": ["Mosque circuit map", "Islamic guide", "Prayer schedule"],
+      "tourPlan": [
+        "Morning: Baitul Mukarram National Mosque, Star Mosque (Tara Masjid)",
+        "Midday: Choto Katra, Khan Mohammad Mridha Mosque",
+        "Afternoon: Binat Bibi Mosque, Hossaini Dalan, return"
+      ],
+      "maxGuest": 25,
+      "minAge": 5,
+      "departureLoacation": "Dhaka City Center",
+      "arriveLocation": "Baitul Mukarram, Dhaka",
+      "tourType": "64b1000000000000000000007",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000059",
+      "title": "Mymensingh Agro-Tourism Farm Stay",
+      "slug": "mymensingh-agro-tourism-farm-stay",
+      "description": "Stay at an agricultural farm in Mymensingh, participate in crop harvesting, livestock care, and farm-to-table cooking.",
+      "images": [
+        "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800"
+      ],
+      "location": "Trishal, Mymensingh",
+      "costFrom": 3000,
+      "startDate": "2025-09-05T00:00:00.000Z",
+      "endDate": "2025-09-07",
+      "included": ["Farm stay (2 nights)", "All farm meals", "Activities", "Harvest experience"],
+      "excluded": ["Personal expenses", "Farm produce purchases"],
+      "amenities": ["Farm cottage", "Farm guide", "Cooking class", "Vegetable garden access"],
+      "tourPlan": [
+        "Day 1: Arrive farm, orientation, evening livestock feeding",
+        "Day 2: Morning harvest, farm-to-table cooking class, evening bonfire",
+        "Day 3: Organic market visit, farewell breakfast, return"
+      ],
+      "maxGuest": 12,
+      "minAge": 6,
+      "departureLoacation": "Mymensingh City",
+      "arriveLocation": "Trishal Farm, Mymensingh",
+      "tourType": "64b1000000000000000000008",
+      "division": "64a1000000000000000000008"
+    },
+    {
+      "_id": "64c1000000000000000000060",
+      "title": "Sylhet Madhabpur Lake Tour",
+      "slug": "sylhet-madhabpur-lake-tour",
+      "description": "Visit Madhabpur Lake in Habiganj, a stunning lake surrounded by tea gardens with seasonal migrating birds in winter.",
+      "images": [
+        "https://images.unsplash.com/photo-1473496169904-658ba7574b0d?w=800"
+      ],
+      "location": "Habiganj, Sylhet",
+      "costFrom": 2200,
+      "startDate": "2025-12-15T00:00:00.000Z",
+      "endDate": "2025-12-16",
+      "included": ["Transport", "Hotel (1 night)", "Meals", "Boat ride"],
+      "excluded": ["Personal expenses", "Photography gear"],
+      "amenities": ["Country boat", "Bird guide", "Binoculars", "Tea garden walk"],
+      "tourPlan": [
+        "Day 1: Arrive Habiganj, Madhabpur Lake boat ride, bird watching",
+        "Day 2: Dawn photography at lake, tea garden walk, return to Sylhet"
+      ],
+      "maxGuest": 15,
+      "minAge": 8,
+      "departureLoacation": "Sylhet City",
+      "arriveLocation": "Madhabpur Lake, Habiganj",
+      "tourType": "64b1000000000000000000006",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000061",
+      "title": "Dhaka Sadarghat Launch Cruise",
+      "slug": "dhaka-sadarghat-launch-cruise",
+      "description": "Board a traditional rocket paddle steamer from Sadarghat and cruise through Bangladesh's iconic river highways.",
+      "images": [
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
+      ],
+      "location": "Sadarghat, Dhaka to Barisal",
+      "costFrom": 3000,
+      "startDate": "2025-05-15T00:00:00.000Z",
+      "endDate": "2025-05-16",
+      "included": ["Steamer ticket (1st class)", "Dinner on board", "Breakfast"],
+      "excluded": ["Personal expenses", "Alcohol"],
+      "amenities": ["Cabin berth", "On-deck seating", "River views", "Traditional Bengali dinner"],
+      "tourPlan": [
+        "Day 1 Evening: Board rocket steamer at Sadarghat, overnight cruise",
+        "Day 2 Morning: Arrive Barisal, optional extension or return"
+      ],
+      "maxGuest": 30,
+      "minAge": 5,
+      "departureLoacation": "Sadarghat, Dhaka",
+      "arriveLocation": "Barisal Launch Ghat",
+      "tourType": "64b1000000000000000000003",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000062",
+      "title": "Khulna Jessore Jessore Road Historical Trek",
+      "slug": "khulna-jessore-historical-trek",
+      "description": "Walk along the historic Jessore Road immortalized in Allen Ginsberg's poem and discover the border region's heritage.",
+      "images": [
+        "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800"
+      ],
+      "location": "Jessore, Khulna",
+      "costFrom": 2000,
+      "startDate": "2025-03-28T00:00:00.000Z",
+      "endDate": "2025-03-29",
+      "included": ["Transport", "Guide", "Hotel (1 night)", "Meals"],
+      "excluded": ["Personal expenses"],
+      "amenities": ["Historical guide", "AC minibus", "Heritage map", "Documentary screening"],
+      "tourPlan": [
+        "Day 1: Arrive Jessore, historical road walk, Michael Madhusudan Museum",
+        "Day 2: Chaitanyapur historical site, Jessore-Benapole border view, return"
+      ],
+      "maxGuest": 20,
+      "minAge": 12,
+      "departureLoacation": "Khulna City",
+      "arriveLocation": "Jessore Sadar",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000004"
+    },
+    {
+      "_id": "64c1000000000000000000063",
+      "title": "Barisal Kuakata Surf & Yoga Retreat",
+      "slug": "barisal-kuakata-surf-yoga-retreat",
+      "description": "A wellness retreat combining morning yoga on the beach, surfing lessons, and meditation by the sea at Kuakata.",
+      "images": [
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+      ],
+      "location": "Kuakata, Patuakhali",
+      "costFrom": 7500,
+      "startDate": "2025-11-01T00:00:00.000Z",
+      "endDate": "2025-11-05",
+      "included": ["Beach resort (4 nights)", "All meals", "Yoga instructor", "Surf lessons"],
+      "excluded": ["Personal surfboard", "Alcohol"],
+      "amenities": ["Beachfront resort", "Yoga mat & props", "Surfboard rental", "Meditation guide"],
+      "tourPlan": [
+        "Day 1: Arrive Kuakata, evening beach meditation",
+        "Day 2-4: Morning yoga, afternoon surfing, evening sunset watch",
+        "Day 5: Farewell meditation, departure"
+      ],
+      "maxGuest": 12,
+      "minAge": 16,
+      "departureLoacation": "Barisal City",
+      "arriveLocation": "Kuakata Beach",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000005"
+    },
+    {
+      "_id": "64c1000000000000000000064",
+      "title": "Rangpur Tajhat Palace Luxury Tour",
+      "slug": "rangpur-tajhat-palace-luxury-tour",
+      "description": "A curated luxury tour of Rangpur's Tajhat Palace, with exclusive evening dining at royal-themed restaurant and private museum access.",
+      "images": [
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800"
+      ],
+      "location": "Rangpur City",
+      "costFrom": 10000,
+      "startDate": "2025-02-05T00:00:00.000Z",
+      "endDate": "2025-02-07",
+      "included": ["5-star hotel (2 nights)", "Private museum access", "Royal dinner", "Chauffeur"],
+      "excluded": ["Flights", "Alcoholic beverages", "Shopping"],
+      "amenities": ["5-star suite", "Private palace guide", "Royal themed dinner", "Chauffeur car"],
+      "tourPlan": [
+        "Day 1: Arrive Rangpur, private Tajhat Palace tour at golden hour",
+        "Day 2: Rangpur Museum collection, royal dinner, cultural evening",
+        "Day 3: Pienikhi Bazaar heritage walk, departure"
+      ],
+      "maxGuest": 4,
+      "minAge": 18,
+      "departureLoacation": "Rangpur Airport",
+      "arriveLocation": "Tajhat Palace, Rangpur",
+      "tourType": "64b1000000000000000000010",
+      "division": "64a1000000000000000000007"
+    },
+    {
+      "_id": "64c1000000000000000000065",
+      "title": "Chittagong WWII War Cemetery & Memorial Tour",
+      "slug": "chittagong-wwii-war-cemetery-memorial-tour",
+      "description": "A poignant historical tour visiting the Chittagong War Cemetery, the only WWII Commonwealth cemetery in Bangladesh.",
+      "images": [
+        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800"
+      ],
+      "location": "Chittagong City",
+      "costFrom": 1500,
+      "startDate": "2025-11-11T00:00:00.000Z",
+      "endDate": "2025-11-11",
+      "included": ["Transport", "Expert guide", "Memorial book", "Lunch"],
+      "excluded": ["Personal expenses"],
+      "amenities": ["Historical guide", "WWII memorial booklet", "Wreath for ceremony"],
+      "tourPlan": [
+        "Morning: Chittagong WWII War Cemetery, wreath laying ceremony",
+        "Afternoon: Chittagong Ethnological Museum, city war monument, return"
+      ],
+      "maxGuest": 30,
+      "minAge": 12,
+      "departureLoacation": "Chittagong Railway Station",
+      "arriveLocation": "Chittagong War Cemetery",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000066",
+      "title": "Dhaka Jamdani Weaving Village Tour",
+      "slug": "dhaka-jamdani-weaving-village-tour",
+      "description": "Visit the UNESCO-recognized Jamdani weavers' villages near Dhaka and witness the intricate art of handloom weaving.",
+      "images": [
+        "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800"
+      ],
+      "location": "Rupganj, Narayanganj",
+      "costFrom": 2000,
+      "startDate": "2025-05-25T00:00:00.000Z",
+      "endDate": "2025-05-25",
+      "included": ["AC transport", "Weaving workshop", "Lunch", "Jamdani fabric demo"],
+      "excluded": ["Fabric purchases", "Personal expenses"],
+      "amenities": ["Master weaver guide", "Weaving demonstration", "AC minibus", "Textile museum pass"],
+      "tourPlan": [
+        "Morning: Depart Dhaka, arrive Rupganj Jamdani village",
+        "Midday: Master weaver workshop, handloom demonstration",
+        "Afternoon: Textile museum, traditional lunch, return to Dhaka"
+      ],
+      "maxGuest": 20,
+      "minAge": 8,
+      "departureLoacation": "Dhaka Gulistan",
+      "arriveLocation": "Rupganj, Narayanganj",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000067",
+      "title": "Sylhet Satchhari Forest Trek",
+      "slug": "sylhet-satchhari-forest-trek",
+      "description": "Trek through Satchhari National Park, home to hoolock gibbons, king cobras, and rare birds in a lush mixed evergreen forest.",
+      "images": [
+        "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800"
+      ],
+      "location": "Chunarughat, Habiganj",
+      "costFrom": 2800,
+      "startDate": "2025-02-03T00:00:00.000Z",
+      "endDate": "2025-02-04",
+      "included": ["Park permit", "Forest guide", "Hotel (1 night)", "Meals"],
+      "excluded": ["Personal gear", "Camera equipment"],
+      "amenities": ["Forest ranger guide", "Binoculars", "Species checklist", "Anti-leech socks"],
+      "tourPlan": [
+        "Day 1: Arrive Habiganj, park orientation, afternoon gibbon tracking",
+        "Day 2: Dawn bird watching, reptile habitat walk, return to Sylhet"
+      ],
+      "maxGuest": 12,
+      "minAge": 14,
+      "departureLoacation": "Sylhet City",
+      "arriveLocation": "Satchhari National Park",
+      "tourType": "64b1000000000000000000006",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000068",
+      "title": "Bagerhat Mangrove Kayaking Adventure",
+      "slug": "bagerhat-mangrove-kayaking-adventure",
+      "description": "Kayak through the winding waterways of Bagerhat's mangroves, discovering hidden creeks and tidal forest ecosystems.",
+      "images": [
+        "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800"
+      ],
+      "location": "Bagerhat, Khulna",
+      "costFrom": 4000,
+      "startDate": "2025-03-18T00:00:00.000Z",
+      "endDate": "2025-03-20",
+      "included": ["Kayaks", "Guide", "Hotel (2 nights)", "All meals", "Safety gear"],
+      "excluded": ["Personal expenses", "Alcohol"],
+      "amenities": ["Sea kayaks", "Life vests", "Waterproof bags", "Eco-guide"],
+      "tourPlan": [
+        "Day 1: Arrive Bagerhat, kayaking orientation, evening paddle",
+        "Day 2: Full-day mangrove kayak expedition, tidal creek exploration",
+        "Day 3: Morning paddle, Sixty Dome Mosque visit, return"
+      ],
+      "maxGuest": 10,
+      "minAge": 16,
+      "departureLoacation": "Khulna City",
+      "arriveLocation": "Bagerhat Mangrove Area",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000004"
+    },
+    {
+      "_id": "64c1000000000000000000069",
+      "title": "Mymensingh Netrokona Ethnic Village Tour",
+      "slug": "mymensingh-netrokona-ethnic-village-tour",
+      "description": "Explore Netrokona's ethnic Hajong and Garo communities, their festivals, bamboo architecture, and tribal cuisine.",
+      "images": [
+        "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800"
+      ],
+      "location": "Netrokona, Mymensingh",
+      "costFrom": 2500,
+      "startDate": "2025-10-10T00:00:00.000Z",
+      "endDate": "2025-10-12",
+      "included": ["Transport", "Eco-lodge (2 nights)", "Ethnic meals", "Cultural guide"],
+      "excluded": ["Handicraft purchases", "Personal expenses"],
+      "amenities": ["Bamboo eco-lodge", "Tribal guide", "Traditional cooking class", "Cultural ceremony access"],
+      "tourPlan": [
+        "Day 1: Arrive Netrokona, Garo village introduction, evening ceremony",
+        "Day 2: Hajong village, bamboo craft making, tribal lunch",
+        "Day 3: Someshwari river boat ride, return to Mymensingh"
+      ],
+      "maxGuest": 15,
+      "minAge": 10,
+      "departureLoacation": "Mymensingh Bus Stand",
+      "arriveLocation": "Netrokona Sadar",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000008"
+    },
+    {
+      "_id": "64c1000000000000000000070",
+      "title": "Rangpur Pirganj Terracotta Temple Tour",
+      "slug": "rangpur-pirganj-terracotta-temple-tour",
+      "description": "Discover the terracotta-decorated temples of Pirganj and surrounding areas, rare surviving gems of Bengal architecture.",
+      "images": [
+        "https://images.unsplash.com/photo-1568454537842-d933259bb258?w=800"
+      ],
+      "location": "Pirganj, Rangpur",
+      "costFrom": 1800,
+      "startDate": "2025-04-08T00:00:00.000Z",
+      "endDate": "2025-04-09",
+      "included": ["Transport", "Guide", "Lunch", "Museum entry"],
+      "excluded": ["Personal expenses", "Photography fee"],
+      "amenities": ["Heritage guide", "Terracotta art brochure", "AC minibus"],
+      "tourPlan": [
+        "Day 1: Arrive Pirganj, Kantajew-style local temple, terracotta art trail",
+        "Day 2: Surrounding villages with temple ruins, local craft market, return"
+      ],
+      "maxGuest": 20,
+      "minAge": 8,
+      "departureLoacation": "Rangpur City",
+      "arriveLocation": "Pirganj, Rangpur",
+      "tourType": "64b1000000000000000000007",
+      "division": "64a1000000000000000000007"
+    },
+    {
+      "_id": "64c1000000000000000000071",
+      "title": "Dhaka Corporate Incentive City Tour",
+      "slug": "dhaka-corporate-incentive-city-tour",
+      "description": "Customized corporate group tour of Dhaka with team-building activities, business district sightseeing, and networking dinner.",
+      "images": [
+        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800"
+      ],
+      "location": "Dhaka City",
+      "costFrom": 20000,
+      "startDate": "2025-06-05T00:00:00.000Z",
+      "endDate": "2025-06-07",
+      "included": ["5-star hotel (2 nights)", "All meals", "Team activities", "Business tour"],
+      "excluded": ["Flights", "Personal expenses", "Alcohol"],
+      "amenities": ["5-star hotel", "Team building facilitator", "Banquet hall", "Private transport"],
+      "tourPlan": [
+        "Day 1: Arrive, business district tour, team dinner",
+        "Day 2: Team building activities, city cultural tour, networking gala",
+        "Day 3: Factory/industry visit, farewell brunch, departure"
+      ],
+      "maxGuest": 50,
+      "minAge": 21,
+      "departureLoacation": "Hazrat Shahjalal International Airport",
+      "arriveLocation": "Dhaka Business District",
+      "tourType": "64b1000000000000000000010",
+      "division": "64a1000000000000000000001"
+    },
+    {
+      "_id": "64c1000000000000000000072",
+      "title": "Cox's Bazar Parasailing & Water Sports Day",
+      "slug": "coxs-bazar-parasailing-water-sports-day",
+      "description": "An adrenaline-packed day of parasailing, jet skiing, banana boating, and wind-surfing at Cox's Bazar beach.",
+      "images": [
+        "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800"
+      ],
+      "location": "Cox's Bazar Beach",
+      "costFrom": 4000,
+      "startDate": "2025-04-22T00:00:00.000Z",
+      "endDate": "2025-04-22",
+      "included": ["All water sports", "Safety gear", "Instructors", "Lunch"],
+      "excluded": ["Personal expenses", "GoPro rental"],
+      "amenities": ["Parasail harness", "Jet ski", "Banana boat", "Safety instructor", "Beach lounge"],
+      "tourPlan": [
+        "Morning: Parasailing session (2 flights per person)",
+        "Midday: Banana boating, jet ski rides, beach lunch",
+        "Afternoon: Wind surfing lesson, beach volleyball"
+      ],
+      "maxGuest": 20,
+      "minAge": 14,
+      "departureLoacation": "Cox's Bazar Town",
+      "arriveLocation": "Cox's Bazar Main Beach",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000073",
+      "title": "Khulna Satkhira Hindu Temples Circuit",
+      "slug": "khulna-satkhira-hindu-temples-circuit",
+      "description": "A religious circuit through Satkhira's magnificent 200-year-old Hindu temples, ghats, and Durga Puja festival grounds.",
+      "images": [
+        "https://images.unsplash.com/photo-1568454537842-d933259bb258?w=800"
+      ],
+      "location": "Satkhira, Khulna",
+      "costFrom": 2000,
+      "startDate": "2025-10-02T00:00:00.000Z",
+      "endDate": "2025-10-03",
+      "included": ["Transport", "Guide", "Hotel (1 night)", "Prasad & meals"],
+      "excluded": ["Donations", "Personal expenses"],
+      "amenities": ["Religious guide", "Prasad kit", "Festival schedule"],
+      "tourPlan": [
+        "Day 1: Arrive Satkhira, historic Hindu temples, evening Durga Puja",
+        "Day 2: Ancient temple complex, river ghats, puja ceremony, return"
+      ],
+      "maxGuest": 25,
+      "minAge": 5,
+      "departureLoacation": "Khulna City",
+      "arriveLocation": "Satkhira Town",
+      "tourType": "64b1000000000000000000007",
+      "division": "64a1000000000000000000004"
+    },
+    {
+      "_id": "64c1000000000000000000074",
+      "title": "Barisal Luxury River Cruise",
+      "slug": "barisal-luxury-river-cruise",
+      "description": "A premium river cruise through the waterways of Barisal on a luxury vessel with gourmet dining and private cabins.",
+      "images": [
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800"
+      ],
+      "location": "Barisal Waterways",
+      "costFrom": 20000,
+      "startDate": "2025-12-20T00:00:00.000Z",
+      "endDate": "2025-12-24",
+      "included": ["Luxury cruise cabin (4 nights)", "All gourmet meals", "River excursions", "Entertainment"],
+      "excluded": ["Alcoholic beverages", "Personal shopping", "Insurance"],
+      "amenities": ["Private luxury cabin", "On-board restaurant", "Live music", "Massage service", "Sundeck"],
+      "tourPlan": [
+        "Day 1: Board luxury cruise, welcome dinner, evening canal",
+        "Day 2: Floating market, island village stop",
+        "Day 3: Kuakata day excursion from cruise",
+        "Day 4: River delta cruise, sunset gala dinner",
+        "Day 5: Return to Barisal, disembarkation"
+      ],
+      "maxGuest": 8,
+      "minAge": 18,
+      "departureLoacation": "Barisal Launch Ghat",
+      "arriveLocation": "Barisal Luxury Cruise Terminal",
+      "tourType": "64b1000000000000000000010",
+      "division": "64a1000000000000000000005"
+    },
+    {
+      "_id": "64c1000000000000000000075",
+      "title": "Netrokona Haor Bird Watching Expedition",
+      "slug": "netrokona-haor-bird-watching-expedition",
+      "description": "A serious bird watching expedition in Netrokona's haor wetlands during winter migration season.",
+      "images": [
+        "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800"
+      ],
+      "location": "Khaliajuri Haor, Netrokona",
+      "costFrom": 3500,
+      "startDate": "2025-01-05T00:00:00.000Z",
+      "endDate": "2025-01-07",
+      "included": ["Boat", "Expert ornithologist guide", "Hotel (2 nights)", "Meals", "Bird checklist"],
+      "excluded": ["Camera & binoculars", "Personal expenses"],
+      "amenities": ["Motor boat", "Expert ornithologist", "Species ID book", "Bird call recordings"],
+      "tourPlan": [
+        "Day 1: Arrive Netrokona, evening haor orientation",
+        "Day 2: Full-day bird watching expedition (100+ species expected)",
+        "Day 3: Dawn photography session, return to Mymensingh"
+      ],
+      "maxGuest": 8,
+      "minAge": 14,
+      "departureLoacation": "Mymensingh City",
+      "arriveLocation": "Khaliajuri Haor, Netrokona",
+      "tourType": "64b1000000000000000000006",
+      "division": "64a1000000000000000000008"
+    },
+    {
+      "_id": "64c1000000000000000000076",
+      "title": "Chittagong Hill Tracts Jeep Safari",
+      "slug": "chittagong-hill-tracts-jeep-safari",
+      "description": "An off-road jeep safari through the rugged hills and river valleys of the Chittagong Hill Tracts.",
+      "images": [
+        "https://images.unsplash.com/photo-1442570468985-f63ed5de9086?w=800"
+      ],
+      "location": "CHT, Chittagong",
+      "costFrom": 8000,
+      "startDate": "2025-02-22T00:00:00.000Z",
+      "endDate": "2025-02-26",
+      "included": ["4x4 Jeep", "Driver & guide", "All meals", "Camp stay"],
+      "excluded": ["Personal gear", "Insurance"],
+      "amenities": ["4x4 Jeep", "Camping gear", "GPS tracker", "Satellite phone"],
+      "tourPlan": [
+        "Day 1: Depart Chittagong, off-road entry to CHT",
+        "Day 2: Deep valley safari, tribal village",
+        "Day 3: Mountain road challenge, jungle camp",
+        "Day 4: River ford crossing, hilltop sunrise",
+        "Day 5: Return to Chittagong"
+      ],
+      "maxGuest": 8,
+      "minAge": 18,
+      "departureLoacation": "Chittagong City",
+      "arriveLocation": "Chittagong Hill Tracts",
+      "tourType": "64b1000000000000000000001",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000077",
+      "title": "Sylhet Bisnakandi Stone River Tour",
+      "slug": "sylhet-bisnakandi-stone-river-tour",
+      "description": "Visit Bisnakandi in Sylhet where crystal water streams over flat stones surrounded by green hills and waterfalls.",
+      "images": [
+        "https://images.unsplash.com/photo-1473496169904-658ba7574b0d?w=800"
+      ],
+      "location": "Bisnakandi, Sylhet",
+      "costFrom": 2200,
+      "startDate": "2025-10-28T00:00:00.000Z",
+      "endDate": "2025-10-29",
+      "included": ["Transport", "Boat", "Meals", "Guide"],
+      "excluded": ["Personal expenses", "Stone collection"],
+      "amenities": ["Speed boat", "Trekking boots", "River guide", "Packed lunch"],
+      "tourPlan": [
+        "Day 1: Arrive Sylhet, morning drive to Bisnakandi via Kanaighat",
+        "Day 1: Stone river walk, waterfall swim, photography",
+        "Day 2: Sunrise river, village breakfast, return to Sylhet"
+      ],
+      "maxGuest": 15,
+      "minAge": 12,
+      "departureLoacation": "Sylhet City",
+      "arriveLocation": "Bisnakandi, Kanaighat",
+      "tourType": "64b1000000000000000000003",
+      "division": "64a1000000000000000000006"
+    },
+    {
+      "_id": "64c1000000000000000000078",
+      "title": "Rajshahi Natore Rajbari Palace Tour",
+      "slug": "rajshahi-natore-rajbari-palace-tour",
+      "description": "Explore the magnificent Natore Rajbari palace complex, the seat of the famous Rani Bhabani and 18th-century Bengal history.",
+      "images": [
+        "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=800"
+      ],
+      "location": "Natore, Rajshahi",
+      "costFrom": 2200,
+      "startDate": "2025-03-03T00:00:00.000Z",
+      "endDate": "2025-03-04",
+      "included": ["Transport", "Guide", "Entry", "Meals"],
+      "excluded": ["Camera fee", "Personal expenses"],
+      "amenities": ["Heritage guide", "AC minibus", "Palace history booklet"],
+      "tourPlan": [
+        "Day 1: Arrive Natore, Natore Rajbari walking tour, Sataish building",
+        "Day 2: Rani Bhabani Museum, Natore Zoo & park, return to Rajshahi"
+      ],
+      "maxGuest": 20,
+      "minAge": 8,
+      "departureLoacation": "Rajshahi City",
+      "arriveLocation": "Natore Rajbari",
+      "tourType": "64b1000000000000000000004",
+      "division": "64a1000000000000000000003"
+    },
+    {
+      "_id": "64c1000000000000000000079",
+      "title": "Barisal Family River & Nature Package",
+      "slug": "barisal-family-river-nature-package",
+      "description": "A relaxing family package through Barisal's rivers, guava orchards, and paddy fields with kids-friendly activities.",
+      "images": [
+        "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800"
+      ],
+      "location": "Barisal & Pirojpur",
+      "costFrom": 3500,
+      "startDate": "2025-08-25T00:00:00.000Z",
+      "endDate": "2025-08-27",
+      "included": ["Hotel (2 nights)", "All meals", "Boat rides", "Kids activity pack"],
+      "excluded": ["Personal expenses", "Fruit purchases"],
+      "amenities": ["Family-friendly boat", "Kids nature kit", "Guava orchard picnic", "Life jackets"],
+      "tourPlan": [
+        "Day 1: Arrive Barisal, afternoon river cruise",
+        "Day 2: Guava orchard visit, paddy field walk, kids games",
+        "Day 3: Pirojpur canal walk, local market, return"
+      ],
+      "maxGuest": 20,
+      "minAge": 3,
+      "departureLoacation": "Barisal City",
+      "arriveLocation": "Barisal & Pirojpur",
+      "tourType": "64b1000000000000000000009",
+      "division": "64a1000000000000000000005"
+    },
+    {
+      "_id": "64c1000000000000000000080",
+      "title": "Chittagong Seafood Culinary Tour",
+      "slug": "chittagong-seafood-culinary-tour",
+      "description": "A gourmet tour of Chittagong's seafood culture, visiting fish markets, coastal kitchens, and top seafood restaurants.",
+      "images": [
+        "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800"
+      ],
+      "location": "Chittagong City & Patenga",
+      "costFrom": 3000,
+      "startDate": "2025-05-08T00:00:00.000Z",
+      "endDate": "2025-05-09",
+      "included": ["All food tastings", "Cooking class", "Fish market tour", "Hotel (1 night)"],
+      "excluded": ["Extra food purchases", "Personal expenses"],
+      "amenities": ["Seafood chef guide", "Fish market tour", "Cooking apron & kit", "Recipe booklet"],
+      "tourPlan": [
+        "Day 1: Fishery Ghat market tour, Patenga beach seafood cooking class",
+        "Day 2: Traditional Chittagonian seafood restaurant tour, mezban feast"
+      ],
+      "maxGuest": 16,
+      "minAge": 10,
+      "departureLoacation": "Chittagong City Center",
+      "arriveLocation": "Fishery Ghat, Chittagong",
+      "tourType": "64b1000000000000000000002",
+      "division": "64a1000000000000000000002"
+    },
+    {
+      "_id": "64c1000000000000000000081",
+      "title": "Rangpur Eco Village Homestay",
+      "slug": "rangpur-eco-village-homestay",
+      "description": "Stay with a local family in a Rangpur village, participate in daily life, and explore the agricultural heartland.",
+      "images": [
+        "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800"
+      ],
+      "location": "Mithapukur, Rangpur",
+      "costFrom": 2500,
+      "startDate": "2025-09-20T00:00:00.000Z",
+      "endDate": "2025-09-22",
+      "included": ["Homestay (2 nights)", "All home-cooked meals", "Village activities", "Bicycle"],
+      "excluded": ["Personal expenses", "Produce purchases"],
+      "amenities": ["Homestay room", "Bicycle", "Village guide", "Farm activities"],
+      "tourPlan": [
+        "Day 1: Arrive Mithapukur, family welcome, evening village walk",
+        "Day 2: Paddy field work, cooking with host family, local market by bicycle",
+        "Day 3: Farewell traditional breakfast, return to Rangpur"
+      ],
+      "maxGuest": 6,
+      "minAge": 10,
+      "departureLoacation": "Rangpur City",
+      "arriveLocation": "Mithapukur, Rangpur",
+      "tourType": "64b1000000000000000000008",
+      "division": "64a1000000000000000000007"
+    },
+    {
+      "_id": "64c1000000000000000000082",
+      "title": "Khulna Luxury Sundarbans Cruise",
+      "slug": "khulna-luxury-sundarbans-cruise",
+      "description": "An exclusive luxury cruise deep into the Sundarbans on a private vessel with gourmet dining, spa, and naturalist.",
+      "images": [
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800"
+      ],
+      "location": "Sundarbans, Khulna",
+      "costFrom": 30000,
+      "startDate": "2025-01-12T00:00:00.000Z",
+      "endDate": "2025-01-17",
+      "included": ["Private luxury vessel (5 nights)", "All gourmet meals", "Naturalist", "All permits", "Spa"],
+      "excluded": ["Flights to Khulna", "Alcohol", "Personal shopping"],
+      "amenities": ["Private vessel", "Suite cabin", "On-board chef", "Spa & Jacuzzi", "Expert wildlife naturalist"],
+      "tourPlan": [
+        "Day 1: Board vessel at Khulna, welcome dinner",
+        "Day 2-3: Deep Sundarbans wildlife watching",
+        "Day 4: Tiger territory exploration with armed escort",
+        "Day 5: Dublar Char island excursion",
+        "Day 6: Return to Khulna, farewell brunch"
+      ],
+      "maxGuest": 6,
+      "minAge": 16,
+      "departureLoacation": "Khulna Launch Terminal",
+      "arriveLocation": "Deep Sundarbans",
+      "tourType": "64b1000000000000000000010",
+      "division": "64a1000000000000000000004"
+    }
+  ]
+}
