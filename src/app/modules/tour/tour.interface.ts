@@ -22,7 +22,7 @@ export interface ITour {
     departureLoacation?:string,
     arriveLocation?:string,
     tourType:Types.ObjectId,
-    divisions: Types.ObjectId,
+    division: Types.ObjectId,
 
 }
 

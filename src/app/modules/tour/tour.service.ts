@@ -1,140 +1,163 @@
-import  httpStatus  from 'http-status-codes';
-
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import httpStatus from "http-status-codes";
 
 //todo================ TOUR SERVICES ================
 
 import AppError from "../../errorHelper/AppError";
 import { ITour, ITourType } from "./tour.interface";
 import { Tour, TourType } from "./tour.model";
+import { searchFields } from "./tour.constants";
 
-const createTour = async(payload:ITour)=>{
-
-    const {title} = payload
-    const isTourexists = await Tour.findOne({title}) 
+const createTour = async (payload: ITour) => {
+    const { title } = payload;
+    const isTourexists = await Tour.findOne({ title });
 
     if (isTourexists) {
-        throw new AppError(httpStatus.BAD_REQUEST," this Tour already exists",'')
+        throw new AppError(httpStatus.BAD_REQUEST, " this Tour already exists", "");
     }
 
-    const createTour = await Tour.create(payload)
+    const createTour = await Tour.create(payload);
 
-  return {
-    createTour
-  }
-}
+    return {
+        createTour,
+    };
+};
+
+const getAllTour = async (query: Record<string, string>) => {
+    console.log("from service getAlltour", query);
+
+    const filter = query
+    const searchTerm = query.searchTerm || " ";
+    delete filter["searchTerm"]
+    console.log(filter);
 
 
-const getAllTour = async() =>{
+    const queryField = {
+        $or: searchFields.map((field) => ({
+            [field]: { $regex: searchTerm, $options: "i" },
+        })),
+    };
+    
+    const sortField = query.sort as string
+console.log(sortField);
 
-    const getAllTour = await Tour.find({})
-    const totalTour = await Tour.countDocuments()
+    //* Search = fuzzy match(regex)
+    //* Filter = exact match
+
+    const getAllTour = await Tour.find(queryField).find(filter).sort(sortField);
+    const totalTour = await Tour.countDocuments();
 
     return {
         data: getAllTour,
-        meta:{
-            count: totalTour
-        }
-    }
-}
+        meta: {
+            count: totalTour,
+        },
+    };
+};
 
-
-const updateTour = async(id:string, payload:Partial<ITour>) =>{
-    const isTourexists = await Tour.findById({id})
+const updateTour = async (id: string, payload: Partial<ITour>) => {
+    const isTourexists = await Tour.findById({ id });
     if (!isTourexists) {
-        throw new AppError(httpStatus.BAD_REQUEST," this Tour does not exists",'')
+        throw new AppError(
+            httpStatus.BAD_REQUEST,
+            " this Tour does not exists",
+            "",
+        );
     }
 
-    const updateTour = await Tour.findByIdAndUpdate(payload)
+    const updateTour = await Tour.findByIdAndUpdate(payload);
 
-    return updateTour
-}
+    return updateTour;
+};
 
-const deleteTour = async(id:string) =>{
-    const isTourexists = await Tour.findById({id})
+const deleteTour = async (id: string) => {
+    const isTourexists = await Tour.findById({ id });
 
     if (!isTourexists) {
-        throw new AppError(httpStatus.BAD_REQUEST," this Tour does not exists",'')
+        throw new AppError(
+            httpStatus.BAD_REQUEST,
+            " this Tour does not exists",
+            "",
+        );
     }
 
-    const deleteTour = await Tour.findByIdAndDelete(id)
+    const deleteTour = await Tour.findByIdAndDelete(id);
 
-    return deleteTour
-}
-
-
-
-
-
+    return deleteTour;
+};
 
 export const TourServices = {
     createTour,
     getAllTour,
     updateTour,
-    deleteTour
-}
-
-
+    deleteTour,
+};
 
 //todo================ TOUR TYPE SERVICES ===========
 
-
-const createTourType = async(payload:ITourType)=>{
-
-    const {name} = payload
-    const isTourexists = await Tour.findOne({name}) 
+const createTourType = async (payload: ITourType) => {
+    const { name } = payload;
+    const isTourexists = await Tour.findOne({ name });
 
     if (isTourexists) {
-        throw new AppError(httpStatus.BAD_REQUEST," this Tour Type already exists",'')
+        throw new AppError(
+            httpStatus.BAD_REQUEST,
+            " this Tour Type already exists",
+            "",
+        );
     }
 
-    const tourType = await TourType.create(payload)
+    const tourType = await TourType.create(payload);
 
-  return tourType
-}
+    return tourType;
+};
 
-
-const getAllTourType = async() =>{
-
-    const getAllTourType = await TourType.find({})
-    const totalTourType = await TourType.countDocuments()
+const getAllTourType = async () => {
+    const getAllTourType = await TourType.find({});
+    const totalTourType = await TourType.countDocuments();
 
     return {
         data: getAllTourType,
-        meta:{
-            count: totalTourType
-        }
-    }
-}
+        meta: {
+            count: totalTourType,
+        },
+    };
+};
 
-
-const updateTourType = async(id:string, payload:Partial<ITour>) =>{
-    const isTourexists = await Tour.findById({id})
+const updateTourType = async (id: string, payload: Partial<ITour>) => {
+    const isTourexists = await Tour.findById({ id });
     if (!isTourexists) {
-        throw new AppError(httpStatus.BAD_REQUEST," this Tour does not exists",'')
+        throw new AppError(
+            httpStatus.BAD_REQUEST,
+            " this Tour does not exists",
+            "",
+        );
     }
 
-    const updateTourType = await Tour.findByIdAndUpdate(payload)
+    const updateTourType = await Tour.findByIdAndUpdate(payload);
 
-    return updateTourType
-}
+    return updateTourType;
+};
 
-const deleteTourType = async(id:string) =>{
-    const isTourexists = await Tour.findById({id})
+const deleteTourType = async (id: string) => {
+    const isTourexists = await Tour.findById({ id });
 
     if (!isTourexists) {
-        throw new AppError(httpStatus.BAD_REQUEST," this Tour Type does not exists",'')
+        throw new AppError(
+            httpStatus.BAD_REQUEST,
+            " this Tour Type does not exists",
+            "",
+        );
     }
 
-    const deleteTourType = await Tour.findByIdAndDelete(id)
+    const deleteTourType = await Tour.findByIdAndDelete(id);
 
-    return deleteTourType
-}
+    return deleteTourType;
+};
 
 export const TourTypeServices = {
     createTourType,
     getAllTourType,
     updateTourType,
-    deleteTourType
-
-} 
+    deleteTourType,
+};

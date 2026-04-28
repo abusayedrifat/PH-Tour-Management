@@ -23,7 +23,6 @@ const tourSchema = new Schema<ITour>({
     },
     slug: {
         type: String,
-        required: true,
         unique: true
     },
     description: {
@@ -78,7 +77,7 @@ const tourSchema = new Schema<ITour>({
         ref: "TourType",
         required: true
     },
-    divisions: {
+    division: {
         type: Schema.Types.ObjectId,
         ref: "Division",
         required: true

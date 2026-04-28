@@ -6,6 +6,7 @@ export const createZodTourType = z.object({
         .string({ message: "Name must be string" })
         .min(3)
 })
+
 export const updateZodTourType = z.object({
     name: z
         .string({ message: "Name must be string" })
@@ -17,7 +18,8 @@ export const createZodTour = z.object({
     title: z
         .string(),
     slug: z
-        .string(),
+        .string()
+        .optional(),
     description: z
         .string()
         .optional(),
@@ -64,7 +66,7 @@ export const createZodTour = z.object({
         .optional(),
     tourType: z
         .string(),
-    divisions: z
+    division: z
         .string()
 
 

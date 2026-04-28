@@ -24,7 +24,6 @@ router.post(
 //*=========== getAll tour ============
 router.get(
   "/",
-  checkAuthorization(Role.ADMIN, Role.SUPER_ADMIN),
   TourController.getAllTour,
 );
 
@@ -55,7 +54,6 @@ router.post(
 //*=========== getAll tour types ============
 router.get(
   "/tour-types",
-  checkAuthorization(Role.ADMIN, Role.SUPER_ADMIN),
   TourController.getAllTourType,
 );
 

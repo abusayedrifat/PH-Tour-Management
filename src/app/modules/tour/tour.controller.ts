@@ -24,11 +24,12 @@ const createTour = catchAsync(async (req: Request, res: Response, next: NextFunc
 //*================= getAll tour type =====================
 const getAllTour = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
-      const allTour = await TourServices.getAllTour()
+      const query = req.query as Record<string, string>
+      const allTour = await TourServices.getAllTour(query)
       sendResponse(res, {
             success: true,
             statusCode: httpStatus.CREATED,
-            message: "tour type created successfully",
+            message: "tour retrived successfully",
             data: allTour,
       })
 })
