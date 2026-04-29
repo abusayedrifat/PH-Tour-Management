@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-dynamic-delete */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import httpStatus from "http-status-codes";
 
@@ -6,7 +7,7 @@ import httpStatus from "http-status-codes";
 import AppError from "../../errorHelper/AppError";
 import { ITour, ITourType } from "./tour.interface";
 import { Tour, TourType } from "./tour.model";
-import { searchFields } from "./tour.constants";
+import { excludedFields, searchFields } from "../../utils/constants";
 
 const createTour = async (payload: ITour) => {
     const { title } = payload;
@@ -28,8 +29,15 @@ const getAllTour = async (query: Record<string, string>) => {
 
     const filter = query
     const searchTerm = query.searchTerm || " ";
-    delete filter["searchTerm"]
+    const sort = query.sort || "-createdAt";
+    const fields = query.fields.split(",").join(" ").split("-").join(" ")|| " ";
     console.log(filter);
+
+    
+
+    for(const field of excludedFields){
+        delete filter[field]
+    }
 
 
     const queryField = {
@@ -38,13 +46,12 @@ const getAllTour = async (query: Record<string, string>) => {
         })),
     };
     
-    const sortField = query.sort as string
-console.log(sortField);
+    
 
     //* Search = fuzzy match(regex)
     //* Filter = exact match
 
-    const getAllTour = await Tour.find(queryField).find(filter).sort(sortField);
+    const getAllTour = await Tour.find(queryField).find(filter).sort(sort).select(fields)
     const totalTour = await Tour.countDocuments();
 
     return {
