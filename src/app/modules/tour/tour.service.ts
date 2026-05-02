@@ -31,7 +31,7 @@ const getAllTour = async (query: Record<string, string>) => {
     const searchTerm = query.searchTerm || " ";
     const sort = query.sort || "-createdAt";
     const fields = query.fields.split(",").join(" ").split("-").join(" ")|| " ";
-    console.log(filter);
+
 
     
 
@@ -51,7 +51,7 @@ const getAllTour = async (query: Record<string, string>) => {
     //* Search = fuzzy match(regex)
     //* Filter = exact match
 
-    const getAllTour = await Tour.find(queryField).find(filter).sort(sort).select(fields)
+    const getAllTour = await Tour.find(queryField).find(filter).sort(sort).select(fields).limit(4)
     const totalTour = await Tour.countDocuments();
 
     return {
