@@ -27,9 +27,24 @@ const getALlDivision = catchAsync(async(req:Request, res:Response, next:NextFunc
 
     sendResponse(res, {
       success: true,
-      statusCode: httpStatus.CREATED,
+      statusCode: httpStatus.ACCEPTED,
       message: "user retrived successfully",
       data: allDivision,
+    })
+})
+
+//*================= getAll division =====================
+
+const getSingleDivision = catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+
+  const slug = req.params.slug as string
+  const singleDivision = await DivisionServices.getSingleDivision(slug)
+
+    sendResponse(res, {
+      success: true,
+      statusCode: httpStatus.ACCEPTED,
+      message: "user retrived successfully",
+      data: singleDivision,
     })
 })
 

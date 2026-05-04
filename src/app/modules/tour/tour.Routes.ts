@@ -26,6 +26,11 @@ router.get(
   "/",
   TourController.getAllTour,
 );
+//*=========== get single tour ============
+router.get(
+  "/:slug",
+  TourController.getSingleTour,
+);
 
 //*=========== update tour ============
 router.patch(
