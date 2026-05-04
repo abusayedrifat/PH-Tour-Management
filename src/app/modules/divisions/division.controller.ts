@@ -27,9 +27,24 @@ const getALlDivision = catchAsync(async(req:Request, res:Response, next:NextFunc
 
     sendResponse(res, {
       success: true,
-      statusCode: httpStatus.CREATED,
-      message: "user retrived successfully",
+      statusCode: httpStatus.ACCEPTED,
+      message: "division retrived successfully",
       data: allDivision,
+    })
+})
+
+//*================= getAll division =====================
+
+const getSingleDivision = catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+
+  const slug = req.params.slug as string
+  const singleDivision = await DivisionServices.getSingleDivision(slug)
+
+    sendResponse(res, {
+      success: true,
+      statusCode: httpStatus.ACCEPTED,
+      message: "division retrived successfully",
+      data: singleDivision,
     })
 })
 
@@ -44,7 +59,7 @@ const updateDivision = catchAsync(async(req:Request, res:Response, next:NextFunc
     sendResponse(res, {
       success: true,
       statusCode: httpStatus.CREATED,
-      message: "user updated successfully",
+      message: "division updated successfully",
       data: updateDivision,
     })
 })
@@ -60,7 +75,7 @@ const deleteDivision = catchAsync(async(req:Request, res:Response, next:NextFunc
     sendResponse(res, {
       success: true,
       statusCode: httpStatus.CREATED,
-      message: "user deleted successfully",
+      message: "division deleted successfully",
       data: deleteDivision,
     })
 })
@@ -70,5 +85,6 @@ export const DivisionController = {
     createDivision,
     getALlDivision,
     updateDivision,
-    deleteDivision
+    deleteDivision,
+    getSingleDivision
 }

@@ -23,6 +23,12 @@ router.get(
   DivisionController.getALlDivision,
 );
 
+router.get(
+  "/:slug",
+  checkAuthorization(Role.ADMIN, Role.SUPER_ADMIN),
+  DivisionController.getSingleDivision,
+);
+
 router.patch(
   "/:id",
   checkAuthorization(Role.ADMIN, Role.SUPER_ADMIN),
