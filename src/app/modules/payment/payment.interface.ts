@@ -13,7 +13,7 @@ export enum PaymentStatus {
 
 export interface IPayment {
     booking: Types.ObjectId,
-    transactioId: string,
+    transactionId: string,
     amount: number,
     paymentGateway: any,
     invoiceUrl?: string,
