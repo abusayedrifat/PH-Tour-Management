@@ -5,6 +5,7 @@ import { BookingStatus, IBooking } from "./booking.interface";
 import { Booking } from "./booking.model";
 import { Payment } from "../payment/payment.model";
 import { PaymentStatus } from "../payment/payment.interface";
+import { Tour } from "../tour/tour.model";
 
 const getTransactionId = () => {
     const date = Date.now();
@@ -16,32 +17,118 @@ const getTransactionId = () => {
 };
 
 const createBooking = async (payload: Partial<IBooking>, userID: string) => {
-    const user = await User.findById(userID);
-    const  transactionId = getTransactionId()
+  const transactionId = getTransactionId();
 
-    if (!user?.phone || !user.address) {
-        throw new AppError(
-            httpStatus.BAD_REQUEST,
-            "kindly update ur phone number and address at ur profile",
-            "",
-        );
-    }
-    const booking = Booking.create({
-        user: userID,
-        status: BookingStatus.PENDEING,
-        ...payload,
-    });
+  // Use userID from token, not from payload
+  const user = await User.findById(userID);
+console.log("Phone:", user?.phone);
+console.log("Address:", user?.address);
+  if (!user?.phone || !user?.address) {
+    throw new AppError(
+      httpStatus.BAD_REQUEST,
+      "Kindly update your phone number and address in your profile",
+      "",
+    );
+  }
 
-    const payment = await Payment.create({
-        booking: (await booking)._id,
-        status: PaymentStatus.UNPAID,
-        transactionId: transactionId
+  const tour = await Tour.findById(payload.tour).select("costFrom");
 
-    })
+  // ✅ Fixed: was missing the `!`
+  if (!tour?.costFrom) {
+    throw new AppError(httpStatus.BAD_REQUEST, "costFrom not found", "");
+  }
 
-    return booking;
+  const amount = (tour.costFrom as number) * (payload.guest as number);
+
+  const booking = await Booking.create({
+    user: userID, // ✅ Always use the authenticated userID
+    status: BookingStatus.PENDEING,
+    ...payload,
+  });
+
+  const payment = await Payment.create({
+    booking: booking._id,
+    status: PaymentStatus.UNPAID,
+    transactionId: transactionId,
+    amount: amount,
+  });
+
+  const updateBooking = await Booking.findByIdAndUpdate(
+    booking._id,
+    { payment: payment._id },
+    { new: true, runValidators: true }
+  );
+
+  return updateBooking;
 };
+// const createBooking = async (payload: Partial<IBooking>, id: string) => {
+//     const user = await User.findById(id);
+//     console.log('from booking',user);
+    
+//     const  transactionId = getTransactionId()
+
+//     if (!user?.phone || !user?.address) {
+//         throw new AppError(
+//             httpStatus.BAD_REQUEST,
+//             "kindly update ur phone number and address at ur profile",
+//             "",
+//         );
+//     }
+//     const tour = await Tour.findById(payload.tour).select("costFrom")
+
+//     if (!tour?.costFrom) {
+//         throw new AppError(httpStatus.BAD_REQUEST, 'costFfrom not found','')
+//     }
+
+
+
+//     const amount = (tour?.costFrom as number) * (payload.guest as number)
+
+//     const booking = await Booking.create({
+//         user: id,
+//         status: BookingStatus.PENDEING,
+//         ...payload,
+//     });
+
+//     const payment = await Payment.create({
+//         booking: booking._id,
+//         status: PaymentStatus.UNPAID,
+//         transactionId: transactionId,
+//         amount: amount
+
+//     })
+//     const updateBooking = await Booking.findByIdAndUpdate(
+//         booking._id,
+//         {payment: payment._id},
+//         { new:true, runValidators:true}
+//     )
+
+//     return updateBooking
+// };
+
+
+const getAllBooking = async() =>{
+    const allBooking = await Booking.find({})
+    return allBooking
+}
+const getSingleBooking = async(id:string) =>{
+
+    const singleBooking = await Booking.findById({id})
+    return singleBooking
+}
+const getUserBooking = async(id:string) =>{
+
+    const userBooking = await Booking.findById({id})
+    return userBooking
+}
+
+
+
 
 export const BookingServices = {
     createBooking,
+    getAllBooking,
+    getSingleBooking,
+    getUserBooking
+
 };

@@ -2,12 +2,15 @@ import { Router } from "express";
 import { checkAuthorization } from "../../middlewares/checkAuthorization";
 import { Role } from "../user/user.interface";
 import { BookingController } from "./booking.controller";
+import { validateRequest } from "../../middlewares/validateRequest";
+import { createBookingZodSchema } from "./booking.validation";
 
 const router = Router();
 
 router.post(
   "/",
   checkAuthorization(...Object.values(Role)),
+  validateRequest(createBookingZodSchema),
   BookingController.createBooking,
 );
 
@@ -30,11 +33,11 @@ router.get(
 );
 
 
-router.patch(
-  "/:bookingId/status",
-  checkAuthorization(...Object.values(Role)),
-  BookingController.updateBooking,
-);
+// router.patch(
+//   "/:bookingId/status",
+//   checkAuthorization(...Object.values(Role)),
+//   BookingController.,
+// );
 
 
 // router.delete("/:id");

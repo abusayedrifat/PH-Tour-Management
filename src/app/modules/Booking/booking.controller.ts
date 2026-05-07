@@ -4,11 +4,15 @@ import { NextFunction, Request, Response } from "express"
 import catchAsync from "../../utils/catchAsync"
 import { sendResponse } from "../../utils/sendResponse"
 import { BookingServices } from './booking.service';
+import { JwtPayload } from 'jsonwebtoken';
 
 //*================== create booking =======================
 const createBooking = (catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
-    const booking = await BookingServices.createBooking(req.body)
+    const decodedToken = req.user as  JwtPayload
+    console.log('from booking controller',decodedToken);
+    
+    const booking = await BookingServices.createBooking(req.body, decodedToken.id)
 
     sendResponse(res, {
         success: true,
@@ -20,10 +24,10 @@ const createBooking = (catchAsync(async (req: Request, res: Response, next: Next
 
 
 
-//*================== get booking =======================
+//*================== get all booking =======================
 const getAllBooking = (catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
-    const booking = await BookingServices.createBooking(req.body)
+    const booking = await BookingServices.getAllBooking()
     sendResponse(res, {
         success: true,
         statusCode: httpStatus.CREATED,
@@ -33,8 +37,8 @@ const getAllBooking = (catchAsync(async (req: Request, res: Response, next: Next
 }))
 //*================== get single booking =======================
 const getSingleBooking = (catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-
-    const booking = await BookingServices.createBooking(req.body)
+    const id = req.params.id as string
+    const booking = await BookingServices.getSingleBooking(id)
     sendResponse(res, {
         success: true,
         statusCode: httpStatus.CREATED,
@@ -45,7 +49,8 @@ const getSingleBooking = (catchAsync(async (req: Request, res: Response, next: N
 //*================== get user booking =======================
 const getUserBooking = (catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
-    const booking = await BookingServices.createBooking(req.body)
+    const decodedToken = req.body
+    const booking = await BookingServices.getUserBooking(decodedToken)
     sendResponse(res, {
         success: true,
         statusCode: httpStatus.CREATED,
@@ -56,17 +61,17 @@ const getUserBooking = (catchAsync(async (req: Request, res: Response, next: Nex
 
 
 
-//*================== update booking =======================
-const updateBooking = (catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+// //*================== update booking =======================
+// const updateBooking = (catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
-    const booking = await BookingServices.createBooking(req.body)
-    sendResponse(res, {
-        success: true,
-        statusCode: httpStatus.CREATED,
-        message: "division updated successfully",
-        data: booking
-    })
-}))
+//     const booking = await BookingServices.createBooking(req.body)
+//     sendResponse(res, {
+//         success: true,
+//         statusCode: httpStatus.CREATED,
+//         message: "division updated successfully",
+//         data: booking
+//     })
+// }))
 
 
 
@@ -88,6 +93,6 @@ export const BookingController = {
     getAllBooking,
     getSingleBooking,
     getUserBooking,
-    updateBooking,
+    // updateBooking,
     // deleteBooking
 }
