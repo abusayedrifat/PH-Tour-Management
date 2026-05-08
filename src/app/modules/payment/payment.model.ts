@@ -34,7 +34,7 @@ const paymentSchema = new Schema<IPayment>({
     timestamps:true,
     versionKey:false,
 })
-//*document must have an _id before saving. if i set _id:false, then,
+//* _id:flase only applied at sub-schema not in main one schema
 
 export const Payment = model("Payment", paymentSchema )
 
