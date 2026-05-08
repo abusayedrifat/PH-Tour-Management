@@ -32,8 +32,9 @@ const credentialsLogIn = catchAsync(
 
       const userTokens = createUserTokens(user);
 
-    const { password: pass, ...rest } = user.toObject();
-
+      const { password: pass, ...rest } = user.toObject();
+      console.log("from authControoller: jwtpayload",rest);
+      
       setAuthCookie(res, userTokens)
 
       sendResponse(res, {

@@ -26,8 +26,7 @@ const bookingSchema = new Schema<IBooking>({
     }
 },{
     timestamps:true,
-    versionKey:false,
-    _id:false
+    versionKey:false
 })
 
 

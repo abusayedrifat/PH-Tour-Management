@@ -33,9 +33,8 @@ const paymentSchema = new Schema<IPayment>({
 },{
     timestamps:true,
     versionKey:false,
-    _id:false
 })
-
+//*document must have an _id before saving. if i set _id:false, then,
 
 export const Payment = model("Payment", paymentSchema )
 

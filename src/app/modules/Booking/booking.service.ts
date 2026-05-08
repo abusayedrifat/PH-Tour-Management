@@ -21,8 +21,9 @@ const createBooking = async (payload: Partial<IBooking>, userID: string) => {
 
   // Use userID from token, not from payload
   const user = await User.findById(userID);
-console.log("Phone:", user?.phone);
-console.log("Address:", user?.address);
+  if (!user) {
+    throw new AppError(httpStatus.UNAUTHORIZED, 'user not matched.kindly logOut and logIn again','')
+  }
   if (!user?.phone || !user?.address) {
     throw new AppError(
       httpStatus.BAD_REQUEST,
@@ -31,9 +32,10 @@ console.log("Address:", user?.address);
     );
   }
 
+  
   const tour = await Tour.findById(payload.tour).select("costFrom");
 
-  // ✅ Fixed: was missing the `!`
+
   if (!tour?.costFrom) {
     throw new AppError(httpStatus.BAD_REQUEST, "costFrom not found", "");
   }
@@ -41,10 +43,13 @@ console.log("Address:", user?.address);
   const amount = (tour.costFrom as number) * (payload.guest as number);
 
   const booking = await Booking.create({
-    user: userID, // ✅ Always use the authenticated userID
+    user: userID,
     status: BookingStatus.PENDEING,
-    ...payload,
+    ...payload
   });
+
+  console.log('from booking creating',booking.user);
+  
 
   const payment = await Payment.create({
     booking: booking._id,
@@ -61,50 +66,6 @@ console.log("Address:", user?.address);
 
   return updateBooking;
 };
-// const createBooking = async (payload: Partial<IBooking>, id: string) => {
-//     const user = await User.findById(id);
-//     console.log('from booking',user);
-    
-//     const  transactionId = getTransactionId()
-
-//     if (!user?.phone || !user?.address) {
-//         throw new AppError(
-//             httpStatus.BAD_REQUEST,
-//             "kindly update ur phone number and address at ur profile",
-//             "",
-//         );
-//     }
-//     const tour = await Tour.findById(payload.tour).select("costFrom")
-
-//     if (!tour?.costFrom) {
-//         throw new AppError(httpStatus.BAD_REQUEST, 'costFfrom not found','')
-//     }
-
-
-
-//     const amount = (tour?.costFrom as number) * (payload.guest as number)
-
-//     const booking = await Booking.create({
-//         user: id,
-//         status: BookingStatus.PENDEING,
-//         ...payload,
-//     });
-
-//     const payment = await Payment.create({
-//         booking: booking._id,
-//         status: PaymentStatus.UNPAID,
-//         transactionId: transactionId,
-//         amount: amount
-
-//     })
-//     const updateBooking = await Booking.findByIdAndUpdate(
-//         booking._id,
-//         {payment: payment._id},
-//         { new:true, runValidators:true}
-//     )
-
-//     return updateBooking
-// };
 
 
 const getAllBooking = async() =>{
