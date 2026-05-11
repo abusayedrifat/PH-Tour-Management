@@ -8,6 +8,7 @@ import { Booking } from "./booking.model";
 import { Payment } from "../payment/payment.model";
 import { PaymentStatus } from "../payment/payment.interface";
 import { Tour } from "../tour/tour.model";
+import { sslService } from "../sslcommerz/sslcommerz.service";
 
 const getTransactionId = () => {
   const date = Date.now();
@@ -72,18 +73,42 @@ const createBooking = async (payload: Partial<IBooking>, userID: string) => {
     }],{session});
 
     const updateBooking = await Booking.findByIdAndUpdate(
-      booking[0]._id,
-      { payment: payment[0]._id },
+        booking[0]._id,
+        { 
+        payment: payment[0]._id 
+      },
       { new: true, runValidators: true ,session},
       
     ).populate("user", "name email phone address")
       .populate("tour", "title costFrom")
       .populate("payment")
 
+      const userName = ( updateBooking?.user as any).name
+      const userEmail = ( updateBooking?.user as any).email
+      const userPhoneNumber = ( updateBooking?.user as any).phone
+      const userAddress= ( updateBooking?.user as any).address
+
+      const sslPayload = {
+         name: userName,
+        email:userEmail ,
+        address: userAddress,
+        phoneNumber: userPhoneNumber,
+        amount: amount,
+        transactionId:transactionId ,
+      }
+
+      const sslPayment= await sslService.sslPaymentInit(sslPayload)
+      console.log(sslPayment);
+      
+
       await session.commitTransaction()
       session.endSession()
 
-    return updateBooking
+
+    return {
+      booking: updateBooking,
+      paymentUrl: sslPayment.GatewayPageURL
+    }
 
   } catch (error:any) {
     
