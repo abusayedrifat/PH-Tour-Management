@@ -1,3 +1,4 @@
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import bcrypt from "bcryptjs";
@@ -7,6 +8,7 @@ import { User } from "./user.model";
 import httpStatus from "http-status-codes";
 import { envVars } from "../../config/env";
 import { JwtPayload } from "jsonwebtoken";
+import { deleteImageFromCloudinary } from "../../config/cloudinary.config";
 
 //*======== create user ====================================
 const createUser = async (payload: Partial<IUser>) => {
@@ -52,11 +54,16 @@ const getAllUsers = async () => {
 //*==============Update User ===========================
 
 const updateUser = async (
-    userId: string,
+    _id: string,
     payload: Partial<IUser>,
     decodedToken: JwtPayload,
 ) => {
-    const isUserExist = await User.findById(userId);
+
+    console.log(payload.picture);
+    
+    const isUserExist = await User.findById({_id});
+    console.log('fromuser service',_id);
+    
 
     if (!isUserExist) {
         throw new AppError(httpStatus.NOT_FOUND, "This user not found", "");
@@ -91,10 +98,14 @@ const updateUser = async (
         );
     }
 
-    const newUpdatedUser = await User.findByIdAndUpdate(userId, payload, {
+    const newUpdatedUser = await User.findByIdAndUpdate(_id, payload, {
         new: true,
         runValidators: true,
     });
+
+    if (payload.picture && isUserExist.picture) {
+        await deleteImageFromCloudinary(isUserExist.picture)
+    }
 
     return newUpdatedUser;
 };

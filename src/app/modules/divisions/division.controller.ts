@@ -4,12 +4,25 @@ import { NextFunction, Request, Response } from "express";
 import catchAsync from "../../utils/catchAsync";
 import { sendResponse } from "../../utils/sendResponse";
 import { DivisionServices } from './division.service';
+import { IDivisions } from './division.interface';
+import AppError from '../../errorHelper/AppError';
 
 
 const createDivision = catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
 
-  const division = await DivisionServices.createDivision(req.body)
 
+  console.log({
+    file: req.file,
+    data: req.body
+  });
+  
+  const payload:IDivisions ={
+    ...req.body,
+    thumbnail: req.file?.path
+  } 
+  const division = await DivisionServices.createDivision(payload)
+  
+  
     sendResponse(res, {
       success: true,
       statusCode: httpStatus.CREATED,
@@ -54,7 +67,10 @@ const getSingleDivision = catchAsync(async(req:Request, res:Response, next:NextF
 const updateDivision = catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
 
   const id = req.params.id as string
-  const payload = req.body
+  const payload:IDivisions = {
+    ...req.body,
+    thumbnail: req.file?.path
+  }
   const updateDivision = await DivisionServices.updateDivision(id , payload)
     sendResponse(res, {
       success: true,

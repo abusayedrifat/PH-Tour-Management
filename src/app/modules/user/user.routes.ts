@@ -5,6 +5,7 @@ import { validateRequest } from "../../middlewares/validateRequest";
 import { Router } from "express";
 import { checkAuthorization } from "../../middlewares/checkAuthorization";
 import { Role } from "./user.interface";
+import { multerUpload } from "../../config/multer.config";
 
 const router = Router();
 
@@ -12,6 +13,7 @@ const router = Router();
 
 router.post(
     "/register",
+    multerUpload.single("file"),
     validateRequest(createUserZodSchema),
     UserControllers.createUser,
 );
@@ -24,8 +26,9 @@ router.get(
 );
 
 router.patch("/:id",
-     validateRequest(updateUserZodSchema),
     checkAuthorization(...Object.values(Role)),
+    multerUpload.single("file"),
+    validateRequest(updateUserZodSchema),
     UserControllers.updateUser
 )
 

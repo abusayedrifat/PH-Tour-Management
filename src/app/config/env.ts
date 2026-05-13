@@ -27,7 +27,10 @@ interface EnvConfig {
   SSLCOMMERZ_CANCEL_BACKEND_URL: string,
   SSLCOMMERZ_SUCCESS_FRONTEND_URL: string,
   SSLCOMMERZ_FAIL_FRONTEND_URL: string,
-  SSLCOMMERZ_CANCEL_FRONTEND_URL: string
+  SSLCOMMERZ_CANCEL_FRONTEND_URL: string,
+  CLOUDINARY_CLOUD_NAME: string,
+  CLOUDINARY_CLOUD_API_KEY: string,
+  CLOUDINARY_CLOUD_API_SECRET: string,
 }
 
 const loadEnvVariables = (): EnvConfig => {
@@ -56,7 +59,10 @@ const loadEnvVariables = (): EnvConfig => {
     "SSLCOMMERZ_CANCEL_BACKEND_URL",
     "SSLCOMMERZ_SUCCESS_FRONTEND_URL",
     "SSLCOMMERZ_FAIL_FRONTEND_URL",
-    "SSLCOMMERZ_CANCEL_FRONTEND_URL"
+    "SSLCOMMERZ_CANCEL_FRONTEND_URL",
+    "CLOUDINARY_CLOUD_NAME",
+    "CLOUDINARY_CLOUD_API_KEY",
+    "CLOUDINARY_CLOUD_API_SECRET",
   ];
 
   requiredVariables.forEach((key) => {
@@ -66,14 +72,14 @@ const loadEnvVariables = (): EnvConfig => {
   });
 
   return {
-    PORT: process.env.PORT as string,
+    BCRYPT_SALT_ROUND: process.env.BCRYPT_SALT_ROUND as string,
     DB_URL: process.env.DB_URL as string,
     NODE_ENV: process.env.NODE_ENV as "development" | "production",
-    BCRYPT_SALT_ROUND: process.env.BCRYPT_SALT_ROUND as string,
     JWT_ACCESS_SECRET: process.env.JWT_ACCESS_SECRET as string,
     JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN as string,
     JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET as string,
     JWT_REFRESH_IN: process.env.JWT_REFRESH_IN as string,
+    PORT: process.env.PORT as string,
     SUPER_ADMIN_PASSWORD: process.env.SUPER_ADMIN_PASSWORD as string,
     SUPER_ADMIN_EMAIL: process.env.SUPER_ADMIN_EMAIL as string,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID as string,
@@ -90,8 +96,10 @@ const loadEnvVariables = (): EnvConfig => {
     SSLCOMMERZ_CANCEL_BACKEND_URL: process.env.SSLCOMMERZ_CANCEL_BACKEND_URL as string,
     SSLCOMMERZ_SUCCESS_FRONTEND_URL: process.env.SSLCOMMERZ_SUCCESS_FRONTEND_URL as string,
     SSLCOMMERZ_FAIL_FRONTEND_URL: process.env.SSLCOMMERZ_FAIL_FRONTEND_URL as string,
-    SSLCOMMERZ_CANCEL_FRONTEND_URL: process.env.SSLCOMMERZ_CANCEL_FRONTEND_URL as string
-
+    SSLCOMMERZ_CANCEL_FRONTEND_URL: process.env.SSLCOMMERZ_CANCEL_FRONTEND_URL as string,
+    CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME as string,
+    CLOUDINARY_CLOUD_API_KEY: process.env.CLOUDINARY_CLOUD_API_KEY as string,
+    CLOUDINARY_CLOUD_API_SECRET: process.env.CLOUDINARY_CLOUD_API_SECRET as string,
   };
 };
 
