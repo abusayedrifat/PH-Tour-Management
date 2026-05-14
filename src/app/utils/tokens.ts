@@ -11,6 +11,8 @@ export const createUserTokens = (user: Partial<IUser>) => {
         id: user._id,
         email: user.email,
         role: user.role,
+        phone: user.phone,
+        auths: user.auths
     };
 
     const accessToken = generateToken(
@@ -95,6 +97,8 @@ export const createNewAccessTokenWithRefreshToken = async (
         email: isUserExists.email,
         role: isUserExists.role,
         id: isUserExists._id,
+        phone: isUserExists.phone
+
     };
 
     const accessToken = generateToken(

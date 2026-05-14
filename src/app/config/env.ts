@@ -31,6 +31,11 @@ interface EnvConfig {
   CLOUDINARY_CLOUD_NAME: string,
   CLOUDINARY_CLOUD_API_KEY: string,
   CLOUDINARY_CLOUD_API_SECRET: string,
+  SMTP_HOST: string,
+  SMTP_PORT: string,
+  SMTP_USER: string,
+  SMTP_PASS: string,
+  SMTP_FROM: string,
 }
 
 const loadEnvVariables = (): EnvConfig => {
@@ -63,6 +68,11 @@ const loadEnvVariables = (): EnvConfig => {
     "CLOUDINARY_CLOUD_NAME",
     "CLOUDINARY_CLOUD_API_KEY",
     "CLOUDINARY_CLOUD_API_SECRET",
+    "SMTP_HOST",
+    "SMTP_PORT",
+    "SMTP_USER",
+    "SMTP_PASS",
+    "SMTP_FROM"
   ];
 
   requiredVariables.forEach((key) => {
@@ -100,6 +110,11 @@ const loadEnvVariables = (): EnvConfig => {
     CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME as string,
     CLOUDINARY_CLOUD_API_KEY: process.env.CLOUDINARY_CLOUD_API_KEY as string,
     CLOUDINARY_CLOUD_API_SECRET: process.env.CLOUDINARY_CLOUD_API_SECRET as string,
+    SMTP_HOST: process.env.SMTP_HOST as string,
+    SMTP_PORT: process.env.SMTP_PORT as string,
+    SMTP_USER: process.env.SMTP_USER as string,
+    SMTP_PASS: process.env.SMTP_PASS as string,
+    SMTP_FROM: process.env.SMTP_FROM as string,
   };
 };
 

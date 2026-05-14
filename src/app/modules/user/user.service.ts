@@ -51,6 +51,17 @@ const getAllUsers = async () => {
     };
 };
 
+//*============== get Me =============================
+const getMe = async (id:string) => {
+    const user = await User.findById(id);
+    console.log("from get me service",user);
+    
+    return {
+        data: user,
+       
+    };
+};
+
 //*==============Update User ===========================
 
 const updateUser = async (
@@ -114,4 +125,5 @@ export const UserServices = {
     createUser,
     getAllUsers,
     updateUser,
+    getMe
 };

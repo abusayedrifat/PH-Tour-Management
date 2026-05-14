@@ -38,6 +38,9 @@ const getALlDivision = catchAsync(async(req:Request, res:Response, next:NextFunc
 
   const allDivision = await DivisionServices.getAllDivision()
 
+  // console.log('from devision.controller.ts,',req);
+  console.log('from devision.controller.ts,',req.user);
+  
     sendResponse(res, {
       success: true,
       statusCode: httpStatus.ACCEPTED,
