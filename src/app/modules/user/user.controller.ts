@@ -10,6 +10,7 @@ import { sendResponse } from "../../utils/sendResponse";
 import { verifyToken } from "../../utils/jwt";
 import { envVars } from "../../config/env";
 import { JwtPayload } from "jsonwebtoken";
+import { IUser } from "./user.interface";
 
 // const createUser = async (req: Request, res: Response, next: NextFunction) => {
 //   try {
@@ -28,7 +29,11 @@ import { JwtPayload } from "jsonwebtoken";
 
 const createUser = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const user = await UserServices.createUser(req.body);
+    const payload:IUser = {
+      ...req.body,
+      picture:req.file
+    }
+    const user = await UserServices.createUser(payload);
 
     sendResponse(res, {
       success: true,
@@ -57,6 +62,24 @@ const getALlUsers = catchAsync(
     });
   },
 );
+const getMe = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const user = req.user as JwtPayload
+    const result = await UserServices.getMe(user.id)
+
+    // res.status(httpStatus.ACCEPTED).json({
+    //   success: true,
+    //   user,
+    // });
+
+    sendResponse(res, {
+      success: true,
+      statusCode: httpStatus.CREATED,
+      message: "Your profile retrived successfully",
+      data: result.data,
+    });
+  },
+);
 
 const updateUser = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
@@ -64,7 +87,10 @@ const updateUser = catchAsync(async (req: Request, res: Response, next: NextFunc
     // const token = req.headers.authorization;
     // const verifiedToken = verifyToken(token as string, envVars.JWT_ACCESS_SECRET) as JwtPayload;
     const varifiedToken = req.user
-    const payload = req.body;
+    const payload:IUser= {
+      ...req.body,
+      picture:req.file?.path
+    };
     const user = await UserServices.updateUser(userId as string,payload, varifiedToken as JwtPayload) 
 
     sendResponse(res, {
@@ -78,5 +104,6 @@ const updateUser = catchAsync(async (req: Request, res: Response, next: NextFunc
 export const UserControllers = {
   createUser,
   getALlUsers,
-  updateUser
+  updateUser,
+  getMe
 };

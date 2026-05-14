@@ -67,7 +67,10 @@ export const createZodTour = z.object({
     tourType: z
         .string(),
     division: z
-        .string()
+        .string(),
+    deleteImages: z
+        .array(z.string())
+        .optional()
 
 
 })
@@ -129,7 +132,9 @@ export const updateZodTour = z.object({
         .optional(),
     divisions: z
         .string()
+        .optional(),
+deleteImages: z
+        .array(z.string())
         .optional()
-
 
 })

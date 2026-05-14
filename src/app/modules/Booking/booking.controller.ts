@@ -17,7 +17,7 @@ const createBooking = (catchAsync(async (req: Request, res: Response, next: Next
     sendResponse(res, {
         success: true,
         statusCode: httpStatus.CREATED,
-        message: "division updated successfully",
+        message: "booking created successfully",
         data: booking
     })
 }))

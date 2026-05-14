@@ -28,7 +28,11 @@ export const checkAuthorization = (...authRoles: string[]) => async(req:Request,
             if (!isUserExists) {
                 throw new AppError(httpStatus.BAD_REQUEST, "user does not exist", "");
             }
-        
+            
+           if (!isUserExists.isVarified) {
+            throw new AppError(httpStatus.BAD_REQUEST, "user is not verified", "");
+           }
+
             if (
                 isUserExists.isActive === IsActive.BLOCKED ||
                 isUserExists.isActive === IsActive.INACTIVE
@@ -44,10 +48,9 @@ export const checkAuthorization = (...authRoles: string[]) => async(req:Request,
                 throw new AppError(httpStatus.BAD_REQUEST, "user is deleted", "");
             }
         
-        
-        if (!authRoles.includes(verifiedToken.role)) {
-            throw new AppError(403, "you are not paermitted to see this route", '')
-        }
+            if (!authRoles.includes(verifiedToken.role)) {
+                    throw new AppError(403, "you are not paermitted to see this route", '')
+                }
 
         req.user = verifiedToken
         

@@ -4,6 +4,8 @@ import { NextFunction, Request, Response } from "express";
 import catchAsync from "../../utils/catchAsync";
 import { sendResponse } from "../../utils/sendResponse";
 import { TourServices, TourTypeServices } from './tour.service';
+import { ITour } from './tour.interface';
+import AppError from '../../errorHelper/AppError';
 
 
 
@@ -11,8 +13,13 @@ import { TourServices, TourTypeServices } from './tour.service';
 //todo--> ============= TOUR controller ================================
 const createTour = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
-      const tour = await TourServices.createTour(req.body)
-
+      const payload: ITour = {
+            ...req.body,
+            images: (req.files as Express.Multer.File[]).map(file=> file.path)
+      }
+      console.log('from controller',payload);
+      
+      const tour = await TourServices.createTour(payload)
       sendResponse(res, {
             success: true,
             statusCode: httpStatus.CREATED,
@@ -21,7 +28,7 @@ const createTour = catchAsync(async (req: Request, res: Response, next: NextFunc
       })
 })
 
-//*================= getAll tour type =====================
+//*================= getAll tour  =====================
 const getAllTour = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
       const query = req.query as Record<string, string>
@@ -34,7 +41,7 @@ const getAllTour = catchAsync(async (req: Request, res: Response, next: NextFunc
       })
 })
 
-//*================= getAll tour type =====================
+//*================= getAll tour  =====================
 const getSingleTour = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
       const query = req.params.slug  as string
@@ -47,12 +54,17 @@ const getSingleTour = catchAsync(async (req: Request, res: Response, next: NextF
       })
 })
 
-//*================= update tour type =====================
+//*================= update tour  =====================
 
 const updateTour = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
       const id = req.params.id as string
-      const payload = req.body
+      const payload: ITour = {
+            ...req.body,
+            images:(req.files as Express.Multer.File[]).map(file=> file.path)
+      }
+      console.log("payload from TourController",payload);
+      
       const updateTour = await TourServices.updateTour(id, payload)
       sendResponse(res, {
             success: true,
@@ -62,7 +74,7 @@ const updateTour = catchAsync(async (req: Request, res: Response, next: NextFunc
       })
 })
 
-//*================= delete tour type =====================
+//*================= delete tour  =====================
 const deleteTour = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
       const id = req.params.id as string
@@ -71,8 +83,8 @@ const deleteTour = catchAsync(async (req: Request, res: Response, next: NextFunc
 
       sendResponse(res, {
             success: true,
-            statusCode: httpStatus.CREATED,
-            message: "tour type created successfully",
+            statusCode: httpStatus.OK,
+            message: "tour deleted successfully",
             data: deleteTour,
       })
 })

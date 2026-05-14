@@ -8,9 +8,10 @@ import { handleCastError } from "../helpers/handleCastError";
 import { handleZodError } from "../helpers/handleZodError";
 import { handleValidationError } from "../helpers/handleValidationError";
 import { envVars } from "../config/env";
+import { deleteImageFromCloudinary } from "../config/cloudinary.config";
 
 
-export const globalErrorHandler = (
+export const globalErrorHandler =async (
     err: any,
     req: Request,
     res: Response,
@@ -20,6 +21,19 @@ export const globalErrorHandler = (
      * mongoose
      * - duplicate key error
      */
+
+
+    if(req.file){
+        await deleteImageFromCloudinary(req.file.path)
+    }
+
+    if (req.files && req.files.length ) {
+        const imageUrls = (req.files as Express.Multer.File[]).map(file=> file.path)
+
+        // await Promise.all(imageUrls.map(url=> deleteImageFromCloudinary(url)))
+
+         imageUrls.map(url=> deleteImageFromCloudinary(url))
+    }
 
     let errorSources: any = [];
     let statusCode = 500;

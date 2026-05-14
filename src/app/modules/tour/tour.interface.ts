@@ -23,6 +23,7 @@ export interface ITour {
     arriveLocation?:string,
     tourType:Types.ObjectId,
     division: Types.ObjectId,
+    deleteImages?: string[]
 
 }
 

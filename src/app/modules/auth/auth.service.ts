@@ -1,14 +1,12 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { envVars } from './../../config/env';
+import { envVars } from "./../../config/env";
 import bcrypt from "bcryptjs";
 import httpStatus from "http-status-codes";
 import AppError from "../../errorHelper/AppError";
 import { User } from "../user/user.model";
-import {
-    createNewAccessTokenWithRefreshToken,
-   
-} from "../../utils/tokens";
+import { createNewAccessTokenWithRefreshToken } from "../../utils/tokens";
 import { JwtPayload } from "jsonwebtoken";
+import { IAuthProvider } from "../user/user.interface";
 
 //* we managed this credentialsLogIn through passport js in AuthController
 // const crendentialsLogIn = async (payload: Partial<IUser>) => {
@@ -58,34 +56,84 @@ import { JwtPayload } from "jsonwebtoken";
 //*=========== get new access token ========================
 
 const getNewAccessToken = async (refreshToken: string) => {
+  const newAccessToken =
+    await createNewAccessTokenWithRefreshToken(refreshToken);
 
-    const newAccessToken = await createNewAccessTokenWithRefreshToken(refreshToken);
-
-    return newAccessToken
+  return newAccessToken;
 };
 
+//* ==================== change password ===================
 
+const changePassword = async (
+  oldPassword: string,
+  newPassword: string,
+  decodedToken: JwtPayload,
+) => {
+  const user = await User.findById(decodedToken.id);
+
+  const isOldPasswordMatch = bcrypt.compare(
+    oldPassword,
+    user?.password as string,
+  );
+
+  if (!isOldPasswordMatch) {
+    throw new AppError(httpStatus.UNAUTHORIZED, "you are not authorized", "");
+  }
+
+  user!.password = await bcrypt.hash(
+    newPassword,
+    Number(envVars.BCRYPT_SALT_ROUND),
+  );
+
+  user!.save();
+};
 //* ==================== reset password ===================
 
-const resetPassword = async(oldPassword:string, newPassword:string, decodedToken: JwtPayload)=>{
+const resetPassword = async (
+  oldPassword: string,
+  newPassword: string,
+  decodedToken: JwtPayload,
+) => {
+  return {};
+};
+//* ==================== set password ===================
 
-    const user = await User.findById(decodedToken.id)
+const setPassword = async (userId: string, plainPassword: string) => {
+  const user = await User.findById(userId);
+  if (!user) {
+    throw new AppError(httpStatus.UNAUTHORIZED, "You are not authorized", "");
+  }
 
-    const isOldPasswordMatch = bcrypt.compare(oldPassword, user?.password as string)
+  if (user.password && user.auths.some((providerObject) => providerObject.provider === "google")) {
+    throw new AppError(
+      httpStatus.BAD_REQUEST,
+      "You already set your password. u cannot set password AggregationCursor. rather u can change or reset ur password",
+      "",
+    );
+  }
 
-    if (!isOldPasswordMatch) {
-        throw new AppError(httpStatus.UNAUTHORIZED,'you are not authorized','')
-    }
+  const hasedPassword = await bcrypt.hash(
+    plainPassword,
+    Number(envVars.BCRYPT_SALT_ROUND),
+  );
 
-    user!.password = await bcrypt.hash(newPassword, Number(envVars.BCRYPT_SALT_ROUND))
+  const credentialProvider: IAuthProvider ={
 
-    user!.save()
+    provider:"credentials",
+    providerId: user.email
+  }
 
+  const auth:IAuthProvider[] = [...user.auths , credentialProvider]
 
-}
+  user.password = hasedPassword
+  user.auths = auth
+
+  await user.save()
+};
 
 export const AuthServices = {
-  
-    getNewAccessToken,
-    resetPassword
+  getNewAccessToken,
+  resetPassword,
+  changePassword,
+  setPassword,
 };

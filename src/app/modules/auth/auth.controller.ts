@@ -15,27 +15,23 @@ import passport from "passport";
 
 const credentialsLogIn = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-
     // const clientLogInInfo = await AuthServices.crendentialsLogIn(req.body);
 
     passport.authenticate("local", async (err: any, user: any, info: any) => {
-
-
       if (err) {
-
-        return next(new AppError(401, err.message, ''))
+        return next(new AppError(401, err.message, ""));
       }
 
       if (!user) {
-        return next(new AppError(401, info.message, ''))
+        return next(new AppError(401, info.message, ""));
       }
 
       const userTokens = createUserTokens(user);
 
       const { password: pass, ...rest } = user.toObject();
-      console.log("from authControoller: jwtpayload",rest);
-      
-      setAuthCookie(res, userTokens)
+      console.log("from authControoller: jwtpayload", rest);
+
+      setAuthCookie(res, userTokens);
 
       sendResponse(res, {
         success: true,
@@ -44,30 +40,22 @@ const credentialsLogIn = catchAsync(
         data: {
           accessToken: userTokens.accessToken,
           refreshToken: userTokens.refreshToken,
-          user: rest
-        }
+          user: rest,
+        },
       });
-
-    })(req, res, next)
-
-
-
-
+    })(req, res, next);
   },
 );
 
-
 const getNewAccessToken = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-
-    const refreshToken = req.cookies.refreshToken
+    const refreshToken = req.cookies.refreshToken;
     if (!refreshToken) {
-      throw new AppError(httpStatus.BAD_REQUEST, 'refresh token not found', '')
-
+      throw new AppError(httpStatus.BAD_REQUEST, "refresh token not found", "");
     }
     const tokenInfo = await AuthServices.getNewAccessToken(refreshToken);
 
-    setAuthCookie(res, tokenInfo)
+    setAuthCookie(res, tokenInfo);
 
     sendResponse(res, {
       success: true,
@@ -81,9 +69,7 @@ const getNewAccessToken = catchAsync(
 //*==============logout================================
 const logout = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-
-
-    clearCookies(res)
+    clearCookies(res);
 
     sendResponse(res, {
       success: true,
@@ -94,16 +80,41 @@ const logout = catchAsync(
   },
 );
 
+//*=================== change password ===================
+
+const changePassword = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const oldPassword = req.body.oldPassword;
+    const newPassword = req.body.newPassword;
+    const decodedToken = req.user;
+
+    await AuthServices.resetPassword(
+      oldPassword,
+      newPassword,
+      decodedToken as JwtPayload,
+    );
+
+    sendResponse(res, {
+      success: true,
+      statusCode: httpStatus.ACCEPTED,
+      message: "password changed successfully",
+      data: null,
+    });
+  },
+);
 //*=================== reset password ===================
 
 const resetPassword = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-
     const oldPassword = req.body.oldPassword;
     const newPassword = req.body.newPassword;
-    const decodedToken = req.user
+    const decodedToken = req.user;
 
-    await AuthServices.resetPassword(oldPassword, newPassword, decodedToken as JwtPayload)
+    await AuthServices.resetPassword(
+      oldPassword,
+      newPassword,
+      decodedToken as JwtPayload,
+    );
 
     sendResponse(res, {
       success: true,
@@ -113,16 +124,31 @@ const resetPassword = catchAsync(
     });
   },
 );
+//*=================== set password ===================
 
+const setPassword = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { password } = req.body;
+    const decodedToken = req.user as JwtPayload;
+
+    await AuthServices.setPassword(decodedToken.id, password);
+
+    sendResponse(res, {
+      success: true,
+      statusCode: httpStatus.ACCEPTED,
+      message: "password set  successfully",
+      data: null,
+    });
+  },
+);
 
 //*=================== google log In ===================
 const googleCallBackController = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-
     //todo-> redirectTo
-    let redirectTo = req.query.state ? req.query.state as string : ""
+    let redirectTo = req.query.state ? (req.query.state as string) : "";
     if (redirectTo.startsWith("/")) {
-      redirectTo = redirectTo.slice(1)
+      redirectTo = redirectTo.slice(1);
     }
 
     const user = req.user;
@@ -130,12 +156,12 @@ const googleCallBackController = catchAsync(
     console.log("google autentication logIn", user);
 
     if (!user) {
-      throw new AppError(httpStatus.BAD_REQUEST, 'user not found', '')
+      throw new AppError(httpStatus.BAD_REQUEST, "user not found", "");
     }
 
-    const tokenInfo = createUserTokens(user)
+    const tokenInfo = createUserTokens(user);
 
-    setAuthCookie(res, tokenInfo)
+    setAuthCookie(res, tokenInfo);
 
     // sendResponse(res, {
     //   success: true,
@@ -144,7 +170,7 @@ const googleCallBackController = catchAsync(
     //   data: null,
     // });
 
-    res.redirect(`${envVars.FRONTEND_URL}/${redirectTo}`)
+    res.redirect(`${envVars.FRONTEND_URL}/${redirectTo}`);
   },
 );
 
@@ -152,6 +178,8 @@ export const AuthControllers = {
   credentialsLogIn,
   getNewAccessToken,
   logout,
+  changePassword,
   resetPassword,
-  googleCallBackController
+  setPassword,
+  googleCallBackController,
 };
