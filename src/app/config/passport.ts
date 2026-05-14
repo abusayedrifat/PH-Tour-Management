@@ -19,7 +19,6 @@ passport.use(
             passwordField: "password",
         },
         async (email: string, password: string, done) => {
-
             const isUserExists = await User.findOne({ email });
 
             try {
@@ -27,24 +26,31 @@ passport.use(
                     return done(null, false, { message: "This user doesn't exists" });
                 }
                 if (!isUserExists.isVarified) {
-                    return done(null, false, { message: "This user is not verified" })
+                    return done(null, false, { message: "This user is not verified" });
                 }
 
                 if (
                     isUserExists.isActive === IsActive.BLOCKED ||
                     isUserExists.isActive === IsActive.INACTIVE
                 ) {
-                    return done(null, false, { message: "This user is BLOCKED either INACTIVE" })
+                    return done(null, false, {
+                        message: "This user is BLOCKED either INACTIVE",
+                    });
                 }
 
                 if (isUserExists.isDeleted) {
-                    return done(null, false, { message: "This user has been deleted" })
+                    return done(null, false, { message: "This user has been deleted" });
                 }
 
-                const isGoogleAuthenticated = isUserExists.auths.some(providerObjects => providerObjects.provider == "google")
+                const isGoogleAuthenticated = isUserExists.auths.some(
+                    (providerObjects) => providerObjects.provider == "google",
+                );
 
                 if (isGoogleAuthenticated && !isUserExists.password) {
-                    return done(null, false, { message: " You authenticated with google log in. if u want to login with credentials then logIn with google and set ur password" })
+                    return done(null, false, {
+                        message:
+                            " You authenticated with google log in. if u want to login with credentials then logIn with google and set ur password",
+                    });
                 }
 
                 const isPasswordMatched = await bcrypt.compare(
@@ -57,7 +63,6 @@ passport.use(
                 }
 
                 return done(null, isUserExists);
-
             } catch (error) {
                 done(error);
             }
@@ -80,33 +85,31 @@ passport.use(
             done: VerifyCallback,
         ) => {
             try {
-
                 const email = profile.emails?.[0].value;
 
                 if (!email) {
                     return done(null, false, { message: "no email found" });
                 }
 
-
                 let isUserExists = await User.findOne({ email });
 
-               if (isUserExists && !isUserExists.isVarified) {
-                    return done(null, false, { message: "This user is not verified" })
-                }
                 
+                if (isUserExists && !isUserExists.isVarified) {
+                    return done(null, false, { message: "This user is not verified" });
+                }
+
                 if (
                     isUserExists &&
-                   ( isUserExists.isActive === IsActive.BLOCKED ||
-                    isUserExists.isActive === IsActive.INACTIVE)
+                    (isUserExists.isActive === IsActive.BLOCKED ||
+                        isUserExists.isActive === IsActive.INACTIVE)
                 ) {
-                    return done(null, false, { message: "This user is BLOCKED either INACTIVE" })
-                } 
-                
-                
-
+                    return done(null, false, {
+                        message: "This user is BLOCKED either INACTIVE",
+                    });
+                }
 
                 if (isUserExists && isUserExists.isDeleted) {
-                    return done(null, false, { message: "This user has been deleted" })
+                    return done(null, false, { message: "This user has been deleted" });
                 }
 
                 if (!isUserExists) {
@@ -125,7 +128,6 @@ passport.use(
                     });
                 }
 
-
                 return done(null, isUserExists);
             } catch (error) {
                 console.log(error);
@@ -134,8 +136,6 @@ passport.use(
         },
     ),
 );
-
-
 
 passport.serializeUser((user: any, done: (err: any, id?: unknown) => void) => {
     done(null, user._id);
