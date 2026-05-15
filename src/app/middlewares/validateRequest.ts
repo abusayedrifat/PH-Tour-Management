@@ -10,9 +10,9 @@ export const validateRequest =
                    req.body = JSON.parse(req.body.data) 
                 }  
                 
+                console.log('from validation',req.body.data);
                 req.body = await zodSchema.parseAsync(req.body);
 
-                console.log('from validation',req.body.data);
                 next();
             } catch (error) {
                 next(error);

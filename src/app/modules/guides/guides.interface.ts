@@ -12,7 +12,7 @@ export enum GuideStatus {
 
 export interface IGuide {
     user: Types.ObjectId,
-    nidPhoto: string,
+    nidPhoto: string[],
     division: Types.ObjectId,
     status: GuideStatus
 }

@@ -7,20 +7,23 @@ const guideSchema = new Schema<IGuide>({
     user: {
         type:Schema.Types.ObjectId,
         required:true,
-        unique:true
+        ref: "User"
     },
     nidPhoto: {
-        type:String
+        type:[String]
     },
     division: {
         type: Schema.Types.ObjectId,
-        required:true
+        required:true,
+        ref:"Division"
     },
     status: {
         type:String,
         enum: Object.values(GuideStatus),
         default: GuideStatus.PENDING
     }
+},{
+    versionKey:false
 })
 
 
