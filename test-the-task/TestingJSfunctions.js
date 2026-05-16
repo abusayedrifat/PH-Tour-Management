@@ -56,5 +56,13 @@ const result = url.match(/\/v\d+\/(.*?)\.(jpg|jpeg|png|gif|webpp)$/i)
 //* .toString(16) → converts number to hex
 //* .padStart(6, '0') → ensures always 6 characters
 
-console.log(result.length);
+// console.log(result.length);
+
+for (let i = 0; i <= 1000; i++) {
+const otp = Math.ceil(Math.random()*(10**6))
+.toString()
+.padStart(6, '0')
+console.log(otp);
+
+}
 

@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import app from './app';
 import { envVars } from './config/env';
 import { seedSuperAdmin } from './utils/seedSuperAdmin';
+import { connectRedis } from './config/redis.config';
 // import { promise } from 'zod';
 // import { error } from 'console';
 
@@ -42,6 +43,7 @@ const startServer = async() =>{
 //*IIFE = Immediately Invoked Function Expression
 
 (async()=>{
+    await connectRedis()
     await startServer();
     await seedSuperAdmin()
 })()
