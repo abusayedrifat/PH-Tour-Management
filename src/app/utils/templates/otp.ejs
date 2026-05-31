@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sent OTP for PH-Tour user verification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        color: #333;
+      }
+      .container {
+        max-width: 500px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(21, 20, 20, 0.548);
+      }
+     .p{
+        font-size: 14px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Your OTP Code: <%= otp%></h2>
+      <h4>Hello,<b> <%= name %></b> </h4>
+      <p class="p">
+        Don't share with anyone.
+        this will be invalid in 2 min
+        </p> 
+        
+      
+    </div>
+  </body>
+</html>

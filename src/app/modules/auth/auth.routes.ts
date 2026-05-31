@@ -4,6 +4,8 @@ import { Role } from "../user/user.interface";
 import { checkAuthorization } from "../../middlewares/checkAuthorization";
 import passport from "passport";
 import { envVars } from "../../config/env";
+import { validateRequest } from "../../middlewares/validateRequest";
+import { resetPassword } from "./auth.validation";
 
 const router = Router();
 
@@ -15,16 +17,25 @@ router.post(
   checkAuthorization(...Object.values(Role)),
   AuthControllers.changePassword,
 );
-router.post(
-  "/resetPassword",
-  checkAuthorization(...Object.values(Role)),
-  AuthControllers.resetPassword,
-);
+
 router.post(
   "/setPassword",
   checkAuthorization(...Object.values(Role)),
   AuthControllers.setPassword,
 );
+
+router.post(
+  "/forgotPassword",
+  AuthControllers.forgotPassword,
+);
+
+router.post(
+  "/resetPassword",
+  checkAuthorization(...Object.values(Role)),
+  validateRequest(resetPassword),
+  AuthControllers.resetPassword,
+);
+
 
 router.get(
   "/google",
